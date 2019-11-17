@@ -2,12 +2,11 @@
 <div class="sidebar-widget author-widget">
     <div class="media">
         <a href="/profile" class="media-left">
-            @if(isset(Auth::user()->employee->photo))
-                <img src="{{asset('photos/'.Auth::user()->employee->photo)}}" width="40px" height="30px" class="img-responsive">
+            @if(Auth::user()->employee->photo == '')
+                <img src="../assets/img/avatars/profile_pic.png" class="img-responsive">
             @else
-                <img src="/assets/img/avatars/profile_pic.png" class="img-responsive">
+                <img src="{{Auth::user()->employee->photo}}" width="40px" height="30px" class="img-responsive">
             @endif
-
         </a>
 
         <div class="media-body">
@@ -47,26 +46,26 @@
             </ul>
         </li>
 
-        @if(\Auth::user()->isAdmin || \Auth::user()->isHR() || \Auth::user()->isManager())
-            <li>
-                <a class="accordion-toggle" href="/dashboard">
-                    <span class="fa fa-user"></span>
-                    <span class="sidebar-title">Clients</span>
-                    <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                    <li>
-                        <a href="{{route('add-client')}}">
-                            <span class="glyphicon glyphicon-tags"></span> Add Client </a>
-                    </li>
+{{--        @if(\Auth::user()->isAdmin || \Auth::user()->isHR() || \Auth::user()->isManager())--}}
+{{--            <li>--}}
+{{--                <a class="accordion-toggle" href="/dashboard">--}}
+{{--                    <span class="fa fa-user"></span>--}}
+{{--                    <span class="sidebar-title">Clients</span>--}}
+{{--                    <span class="caret"></span>--}}
+{{--                </a>--}}
+{{--                <ul class="nav sub-nav">--}}
+{{--                    <li>--}}
+{{--                        <a href="{{route('add-client')}}">--}}
+{{--                            <span class="glyphicon glyphicon-tags"></span> Add Client </a>--}}
+{{--                    </li>--}}
 
-                    <li>
-                        <a href="{{route('list-client')}}">
-                            <span class="glyphicon glyphicon-tags"></span> List Client </a>
-                    </li>
-                </ul>
-            </li>
-        @endif
+{{--                    <li>--}}
+{{--                        <a href="{{route('list-client')}}">--}}
+{{--                            <span class="glyphicon glyphicon-tags"></span> List Client </a>--}}
+{{--                    </li>--}}
+{{--                </ul>--}}
+{{--            </li>--}}
+{{--        @endif--}}
 
         <li>
             <a class="accordion-toggle" href="/dashboard">
@@ -97,14 +96,14 @@
             </ul>
         </li>
 
-        <li>
+{{--        <li>--}}
 
-            <a href="/bank-account-details">
-                <span class="fa fa-bank"></span>
-                <span class="sidebar-title">Bank Account</span>
+{{--            <a href="/bank-account-details">--}}
+{{--                <span class="fa fa-bank"></span>--}}
+{{--                <span class="sidebar-title">Bank Account</span>--}}
 
-            </a>
-        </li>
+{{--            </a>--}}
+{{--        </li>--}}
 
         <li>
             <a class="accordion-toggle" href="/dashboard">
@@ -202,135 +201,135 @@
         </ul>
     </li>
 
-    @if(Auth::user()->isHR())
-        <li>
-            <a class="accordion-toggle" href="/dashboard">
-                <span class="fa fa-arrow-circle-o-up"></span>
-                <span class="sidebar-title">Promotions</span>
-                <span class="caret"></span>
-            </a>
-            <ul class="nav sub-nav">
-                <li>
-                    <a href="/promotion">
-                        <span class="glyphicon glyphicon-book"></span> Promote </a>
-                </li>
-                <li>
-                    <a href="/show-promotion">
-                        <span class="glyphicon glyphicon-modal-window"></span> Promotion Listings </a>
-                </li>
-            </ul>
-        </li>
+{{--    @if(Auth::user()->isHR())--}}
+{{--        <li>--}}
+{{--            <a class="accordion-toggle" href="/dashboard">--}}
+{{--                <span class="fa fa-arrow-circle-o-up"></span>--}}
+{{--                <span class="sidebar-title">Promotions</span>--}}
+{{--                <span class="caret"></span>--}}
+{{--            </a>--}}
+{{--            <ul class="nav sub-nav">--}}
+{{--                <li>--}}
+{{--                    <a href="/promotion">--}}
+{{--                        <span class="glyphicon glyphicon-book"></span> Promote </a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="/show-promotion">--}}
+{{--                        <span class="glyphicon glyphicon-modal-window"></span> Promotion Listings </a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </li>--}}
 
-        <li>
-            <a class="accordion-toggle" href="/dashboard">
-                <span class="fa fa-money"></span>
-                <span class="sidebar-title">Expenses</span>
-                <span class="caret"></span>
-            </a>
-            <ul class="nav sub-nav">
-                <li>
-                    <a href="{{route('add-expense')}}">
-                        <span class="glyphicon glyphicon-book"></span> Add Expense </a>
-                </li>
-                <li>
-                    <a href="{{route('expense-list')}}">
-                        <span class="glyphicon glyphicon-modal-window"></span> Expense Listings </a>
-                </li>
-            </ul>
-        </li>
+{{--        <li>--}}
+{{--            <a class="accordion-toggle" href="/dashboard">--}}
+{{--                <span class="fa fa-money"></span>--}}
+{{--                <span class="sidebar-title">Expenses</span>--}}
+{{--                <span class="caret"></span>--}}
+{{--            </a>--}}
+{{--            <ul class="nav sub-nav">--}}
+{{--                <li>--}}
+{{--                    <a href="{{route('add-expense')}}">--}}
+{{--                        <span class="glyphicon glyphicon-book"></span> Add Expense </a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="{{route('expense-list')}}">--}}
+{{--                        <span class="glyphicon glyphicon-modal-window"></span> Expense Listings </a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </li>--}}
 
-        <li>
-            <a class="accordion-toggle" href="/dashboard">
-                <span class="fa fa fa-trophy"></span>
-                <span class="sidebar-title">Awards</span>
-                <span class="caret"></span>
-            </a>
-            <ul class="nav sub-nav">
-                <li>
-                    <a href="/add-award">
-                        <span class="fa fa-adn"></span> Add Award </a>
-                </li>
-                <li>
-                    <a href="/award-listing">
-                        <span class="glyphicon glyphicon-calendar"></span> Award Listings </a>
-                </li>
-                <li>
-                    <a href="/assign-award">
-                        <span class="fa fa-desktop"></span> Awardees </a>
-                </li>
-                <li>
-                    <a href="/awardees-listing">
-                        <span class="fa fa-clipboard"></span> Awardees Listings </a>
-                </li>
-            </ul>
-        </li>
-    @endif
+{{--        <li>--}}
+{{--            <a class="accordion-toggle" href="/dashboard">--}}
+{{--                <span class="fa fa fa-trophy"></span>--}}
+{{--                <span class="sidebar-title">Awards</span>--}}
+{{--                <span class="caret"></span>--}}
+{{--            </a>--}}
+{{--            <ul class="nav sub-nav">--}}
+{{--                <li>--}}
+{{--                    <a href="/add-award">--}}
+{{--                        <span class="fa fa-adn"></span> Add Award </a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="/award-listing">--}}
+{{--                        <span class="glyphicon glyphicon-calendar"></span> Award Listings </a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="/assign-award">--}}
+{{--                        <span class="fa fa-desktop"></span> Awardees </a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="/awardees-listing">--}}
+{{--                        <span class="fa fa-clipboard"></span> Awardees Listings </a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </li>--}}
+{{--    @endif--}}
 
 
-    <li>
-        <a class="accordion-toggle" href="#">
-            <span class="fa fa fa-gavel"></span>
-            <span class="sidebar-title">Trainings</span>
-            <span class="caret"></span>
-        </a>
-        <ul class="nav sub-nav">
-            @if(\Auth::user()->notAnalyst())
-                <li>
-                    <a href="/add-training-program">
-                        <span class="fa fa-adn"></span> Add Training Program </a>
-                </li>
-            @endif
-            <li>
-                <a href="/show-training-program">
-                    <span class="glyphicon glyphicon-calendar"></span> Program Listings </a>
-            </li>
-            @if(\Auth::user()->notAnalyst())
-                <li>
-                    <a href="/add-training-invite">
-                        <span class="fa fa-desktop"></span> Training Invite </a>
-                </li>
-            @endif
-            <li>
-                <a href="/show-training-invite">
-                    <span class="fa fa-clipboard"></span> Invitation Listings </a>
-            </li>
-        </ul>
-    </li>
-    @if(Auth::user()->isHR())
-        <li>
-            <a class="accordion-toggle" href="#">
-                <span class="fa fa-clock-o"></span>
-                <span class="sidebar-title"> Attendance </span>
-                <span class="caret"></span>
-            </a>
-            <ul class="nav sub-nav">
-                <li>
-                    <a href="{{route('attendance-upload')}}">
-                        <span class="glyphicon glyphicon-book"></span> Upload Sheets</a>
-                </li>
+{{--    <li>--}}
+{{--        <a class="accordion-toggle" href="#">--}}
+{{--            <span class="fa fa fa-gavel"></span>--}}
+{{--            <span class="sidebar-title">Trainings</span>--}}
+{{--            <span class="caret"></span>--}}
+{{--        </a>--}}
+{{--        <ul class="nav sub-nav">--}}
+{{--            @if(\Auth::user()->notAnalyst())--}}
+{{--                <li>--}}
+{{--                    <a href="/add-training-program">--}}
+{{--                        <span class="fa fa-adn"></span> Add Training Program </a>--}}
+{{--                </li>--}}
+{{--            @endif--}}
+{{--            <li>--}}
+{{--                <a href="/show-training-program">--}}
+{{--                    <span class="glyphicon glyphicon-calendar"></span> Program Listings </a>--}}
+{{--            </li>--}}
+{{--            @if(\Auth::user()->notAnalyst())--}}
+{{--                <li>--}}
+{{--                    <a href="/add-training-invite">--}}
+{{--                        <span class="fa fa-desktop"></span> Training Invite </a>--}}
+{{--                </li>--}}
+{{--            @endif--}}
+{{--            <li>--}}
+{{--                <a href="/show-training-invite">--}}
+{{--                    <span class="fa fa-clipboard"></span> Invitation Listings </a>--}}
+{{--            </li>--}}
+{{--        </ul>--}}
+{{--    </li>--}}
+{{--    @if(Auth::user()->isHR())--}}
+{{--        <li>--}}
+{{--            <a class="accordion-toggle" href="#">--}}
+{{--                <span class="fa fa-clock-o"></span>--}}
+{{--                <span class="sidebar-title"> Attendance </span>--}}
+{{--                <span class="caret"></span>--}}
+{{--            </a>--}}
+{{--            <ul class="nav sub-nav">--}}
+{{--                <li>--}}
+{{--                    <a href="{{route('attendance-upload')}}">--}}
+{{--                        <span class="glyphicon glyphicon-book"></span> Upload Sheets</a>--}}
+{{--                </li>--}}
 
-            </ul>
-        </li>
+{{--            </ul>--}}
+{{--        </li>--}}
 
-        <li>
-            <a class="accordion-toggle" href="#">
-                <span class="fa fa-tree"></span>
-                <span class="sidebar-title">Holiday</span>
-                <span class="caret"></span>
-            </a>
-            <ul class="nav sub-nav">
-                <li>
-                    <a href="/add-holidays">
-                        <span class="glyphicon glyphicon-book"></span> Add Holiday </a>
-                </li>
-                <li>
-                    <a href="/holiday-listing">
-                        <span class="glyphicon glyphicon-modal-window"></span> Holiday Listings </a>
-                </li>
-            </ul>
-        </li>
+{{--        <li>--}}
+{{--            <a class="accordion-toggle" href="#">--}}
+{{--                <span class="fa fa-tree"></span>--}}
+{{--                <span class="sidebar-title">Holiday</span>--}}
+{{--                <span class="caret"></span>--}}
+{{--            </a>--}}
+{{--            <ul class="nav sub-nav">--}}
+{{--                <li>--}}
+{{--                    <a href="/add-holidays">--}}
+{{--                        <span class="glyphicon glyphicon-book"></span> Add Holiday </a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="/holiday-listing">--}}
+{{--                        <span class="glyphicon glyphicon-modal-window"></span> Holiday Listings </a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </li>--}}
 
-    @endif
+{{--    @endif--}}
 
     {{--<li class="sidebar-label pt30"> Extras</li>--}}
     <li>

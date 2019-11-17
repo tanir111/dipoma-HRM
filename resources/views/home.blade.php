@@ -13,7 +13,7 @@
                                     placeholder="Share your status in 270 characters"
                                     style="padding-left:100px"></textarea>
                                     <label for="comment" class="field-icon">
-                                        <img src="{{isset(\Auth::user()->employee) ? \Auth::user()->employee->photo : '/assets/img/avatars/profile_pic.png'}}"
+                                        <img src="{{isset(\Auth::user()->employee) ? \Auth::user()->employee->photo : '../assets/img/avatars/profile_pic.png'}}"
                                              width="80px" height="80px" style="padding-top: 10px; padding-left: 8px"
                                              class="img-responsive">
                                     </label>
@@ -36,13 +36,13 @@
                                         <div class="row">
                                             <div class="col-md-2">
                                                 @if(\Auth::user()->employee->photo)
-                                                    <img src="http://alliance-html.themerex.net/assets/img/avatars/profile_avatar.jpg"
+                                                    <img src="assets/img/avatars/profile_avatar.jpg"
                                                          width="80px"
                                                          height="80px">
                                                     <br/>
                                                     <div class="small-help-block"> {{\Auth::user()->name}}</div>
                                                 @else
-                                                    <img src="/assets/img/avatars/profile_pic.png" width="80px"
+                                                    <img src="assets/img/avatars/profile_pic.png" width="80px"
                                                          height="80px">
                                                     <br/>
                                                     <div class="small-help-block"> {{\Auth::user()->name}}</div>

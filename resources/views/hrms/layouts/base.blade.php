@@ -45,7 +45,7 @@
 
 @stack('styles')
 
-    <!-- -------------- IE8 HTML5 support  -------------- -->
+<!-- -------------- IE8 HTML5 support  -------------- -->
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -53,15 +53,15 @@
 
     <style type="text/css">
         .blink {
-            color:mediumblue;
+            color: mediumblue;
         }
 
         .blink_second {
-            color:red;
+            color: red;
         }
 
         .blink_third {
-            color:yellow;
+            color: yellow;
         }
     </style>
 
@@ -239,8 +239,8 @@
 <div id="main">
 
     <!-- -------------- Header  -------------- -->
-    @include('hrms.layouts.header')
-    <!-- -------------- /Header  -------------- -->
+@include('hrms.layouts.header')
+<!-- -------------- /Header  -------------- -->
 
     <!-- -------------- Sidebar  -------------- -->
     <aside id="sidebar_left" class="nano nano-light affix">
@@ -255,12 +255,12 @@
             @include('hrms.layouts.sidebar')
 
             <!-- -------------- Sidebar Hide Button -------------- -->
-            <div class="sidebar-toggler">
-                <a href="#">
-                    <span class="fa fa-arrow-circle-o-left"></span>
-                </a>
-            </div>
-            <!-- -------------- /Sidebar Hide Button -------------- -->
+                <div class="sidebar-toggler">
+                    <a href="#">
+                        <span class="fa fa-arrow-circle-o-left"></span>
+                    </a>
+                </div>
+                <!-- -------------- /Sidebar Hide Button -------------- -->
 
         </div>
         <!-- -------------- /Sidebar Left Wrapper  -------------- -->
@@ -317,9 +317,9 @@
 
         <!-- YIELD CONTENT -->
 
-        @yield('content')
+    @yield('content')
 
-        <!-- /YIELD CONTENT -->
+    <!-- /YIELD CONTENT -->
 
         <!-- -------------- Content -------------- -->
         <section id="content" class="table-layout animated fadeIn">
@@ -474,24 +474,22 @@
         </section>
         <!-- -------------- /Content -------------- -->
 
-        @if(\Route::getFacadeRoot()->current()->uri() == 'dashboard' || \Route::getFacadeRoot()->current()->uri() == 'welcome' || \Route::getFacadeRoot()->current()->uri() == 'change-password' ||
-        \Route::getFacadeRoot()->current()->uri() == 'not-found' )
+    @if(\Route::getFacadeRoot()->current()->uri() == 'dashboard' || \Route::getFacadeRoot()->current()->uri() == 'welcome' || \Route::getFacadeRoot()->current()->uri() == 'change-password' ||
+    \Route::getFacadeRoot()->current()->uri() == 'not-found' )
         <!-- -------------- Page Footer -------------- -->
-        <footer id="content-footer" class="affix">
-            <div class="row">
-                <div class="col-md-6">
-                    <span class="footer-legal">KANAK © 2016 All rights reserved. By <a
-                                href="http://www.kanakmanjari.com/" target="_blank">Kanak Manjari</a></span>
+            <footer id="content-footer" class="affix">
+                <div class="row">
+                    <div class="col-md-6">
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <span class="footer-meta"></span>
+                        <a href="#content" class="footer-return-top">
+                            <span class="fa fa-angle-up"></span>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-md-6 text-right">
-                    <span class="footer-meta"></span>
-                    <a href="#content" class="footer-return-top">
-                        <span class="fa fa-angle-up"></span>
-                    </a>
-                </div>
-            </div>
-        </footer>
-        <!-- -------------- /Page Footer -------------- -->
+            </footer>
+            <!-- -------------- /Page Footer -------------- -->
         @endif
 
     </section>
@@ -506,7 +504,7 @@
             <div class="sidebar-block br-n p15">
 
                 <h6 class="title-divider text-muted mb20"> Visitors Stats
-                <span class="pull-right"> 2015
+                    <span class="pull-right"> 2015
                   <i class="fa fa-caret-down ml5"></i>
                 </span>
                 </h6>
@@ -532,7 +530,7 @@
                         <span class="fs11 text-left">Orders</span>
                     </div>
                 </div>
-h
+                h
                 <h6 class="title-divider text-muted mt30 mb10">New visitors</h6>
 
                 <div class="row">
@@ -581,9 +579,6 @@ h
 <!-- -------------- /Body Wrap  -------------- -->
 
 
-
-
-
 <!-- -------------- Scripts -------------- -->
 
 <!-- -------------- jQuery -------------- -->
@@ -628,51 +623,51 @@ h
 <script src="/assets/js/sweetalert.min.js"></script>
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'assign-asset')--}}
-    {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-    {{--<script src="/assets/js/custom.js"></script>--}}
+{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
+{{--<script src="/assets/js/custom.js"></script>--}}
 {{--@endif--}}
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'assign-project')--}}
-    {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-    {{--<script src="/assets/js/custom.js"></script>--}}
+{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
+{{--<script src="/assets/js/custom.js"></script>--}}
 {{--@endif--}}
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'assign-award')--}}
-    {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-    {{--<script src="/assets/js/custom.js"></script>--}}
+{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
+{{--<script src="/assets/js/custom.js"></script>--}}
 {{--@endif--}}
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-award-assignment/{id}')--}}
-    {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-    {{--<script src="/assets/js/custom.js"></script>--}}
+{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
+{{--<script src="/assets/js/custom.js"></script>--}}
 {{--@endif--}}
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'add-expense')--}}
-    {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-    {{--<script src="/assets/js/custom.js"></script>--}}
+{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
+{{--<script src="/assets/js/custom.js"></script>--}}
 {{--@endif--}}
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'attendance-manager')--}}
-    {{--<script src="/assets/js/custom.js"></script>--}}
+{{--<script src="/assets/js/custom.js"></script>--}}
 {{--@endif--}}
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'total-leave-list')--}}
-    {{--<script src="/assets/js/custom.js"></script>--}}
+{{--<script src="/assets/js/custom.js"></script>--}}
 {{--@endif--}}
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'apply-leave')--}}
-    {{--<script src="/assets/js/function.js"></script>--}}
-    {{--<script src="/assets/js/custom.js"></script>--}}
-    {{--@endif--}}
+{{--<script src="/assets/js/function.js"></script>--}}
+{{--<script src="/assets/js/custom.js"></script>--}}
+{{--@endif--}}
 
 {{--<script src="/assets/js/function.js"></script>--}}
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-asset-assignment/{id}')--}}
-    {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-    {{--<script src="/assets/js/custom.js"></script>--}}
+{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
+{{--<script src="/assets/js/custom.js"></script>--}}
 {{--@endif--}}
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'promotion')--}}
-    {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-    {{--<script src="/assets/js/custom.js"></script>--}}
+{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
+{{--<script src="/assets/js/custom.js"></script>--}}
 {{--@endif--}}
 
 @if(\Route::getFacadeRoot()->current()->uri() == 'edit-promotion/{id}')
@@ -681,20 +676,20 @@ h
 @endif
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'add-training-invite')--}}
-    {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-    {{--<script src="/assets/js/custom.js"></script>--}}
+{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
+{{--<script src="/assets/js/custom.js"></script>--}}
 {{--@endif--}}
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-training-invite/{id}')--}}
-    {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-    {{--<script src="/assets/js/custom.js"></script>--}}
+{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
+{{--<script src="/assets/js/custom.js"></script>--}}
 {{--@endif--}}
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'add-training-invite')--}}
-    {{--<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>--}}
+{{--<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>--}}
 {{--@endif--}}
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-training-invite/{id}')--}}
-    {{--<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>--}}
+{{--<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>--}}
 {{--@endif--}}
 
 
@@ -703,64 +698,63 @@ h
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'add-employee' )--}}
 {{--<script src="/assets/js/custom_form_wizard.js"></script>--}}
-    {{--@endif--}}
+{{--@endif--}}
 
-    {{--@if(\Route::getFacadeRoot()->current()->uri() == 'attendance-upload' )--}}
-        {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-    {{--@endif--}}
+{{--@if(\Route::getFacadeRoot()->current()->uri() == 'attendance-upload' )--}}
+{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
+{{--@endif--}}
 
-    {{--@if(\Route::getFacadeRoot()->current()->uri() == 'add-team')--}}
-        {{--<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>--}}
-    {{--@endif--}}
+{{--@if(\Route::getFacadeRoot()->current()->uri() == 'add-team')--}}
+{{--<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>--}}
+{{--@endif--}}
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-team/{id}')--}}
-    {{--<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>--}}
+{{--<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>--}}
 {{--@endif--}}
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'create-event')--}}
-        {{--<!-- -------------- DateTime JS -------------- -->--}}
-    {{--<script src="/assets/js/plugins/datepicker/js/bootstrap-datetimepicker.min.js"></script>--}}
+{{--<!-- -------------- DateTime JS -------------- -->--}}
+{{--<script src="/assets/js/plugins/datepicker/js/bootstrap-datetimepicker.min.js"></script>--}}
 {{--@endif--}}
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'create-meeting')--}}
-    {{--<!-- -------------- DateTime JS -------------- -->--}}
-    {{--<script src="/assets/js/plugins/datepicker/js/bootstrap-datetimepicker.min.js"></script>--}}
+{{--<!-- -------------- DateTime JS -------------- -->--}}
+{{--<script src="/assets/js/plugins/datepicker/js/bootstrap-datetimepicker.min.js"></script>--}}
 {{--@endif--}}
-    <script>
-        $('#datetimepicker2').datetimepicker();
+<script>
+    $('#datetimepicker2').datetimepicker();
 
 
-        (function($) {
-            $.fn.blink = function(options) {
-                var defaults = {
-                    delay: 3000
-                };
-                var options = $.extend(defaults, options);
+    (function ($) {
+        $.fn.blink = function (options) {
+            var defaults = {
+                delay: 3000
+            };
+            var options = $.extend(defaults, options);
 
-                return this.each(function() {
-                    var obj = $(this);
-                    setInterval(function() {
-                        if ($(obj).css("visibility") == "visible") {
-                            $(obj).css('visibility', 'hidden');
-                        }
-                        else {
-                            $(obj).css('visibility', 'visible');
-                        }
-                    }, options.delay);
-                });
-            }
-        }(jQuery))
+            return this.each(function () {
+                var obj = $(this);
+                setInterval(function () {
+                    if ($(obj).css("visibility") == "visible") {
+                        $(obj).css('visibility', 'hidden');
+                    } else {
+                        $(obj).css('visibility', 'visible');
+                    }
+                }, options.delay);
+            });
+        }
+    }(jQuery))
 
-        /////////////////////////////////////////////
+    /////////////////////////////////////////////
 
-        $(document).ready(function() {
-            $('.blink').blink(); // default is 500ms blink interval.
-            $('.blink_second').blink({
-                delay: 100
-            }); // causes a 100ms blink interval.
-            $('.blink_third').blink({
-                delay: 1500
-            }); // causes a 1500ms blink interval.
-        });
+    $(document).ready(function () {
+        $('.blink').blink(); // default is 500ms blink interval.
+        $('.blink_second').blink({
+            delay: 100
+        }); // causes a 100ms blink interval.
+        $('.blink_third').blink({
+            delay: 1500
+        }); // causes a 1500ms blink interval.
+    });
 
-        /////////////////////////////////////////////
+    /////////////////////////////////////////////
 
 </script>
 
@@ -768,7 +762,11 @@ h
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108812473-2"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'UA-108812473-2');

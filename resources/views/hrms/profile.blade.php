@@ -14,12 +14,21 @@
                         </div>
                         <div class="panel-body pn pb5 text-center">
                             <hr class="short br-lighter">
-                            <img src="{{isset($details->photo) ? $details->photo : '/assets/img/avatars/profile_pic.png'}}" width="80px" height="80px" class="img-circle img-thumbnail" alt="User Image">
-
+                            @if($details->photo == '')
+                                <img src="assets/img/avatars/profile_pic.png"
+                                     width="80px" height="80px" class="img-circle img-thumbnail" alt="User Image">
+                            @else
+                                <img src="{{$details->photo}}"
+                                     width="80px" height="80px" class="img-circle img-thumbnail" alt="User Image">
+                            @endif
                         </div>
                         <p class="text-center no-margin">{{isset($details->userrole->role->name)?$details->userrole->role->name:''}}</p>
-                        <p class="small text-center no-margin"><span class="text-muted">Department:</span> {{isset($details->department) ? $details->department:'' }}</p>
-                        <p class="small text-center no-margin"><span class="text-muted">Employee ID:</span> {{isset($details->code) ? $details->code:''}}</p>
+                        <p class="small text-center no-margin"><span
+                                    class="text-muted">Department:</span> {{isset($details->department) ? $details->department:'' }}
+                        </p>
+                        <p class="small text-center no-margin"><span
+                                    class="text-muted">Employee ID:</span> {{isset($details->code) ? $details->code:''}}
+                        </p>
 
 
                     </div>
@@ -37,7 +46,8 @@
                                 <table class="table">
                                     <tbody>
                                     <tr>
-                                        <td style="width: 10px" class="text-center"><i class="fa fa-credit-card"></i></td>
+                                        <td style="width: 10px" class="text-center"><i class="fa fa-credit-card"></i>
+                                        </td>
                                         <td><strong>Account Number</strong></td>
                                         <td>{{isset($details->account_number) ? $details->account_number:''}}</td>
 
@@ -153,34 +163,35 @@
             </div>
 
             @if($events)
-            <div class="col-md-3 pull-right">
-                <div class="box box-success">
-                    <div class="panel">
-                        <div class="panel-heading">
-                            <span class="panel-title"> Events </span>
-                        </div>
-                        <div class="panel-body pn pb5">
-                            <hr class="short br-lighter">
+                <div class="col-md-3 pull-right">
+                    <div class="box box-success">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <span class="panel-title"> Events </span>
+                            </div>
+                            <div class="panel-body pn pb5">
+                                <hr class="short br-lighter">
                                 @foreach (array_chunk($events, 3, true) as $results)
                                     <table class="table">
                                         @foreach($results as $event)
-                                             <tr>
+                                            <tr>
                                                 <td>
                                                     <div class='fc-event' data-event="primary">
                                                         <div class="fc-event-desc blink" id="blink">
                                                             <span class="label label-info pull-right">  {{$event->name}} </span></a>
                                                         </div>
                                                     </div>
-                                                    <a href="{{route('create-event')}}" > <span class="label label-success pull-right">{{ \Carbon\Carbon::createFromTimestamp(strtotime($event->date))}}</span></a>
+                                                    <a href="{{route('create-event')}}"> <span
+                                                                class="label label-success pull-right">{{ \Carbon\Carbon::createFromTimestamp(strtotime($event->date))}}</span></a>
                                                 </td>
-                                             </tr>
+                                            </tr>
                                         @endforeach
                                     </table>
                                 @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             @endif
             <div class="col-md-5">
                 <div class="box box-success">
@@ -233,8 +244,8 @@
 
                 </div>
             </div>
-                    </div>
-            </div>
+        </div>
+        </div>
 
         </div>
 
@@ -244,19 +255,21 @@
 <script type="text/javascript">
     function startTime() {
         var today = new Date(),
-                curr_hour = today.getHours(),
-                curr_min = today.getMinutes(),
-                curr_sec = today.getSeconds();
+            curr_hour = today.getHours(),
+            curr_min = today.getMinutes(),
+            curr_sec = today.getSeconds();
         curr_hour = checkTime(curr_hour);
         curr_min = checkTime(curr_min);
         curr_sec = checkTime(curr_sec);
         document.getElementById('clock').innerHTML = curr_hour + ":" + curr_min + ":" + curr_sec;
     }
+
     function checkTime(i) {
         if (i < 10) {
             i = "0" + i;
         }
         return i;
     }
+
     setInterval(startTime, 500);
 </script>

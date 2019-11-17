@@ -309,7 +309,7 @@
                     <!-- -------------- Spec Form -------------- -->
                     <div class="allcp-form">
 
-                        <form method="post" action="/" id="custom-form-wizard">
+                        <form method="post" action="/" id="custom-form-wizard" enctype="multipart/form-data">
                             <div class="wizard steps-bg steps-left">
 
                                 <!-- -------------- step 1 -------------- -->
