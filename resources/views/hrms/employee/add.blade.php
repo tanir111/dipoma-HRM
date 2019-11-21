@@ -546,34 +546,28 @@
                                     </div>
 
 
-                                    <div class="section">
-                                        <label for="input002"><h6 class="mb20 mt40"> PAN Number </h6></label>
-                                        <label for="input002" class="field prepend-icon">
+                                    <div style = "visibility:hidden">
                                             @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
-                                                <input type="text" name="pan_number" id="pan_number" class="gui-input"
+                                                <input type="hidden" name="pan_number" id="pan_number" class="gui-input"
                                                        value="@if($emps && $emps->employee->pan_number){{$emps->employee->pan_number}}@endif">
                                             @else
-                                                <input type="text" placeholder="PAN" name="pan_number"
-                                                       id="pan_number" class="gui-input">
+                                                <input type="hidden" placeholder="PAN" name="pan_number"
+                                                       id="pan_number" class="gui-input" value = "123456">
 
                                             @endif
-                                        </label>
                                     </div>
 
 
-                                    <div class="section">
-                                        <label for="input002"><h6 class="mb20 mt40"> Father's Name </h6></label>
-                                        <label for="input002" class="field prepend-icon">
+                                    <div style = "visibility:hidden">
                                             @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
-                                                <input type="text" name="father_name" id="father_name" class="gui-input"
+                                                <input type="hidden" name="father_name" id="father_name" class="gui-input"
                                                        value="@if($emps && $emps->employee->father_name){{$emps->employee->father_name}}@endif">
 
                                             @else
-                                                <input type="text" placeholder="Employees' father name"
-                                                       name="father_name" id="father_name" class="gui-input">
+                                                <input type="hidden" placeholder="Employees' father name"
+                                                       value = "asdasd" name="father_name" id="father_name" class="gui-input">
 
                                             @endif
-                                        </label>
                                     </div>
 
 
@@ -827,63 +821,54 @@
                                     </div>
 
 
-                                    <div class="section">
-                                        <label for="input002"><h6 class="mb20 mt40"> IFSC Code </h6></label>
-                                        <label for="input002" class="field prepend-icon">
+                                    <div style = "visibility:hidden">
                                             @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
-                                                <input type="text" name="ifsc_code" id="ifsc_code" class="gui-input"
+                                                <input type="hidden" name="ifsc_code" id="ifsc_code" class="gui-input"
                                                        value="@if($emps && $emps->employee->ifsc_code){{$emps->employee->ifsc_code}}@endif">
                                                 <label for="input002" class="field-icon">
                                                     <i class="fa fa-font"></i>
                                                 </label>
                                             @else
-                                                <input type="text" placeholder="ifsc code..." name="ifsc_code"
+                                                <input type="hidden" value = "bankifsc" placeholder="ifsc code..." name="ifsc_code"
                                                        id="ifsc_code" class="gui-input">
                                                 <label for="input002" class="field-icon">
                                                     <i class="fa fa-font"></i>
                                                 </label>
                                             @endif
-                                        </label>
                                     </div>
 
 
-                                    <div class="section">
-                                        <label for="input002"><h6 class="mb20 mt40"> PF Account Number </h6></label>
-                                        <label for="input002" class="field prepend-icon">
+                                    <div style = "visibility:hidden">
                                             @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
-                                                <input type="text" name="pf_account_number" id="pf_account_number"
+                                                <input type="hidden" name="pf_account_number" id="pf_account_number"
                                                        class="gui-input"
                                                        value="@if($emps && $emps->employee->pf_account_number){{$emps->employee->pf_account_number}}@endif">
                                                 <label for="input002" class="field-icon">
                                                     <i class="fa fa-list"></i>
                                                 </label>
                                             @else
-                                                <input type="text" placeholder="PF account number..."
-                                                       name="pf_account_number" id="pf_account_number"
+                                                <input type="hidden" placeholder="PF account number..."
+                                                       name="pf_account_number" value = "pf_account_number" id="pf_account_number"
                                                        class="gui-input">
                                                 <label for="input002" class="field-icon">
                                                     <i class="fa fa-list"></i>
                                                 </label>
                                             @endif
-                                        </label>
                                     </div>
 
-                                   <div class="section">
-                                       <label for="input002"><h6 class="mb20 mt40"> UN Number</h6></label>
-                                       <label for="input002" class="field prepend-icon">
+                                   <div style = "visibility:hidden">
                                            @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
-                                              <input type="text" name="un_number" id="un_number" class="gui-input"
+                                              <input type="hidden" name="un_number" id="un_number" class="gui-input"
                                               value="@if($emps && $emps->employee->un_number){{$emps->employee->un_number}}@endif">
                                                <label for="input002" class="field-icon">
                                                    <i class="fa fa-list"></i>
                                                </label>
                                            @else
-                                             <input type="text" placeholder="UN Number" name="un_number" id="un_number" class="gui-input">
+                                             <input type="hidden" value = "UN_number" placeholder="UN Number" name="un_number" id="un_number" class="gui-input">
                                               <label for="input002" class="field-icon">
                                                   <i class="fa fa-list"></i>
                                               </label>
                                            @endif
-                                       </label>
                                    </div>
 
 

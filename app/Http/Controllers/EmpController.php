@@ -39,7 +39,7 @@ class EmpController extends Controller
 
         $user = new User;
         $user->name = $request->emp_name;
-        $user->email = str_replace(' ', '_', $request->emp_name) . '@sipi-ip.sg';
+        $user->email = str_replace(' ', '_', $request->emp_name) . '@'.env('APP_NAME').'.com';
         $user->password = bcrypt('123456');
         $user->save();
 
@@ -289,7 +289,7 @@ class EmpController extends Controller
                     \Log::info($row->role);
                     $user = new User;
                     $user->name = $row->emp_name;
-                    $user->email = str_replace(' ', '_', $row->emp_name) . '@sipi-ip.sg';
+                    $user->email = str_replace(' ', '_', $row->emp_name) . '@'.env('APP_NAME').'.com';
                     $user->password = bcrypt('123456');
                     $user->save();
                     $attachment = new Employee();
