@@ -28,6 +28,6 @@ class CreateHolidayFilenames extends Migration
      */
     public function down()
     {
-        //
+        \Schema::drop('holiday_filenames');
     }
 }

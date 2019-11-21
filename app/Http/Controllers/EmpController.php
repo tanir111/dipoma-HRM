@@ -28,13 +28,12 @@ class EmpController extends Controller
 
     public function processEmployee(Request $request)
     {
-
+        $filename = '';
         if ($request->file('photo')) {
             $image = $request->file('photo');
             $image_path = time() . $image->getClientOriginalName();
             $imageFullPath = $image->move('/assets/img/avatars/', $image_path);
             $filename = $imageFullPath;
-
         }
 
         $user = new User;
@@ -115,7 +114,7 @@ class EmpController extends Controller
             $filename = str_random(12);
             $fileExt = $file->getClientOriginalExtension();
             $allowedExtension = ['jpg', 'jpeg', 'png'];
-            $destinationPath = public_path('assets/img/avatars/');
+            $destinationPath = public_path('/assets/img/avatars/');
             if (!in_array($fileExt, $allowedExtension)) {
                 return redirect()->back()->with('message', 'Extension not allowed');
             }
@@ -124,7 +123,7 @@ class EmpController extends Controller
 
         }
 
-        $photo = '/assets/img/avatars/'.$filename;
+        $photo = '/assets/img/avatars/' . $filename;
         $emp_name = $request->emp_name;
         $emp_code = $request->emp_code;
         $emp_status = $request->status;
