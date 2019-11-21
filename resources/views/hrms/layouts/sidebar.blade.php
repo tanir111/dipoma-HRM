@@ -347,14 +347,6 @@
             </a>
         </li>
     @endif
-    <li>
-
-        <a href="/download-forms">
-            <span class="fa fa-book"></span>
-            <span class="sidebar-title">Download Forms</span>
-
-        </a>
-    </li>
 
     <li>
         <a href="/hr-policy">
