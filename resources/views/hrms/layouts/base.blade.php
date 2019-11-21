@@ -21,7 +21,7 @@
     <!-- -------------- FullCalendar -------------- -->
     <link rel="stylesheet" type="text/css" href="/assets/js/plugins/fullcalendar/fullcalendar.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/js/plugins/magnific/magnific-popup.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css">
     <!-- -------------- Plugins -------------- -->
     <link rel="stylesheet" type="text/css" href="/assets/js/plugins/c3charts/c3.min.css">
 
@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/allcp/forms/css/forms.css">
     <link rel="stylesheet" type="text/css" href="/assets/allcp/forms/css/widget.css">
 
-    <link rel="stylesheet" type="text/css" href="assets/js/plugins/select2/css/core.css">
+    <link rel="stylesheet" type="text/css" href="/assets/js/plugins/select2/css/core.css">
     <!-- -------------- Favicon -------------- -->
     <link rel="shortcut icon" href="/assets/img/favicon.png">
 
@@ -623,7 +623,6 @@
 <script src="/assets/js/sweetalert.min.js"></script>
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'assign-asset')--}}
-{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
 {{--<script src="/assets/js/custom.js"></script>--}}
 {{--@endif--}}
 
@@ -654,11 +653,11 @@
 {{--<script src="/assets/js/custom.js"></script>--}}
 {{--@endif--}}
 
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'apply-leave')--}}
-{{--<script src="/assets/js/function.js"></script>--}}
-{{--<script src="/assets/js/custom.js"></script>--}}
-{{--@endif--}}
-
+<script src="/assets/js/function.js"></script>
+<script src="/assets/js/custom.js"></script>
+<script src="/assets/js/pages/forms-widgets.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.stepper@1.0.0/jquery.stepper.js"></script>
 {{--<script src="/assets/js/function.js"></script>--}}
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-asset-assignment/{id}')--}}
 {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
@@ -670,10 +669,10 @@
 {{--<script src="/assets/js/custom.js"></script>--}}
 {{--@endif--}}
 
-@if(\Route::getFacadeRoot()->current()->uri() == 'edit-promotion/{id}')
-    <script src="/assets/js/pages/forms-widgets.js"></script>
-    <script src="/assets/js/custom.js"></script>
-@endif
+{{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-promotion/{id}')--}}
+    {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
+    {{--<script src="/assets/js/custom.js"></script>--}}
+{{--@endif--}}
 
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'add-training-invite')--}}
 {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
@@ -689,7 +688,7 @@
 {{--<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>--}}
 {{--@endif--}}
 {{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-training-invite/{id}')--}}
-{{--<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>--}}
+<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>
 {{--@endif--}}
 
 
@@ -714,10 +713,7 @@
 {{--<!-- -------------- DateTime JS -------------- -->--}}
 {{--<script src="/assets/js/plugins/datepicker/js/bootstrap-datetimepicker.min.js"></script>--}}
 {{--@endif--}}
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'create-meeting')--}}
-{{--<!-- -------------- DateTime JS -------------- -->--}}
-{{--<script src="/assets/js/plugins/datepicker/js/bootstrap-datetimepicker.min.js"></script>--}}
-{{--@endif--}}
+
 <script>
     $('#datetimepicker2').datetimepicker();
 

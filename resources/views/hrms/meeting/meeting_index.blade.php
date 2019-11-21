@@ -156,7 +156,7 @@
                         <div class="col-md-12">
                             <label for="firstname" class="field prepend-icon">
                                 <select id="meeting_attendees" class="form-control" multiple required>
-                                    <option value="">Meeting Attendees</option>
+                                    <option disabled>Meeting Attendees</option>
                                     @foreach($users as $user)
                                         <option value="{{$user->id}}">{{$user->name}}</option>
                                     @endforeach

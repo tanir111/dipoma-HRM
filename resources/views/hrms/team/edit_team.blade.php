@@ -134,6 +134,10 @@
 
 </div>
 @endsection
+
+@push('styles')
+    <link rel="stylesheet" type="text/css" href="/assets/allcp/forms/css/bootstrap-select.css">
+@endpush
 @push('scripts')
     <script src="/assets/allcp/forms/js/bootstrap-select.js"></script>
 @endpush

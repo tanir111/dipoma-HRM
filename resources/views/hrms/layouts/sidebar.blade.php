@@ -5,7 +5,7 @@
             @if(Auth::user()->employee->photo == '')
                 <img src="../assets/img/avatars/profile_pic.png" class="img-responsive">
             @else
-                <img src="{{Auth::user()->employee->photo}}" width="40px" height="30px" class="img-responsive">
+                <img src="{{asset(Auth::user()->employee->photo)}}" width="40px" height="30px" class="img-responsive">
             @endif
         </a>
 
@@ -39,33 +39,33 @@
                     <a href="{{route('employee-manager')}}">
                         <span class="glyphicon glyphicon-tags"></span> Employee Listing </a>
                 </li>
-                <li>
-                    <a href="{{route('upload-emp')}}">
-                        <span class="glyphicon glyphicon-tags"></span> Upload </a>
-                </li>
+                {{--<li>--}}
+                    {{--<a href="{{route('upload-emp')}}">--}}
+                        {{--<span class="glyphicon glyphicon-tags"></span> Upload </a>--}}
+                {{--</li>--}}
             </ul>
         </li>
 
-{{--        @if(\Auth::user()->isAdmin || \Auth::user()->isHR() || \Auth::user()->isManager())--}}
-{{--            <li>--}}
-{{--                <a class="accordion-toggle" href="/dashboard">--}}
-{{--                    <span class="fa fa-user"></span>--}}
-{{--                    <span class="sidebar-title">Clients</span>--}}
-{{--                    <span class="caret"></span>--}}
-{{--                </a>--}}
-{{--                <ul class="nav sub-nav">--}}
-{{--                    <li>--}}
-{{--                        <a href="{{route('add-client')}}">--}}
-{{--                            <span class="glyphicon glyphicon-tags"></span> Add Client </a>--}}
-{{--                    </li>--}}
+        @if(\Auth::user()->isAdmin || \Auth::user()->isHR() || \Auth::user()->isManager())
+            <li>
+                <a class="accordion-toggle" href="/dashboard">
+                    <span class="fa fa-user"></span>
+                    <span class="sidebar-title">Clients</span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="nav sub-nav">
+                    <li>
+                        <a href="{{route('add-client')}}">
+                            <span class="glyphicon glyphicon-tags"></span> Add Client </a>
+                    </li>
 
-{{--                    <li>--}}
-{{--                        <a href="{{route('list-client')}}">--}}
-{{--                            <span class="glyphicon glyphicon-tags"></span> List Client </a>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-{{--            </li>--}}
-{{--        @endif--}}
+                    <li>
+                        <a href="{{route('list-client')}}">
+                            <span class="glyphicon glyphicon-tags"></span> List Client </a>
+                    </li>
+                </ul>
+            </li>
+        @endif
 
         <li>
             <a class="accordion-toggle" href="/dashboard">
