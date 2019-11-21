@@ -318,11 +318,9 @@ $('#create-event').click(function () {
     }, function (data) {
         $('#status-section').addClass('hidden');
         $('#message-section').removeClass('hidden');
-        var parsed = JSON.parse(data);
-
-        if (parsed === 'success') {
-            alert(parsed);
-        }
+        setTimeout(function () {
+            window.location.reload(true);
+        }, 2000)
     });
 
 });
