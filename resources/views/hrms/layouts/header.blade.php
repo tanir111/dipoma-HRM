@@ -13,6 +13,7 @@
         </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+
         <li class="dropdown dropdown-fuse">
             <div class="navbar-btn btn-group">
         <li class="dropdown dropdown-fuse">
@@ -40,6 +41,15 @@
                         <span class="fa fa-power-off pr5"></span> Logout </a>
                 </li>
             </ul>
+        </li>
+
+        <li>
+            <a style="text-color:white;" href="{{URL::route('setlangrus')}}">
+                РУС</a>
+        </li>
+        <li style=" border-left: 1px solid white">
+            <a style="text-color:white;" href="{{URL::route('setlangeng')}}">
+                ENG</a>
         </li>
     </ul>
 </header>

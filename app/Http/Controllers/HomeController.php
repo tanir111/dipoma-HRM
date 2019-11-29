@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Models\Post;
+use Session;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,5 +28,17 @@ class HomeController extends Controller
     {
         $posts = Post::with('replies')->where('user_id', \Auth::user()->id)->orderBy('id', 'DESC')->get();
         return view('home', compact('posts'));
+    }
+
+    public function setLangEng()
+    {
+        Session::put('language', 'en');
+        return redirect()->back();
+    }
+
+    public function setLangRus()
+    {
+        Session::put('language', 'ru');
+        return redirect()->back();
     }
 }

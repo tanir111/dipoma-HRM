@@ -16,6 +16,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\FromCollection;
 
 class EmpController extends Controller
 {
@@ -49,30 +51,25 @@ class EmpController extends Controller
         $emp->code = $request->emp_code;
         $emp->status = $request->emp_status;
         $emp->gender = $request->gender;
-        $emp->date_of_birth = date_format(date_create($request->dob), 'Y-m-d');
-        $emp->date_of_joining = date_format(date_create($request->doj), 'Y-m-d');
+        $emp->date_of_birth = $request->dob;
+        $emp->date_of_joining = $request->doj;
         $emp->number = $request->number;
         $emp->qualification = $request->qualification;
         $emp->emergency_number = $request->emergency_number;
-        $emp->pan_number = $request->pan_number;
-        $emp->father_name = $request->father_name;
         $emp->current_address = $request->current_address;
         $emp->permanent_address = $request->permanent_address;
         $emp->formalities = $request->formalities;
         $emp->offer_acceptance = $request->offer_acceptance;
         $emp->probation_period = $request->probation_period;
-        $emp->date_of_confirmation = date_format(date_create($request->date_of_confirmation), 'Y-m-d');
+        $emp->date_of_confirmation = $request->date_of_confirmation;
         $emp->department = $request->department;
         $emp->salary = $request->salary;
         $emp->account_number = $request->account_number;
         $emp->bank_name = $request->bank_name;
-        $emp->ifsc_code = $request->ifsc_code;
-        $emp->pf_account_number = $request->pf_account_number;
-        $emp->un_number = $request->un_number;
         $emp->pf_status = $request->pf_status;
-        $emp->date_of_resignation = date_format(date_create($request->date_of_resignation), 'Y-m-d');
+        $emp->date_of_resignation = $request->date_of_resignation;
         $emp->notice_period = $request->notice_period;
-        $emp->last_working_day = date_format(date_create($request->last_working_day), 'Y-m-d');
+        $emp->last_working_day = $request->last_working_day;
         $emp->full_final = $request->full_final;
         $emp->user_id = $user->id;
         $emp->save();
@@ -99,7 +96,6 @@ class EmpController extends Controller
 
     public function showEdit($id)
     {
-        //$emps = Employee::whereid($id)->with('userrole.role')->first();
         $emps = User::where('id', $id)->with('employee', 'role.role')->first();
 
         $roles = Role::get();
@@ -109,55 +105,44 @@ class EmpController extends Controller
 
     public function doEdit(Request $request, $id)
     {
-        $filename = public_path('photos/a.png');
+        $filename = 'profile_pic.png';
+
         if ($request->file('photo')) {
-            $file = $request->file('photo');
-            $filename = str_random(12);
-            $fileExt = $file->getClientOriginalExtension();
-            $allowedExtension = ['jpg', 'jpeg', 'png'];
-            $destinationPath = public_path('assets/img/avatars/');
-            if (!in_array($fileExt, $allowedExtension)) {
-                return redirect()->back()->with('message', 'Extension not allowed');
-            }
-            $filename = $filename . '.' . $fileExt;
-            $file->move($destinationPath, $filename);
-
+            $image = $request->file('photo');
+            $image_path = time() . $image->getClientOriginalName();
+            $imageFullPath = $image->move('assets/img/avatars/', $image_path);
+            $filename = $imageFullPath;
         }
-
-        $photo = 'assets/img/avatars/' . $filename;
+        $photo = '/assets/img/avatars/' . $filename;
         $emp_name = $request->emp_name;
         $emp_code = $request->emp_code;
         $emp_status = $request->status;
         $emp_role = $request->role;
         $gender = $request->gender;
-        $dob = date_format(date_create($request->date_of_birth), 'Y-m-d');
-        $doj = date_format(date_create($request->date_of_joining), 'Y-m-d');
+        $dob = $request->date_of_birth;
+        $doj = $request->date_of_joining;
         $mob_number = $request->number;
         $qualification = $request->qualification;
         $emer_number = $request->emergency_number;
-        $pan_number = $request->pan_number;
-        $father_name = $request->father_name;
         $address = $request->current_address;
         $permanent_address = $request->permanent_address;
         $formalities = $request->formalities;
         $offer_acceptance = $request->offer_acceptance;
         $prob_period = $request->probation_period;
-        $doc = date_format(date_create($request->date_of_confirmation), 'Y-m-d');
+        $doc = $request->date_of_confirmation;
         $department = $request->department;
         $salary = $request->salary;
         $account_number = $request->account_number;
         $bank_name = $request->bank_name;
-        $ifsc_code = $request->ifsc_code;
-        $pf_account_number = $request->pf_account_number;
-        $un_number = $request->un_number;
         $pf_status = $request->pf_status;
-        $dor = date_format(date_create($request->date_of_resignation), 'Y-m-d');
+        $dor = $request->date_of_resignation;
         $notice_period = $request->notice_period;
-        $last_working_day = date_format(date_create($request->last_working_day), 'Y-m-d');
+        $last_working_day = $request->last_working_day;
         $full_final = $request->full_final;
 
         //$edit = Employee::findOrFail($id);
         $edit = Employee::where('user_id', $id)->first();
+
 
         if (!empty($photo)) {
             $edit->photo = $photo;
@@ -194,12 +179,6 @@ class EmpController extends Controller
         if (!empty($emer_number)) {
             $edit->emergency_number = $emer_number;
         }
-        if (!empty($pan_number)) {
-            $edit->pan_number = $pan_number;
-        }
-        if (!empty($father_name)) {
-            $edit->father_name = $father_name;
-        }
         if (!empty($address)) {
             $edit->current_address = $address;
         }
@@ -213,7 +192,7 @@ class EmpController extends Controller
         if (isset($offer_acceptance)) {
             $edit->offer_acceptance = $offer_acceptance;
         }
-        if (!empty($prob_period)) {
+        if ($prob_period != null) {
             $edit->probation_period = $prob_period;
         }
         if (!empty($doc)) {
@@ -231,16 +210,7 @@ class EmpController extends Controller
         if (!empty($bank_name)) {
             $edit->bank_name = $bank_name;
         }
-        if (!empty($ifsc_code)) {
-            $edit->ifsc_code = $ifsc_code;
-        }
-        if (!empty($pf_account_number)) {
-            $edit->pf_account_number = $pf_account_number;
-        }
-        if (!empty($un_number)) {
-            $edit->un_number = $un_number;
-        }
-        if (isset($pf_status)) {
+        if (!empty($pf_status)) {
             $edit->pf_status = $pf_status;
         }
         if (!empty($dor)) {
@@ -283,7 +253,11 @@ class EmpController extends Controller
         /* try {*/
         foreach ($files as $file) {
             Excel::load($file, function ($reader) {
-                $rows = $reader->get(['emp_name', 'emp_code', 'emp_status', 'role', 'gender', 'dob', 'doj', 'mob_number', 'qualification', 'emer_number', 'pan_number', 'father_name', 'address', 'permanent_address', 'formalities', 'offer_acceptance', 'prob_period', 'doc', 'department', 'salary', 'account_number', 'bank_name', 'ifsc_code', 'pf_account_number', 'un_number', 'pf_status', 'dor', 'notice_period', 'last_working_day', 'full_final']);
+                $rows = $reader->get(['emp_name', 'emp_code', 'emp_status', 'role',
+                    'gender', 'dob', 'doj', 'mob_number', 'qualification', 'emer_number',
+                    'address', 'permanent_address', 'formalities', 'offer_acceptance',
+                    'prob_period', 'doc', 'department', 'salary', 'account_number',
+                    'bank_name', 'pf_status', 'dor', 'notice_period', 'last_working_day', 'full_final']);
 
                 foreach ($rows as $row) {
                     \Log::info($row->role);
@@ -304,14 +278,14 @@ class EmpController extends Controller
                         $attachment->gender = $row->gender;
                     }
                     if (empty($row->dob)) {
-                        $attachment->date_of_birth = '0000-00-00';
+                        $attachment->date_of_birth = '00-00-0000';
                     } else {
-                        $attachment->date_of_birth = date('Y-m-d', strtotime($row->dob));
+                        $attachment->date_of_birth = date('m-d-Y', strtotime($row->dob));
                     }
                     if (empty($row->doj)) {
-                        $attachment->date_of_joining = '0000-00-00';
+                        $attachment->date_of_joining = '00-00-0000';
                     } else {
-                        $attachment->date_of_joining = date('Y-m-d', strtotime($row->doj));
+                        $attachment->date_of_joining = date('m-d-Y', strtotime($row->doj));
                     }
                     if (empty($row->mob_number)) {
                         $attachment->number = '1234567890';
@@ -327,16 +301,6 @@ class EmpController extends Controller
                         $attachment->emergency_number = '1234567890';
                     } else {
                         $attachment->emergency_number = $row->emer_number;
-                    }
-                    if (empty($row->pan_number)) {
-                        $attachment->pan_number = 'Not Exist';
-                    } else {
-                        $attachment->pan_number = $row->pan_number;
-                    }
-                    if (empty($row->father_name)) {
-                        $attachment->father_name = 'Not Exist';
-                    } else {
-                        $attachment->father_name = $row->father_name;
                     }
                     if (empty($row->address)) {
                         $attachment->current_address = 'Not Exist';
@@ -364,9 +328,9 @@ class EmpController extends Controller
                         $attachment->probation_period = $row->prob_period;
                     }
                     if (empty($row->doc)) {
-                        $attachment->date_of_confirmation = '0000-00-00';
+                        $attachment->date_of_confirmation = '00-00-0000';
                     } else {
-                        $attachment->date_of_confirmation = date('Y-m-d', strtotime($row->doc));
+                        $attachment->date_of_confirmation = date('m-d-Y', strtotime($row->doc));
                     }
                     if (empty($row->department)) {
                         $attachment->department = 'Not Exist';
@@ -388,30 +352,15 @@ class EmpController extends Controller
                     } else {
                         $attachment->bank_name = $row->bank_name;
                     }
-                    if (empty($row->ifsc_code)) {
-                        $attachment->ifsc_code = 'Not Exist';
-                    } else {
-                        $attachment->ifsc_code = $row->ifsc_code;
-                    }
-                    if (empty($row->pf_account_number)) {
-                        $attachment->pf_account_number = 'Not Exist';
-                    } else {
-                        $attachment->pf_account_number = $row->pf_account_number;
-                    }
-                    if (empty($row->un_number)) {
-                        $attachment->un_number = 'Not Exist';
-                    } else {
-                        $attachment->un_number = $row->un_number;
-                    }
                     if (empty($row->pf_status)) {
                         $attachment->pf_status = '1';
                     } else {
                         $attachment->pf_status = $row->pf_status;
                     }
                     if (empty($row->dor)) {
-                        $attachment->date_of_resignation = '0000-00-00';
+                        $attachment->date_of_resignation = '00-00-0000';
                     } else {
-                        $attachment->date_of_resignation = date('Y-m-d', strtotime($row->dor));
+                        $attachment->date_of_resignation = date('m-d-Y', strtotime($row->dor));
                     }
                     if (empty($row->notice_period)) {
                         $attachment->notice_period = 'Not exist';
@@ -419,9 +368,9 @@ class EmpController extends Controller
                         $attachment->notice_period = $row->notice_period;
                     }
                     if (empty($row->last_working_day)) {
-                        $attachment->last_working_day = '0000-00-00';
+                        $attachment->last_working_day = '00-00-0000';
                     } else {
-                        $attachment->last_working_day = date('Y-m-d', strtotime($row->last_working_day));
+                        $attachment->last_working_day = date('m-d-Y', strtotime($row->last_working_day));
                     }
                     if (empty($row->full_final)) {
                         $attachment->full_final = 'Not exist';
@@ -489,13 +438,16 @@ class EmpController extends Controller
             $filePath = storage_path('export/') . $fileName;
             $file = new \SplFileObject($filePath, "a");
             // Add header to csv file.
-            $headers = ['id', 'photo', 'code', 'name', 'status', 'gender', 'date_of_birth', 'date_of_joining', 'number', 'qualification', 'emergency_number', 'pan_number', 'father_name', 'current_address', 'permanent_address', 'formalities', 'offer_acceptance', 'probation_period', 'date_of_confirmation', 'department', 'salary', 'account_number', 'bank_name', 'ifsc_code', 'pf_account_number', 'un_number', 'pf_status', 'date_of_resignation', 'notice_period', 'last_working_day', 'full_final', 'user_id', 'created_at', 'updated_at'];
+            $headers = array("id" , "code", "name", "status", "gender", "date_of_birth",
+                "date_of_joining", "number", "qualification", "emergency_number",
+                "current_address", "permanent_address", "formalities", "offer_acceptance",
+                "probation_period", "date_of_confirmation", "department", "salary", "account_number", "bank_name",
+                "pf_status", "date_of_resignation", "notice_period", "last_working_day", "full_final",
+                "created_at", "updated_at");
             $file->fputcsv($headers);
             foreach ($emps as $emp) {
                 $file->fputcsv([
                         $emp->id,
-                        (
-                        $emp->employee->photo) ? $emp->employee->photo : 'Not available',
                         $emp->employee->code,
                         $emp->employee->name,
                         $emp->employee->status,
@@ -505,8 +457,6 @@ class EmpController extends Controller
                         $emp->employee->number,
                         $emp->employee->qualification,
                         $emp->employee->emergency_number,
-                        $emp->employee->pan_number,
-                        $emp->employee->father_name,
                         $emp->employee->current_address,
                         $emp->employee->permanent_address,
                         $emp->employee->formalities,
@@ -517,14 +467,13 @@ class EmpController extends Controller
                         $emp->employee->salary,
                         $emp->employee->account_number,
                         $emp->employee->bank_name,
-                        $emp->employee->ifsc_code,
-                        $emp->employee->pf_account_number,
-                        $emp->employee->un_number,
                         $emp->employee->pf_status,
                         $emp->employee->date_of_resignation,
                         $emp->employee->notice_period,
                         $emp->employee->last_working_day,
-                        $emp->employee->full_final
+                        $emp->employee->full_final,
+                        $emp->employee->created_at,
+                        $emp->employee->updated_at
                     ]
                 );
             }
@@ -547,8 +496,6 @@ class EmpController extends Controller
             $model = Employee::where('id', $request->employee_id)->first();
             $model->bank_name = $request->bank_name;
             $model->account_number = $request->account_number;
-            $model->ifsc_code = $request->ifsc_code;
-            $model->pf_account_number = $request->pf_account_number;
             $model->save();
 
             return json_encode('success');
@@ -594,7 +541,7 @@ class EmpController extends Controller
         $promotion->new_designation = $newDesignation->name;
         $promotion->old_salary = $request->old_salary;
         $promotion->new_salary = $request->new_salary;
-        $promotion->date_of_promotion = date_format(date_create($request->date_of_promotion), 'Y-m-d');
+        $promotion->date_of_promotion = $request->date_of_promotion;
         $promotion->save();
 
         \Session::flash('flash_message', 'Employee successfully Promoted!');

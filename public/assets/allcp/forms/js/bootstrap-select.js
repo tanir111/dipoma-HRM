@@ -1,12 +1,3 @@
-/**
- * Created by shahrukh on 10/8/16.
- */
-/*!
- * Bootstrap-select v1.10.0 (http://silviomoreto.github.io/bootstrap-select)
- *
- * Copyright 2013-2016 bootstrap-select
- * Licensed under MIT (https://github.com/silviomoreto/bootstrap-select/blob/master/LICENSE)
- */
 
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {

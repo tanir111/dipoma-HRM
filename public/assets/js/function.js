@@ -1,6 +1,4 @@
-/**
- * Created by kanak on 1/6/16.
- */
+
 var datepicker1 = $('#datepicker1');
 var datepicker4 = $('#datepicker4');
 

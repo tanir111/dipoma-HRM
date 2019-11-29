@@ -1,11 +1,4 @@
-/**
- * Created by Kanak on 2/8/16.
- */
-
 'use strict';
-//  Author: ThemeREX.com
-//  forms-wizard.html scripts
-//
 
 (function ($) {
 

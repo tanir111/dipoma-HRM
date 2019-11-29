@@ -4002,7 +4002,6 @@ $.widget("ui.fancytree",
 	}
 });
 
-// $.ui.fancytree was created by the widget factory. Create a local shortcut:
 FT = $.ui.fancytree;
 
 /**

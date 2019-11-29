@@ -20,7 +20,7 @@
     <li class="active">
         <a  href="{{route('dashboard')}}">
             <span class="fa fa-dashboard"></span>
-            <span class="sidebar-title">Dashboard</span>
+            <span class="sidebar-title">{{trans('messages.dashboard')}}</span>
         </a>
     </li>
     @if(Auth::user()->isHR())
