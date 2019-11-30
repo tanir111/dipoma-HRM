@@ -52,32 +52,40 @@
                                                 </div>
                                             </div>
 
-                                                <div class="form-group">
-                                                    <label class="col-md-3 control-label"> Description </label>
-                                                    <div class="col-md-6">
-                                                        <textarea class="form-control" name="description"></textarea>
-                                                    </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"> Description </label>
+                                                <div class="col-md-6">
+                                                    <textarea class="form-control" name="description"></textarea>
                                                 </div>
+                                            </div>
 
-                                                <div class="form-group">
-                                                    <label class="col-md-3 control-label"> Project Code </label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="code" id="input002"
-                                                               class="select2-single form-control" placeholder="Project Code"
-                                                               required>
-                                                    </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"> Project Code </label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="code" id="input002"
+                                                           class="select2-single form-control"
+                                                           placeholder="Project Code"
+                                                           required>
                                                 </div>
+                                            </div>
+
 
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label"> Client </label>
                                                 <div class="col-md-6">
-                                                    <select class="selectpicker form-control" data-done-button="true"
-                                                            name="client_id" required>
-                                                        <option value="" selected>Select One</option>
-                                                        @foreach($model->clients as $client)
-                                                            <option value="{{$client->id}}">{{$client->name}}</option>
-                                                        @endforeach
-                                                    </select>
+                                                    @if($model->clients->count() > 0)
+                                                        <select class="selectpicker form-control"
+                                                                data-done-button="true"
+                                                                name="client_id" required>
+                                                            <option value="" selected>Select One</option>
+                                                            @foreach($model->clients as $client)
+                                                                <option value="{{$client->id}}">{{$client->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        @else
+
+                                                        <label class="col-md-9 control-label"> Client not exists!!! You need to add!!!</label>
+                                                    @endif
                                                 </div>
                                             </div>
 
