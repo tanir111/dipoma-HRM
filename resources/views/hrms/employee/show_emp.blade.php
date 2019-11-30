@@ -88,14 +88,25 @@
                                                 <th class="text-center">Status</th>
                                                 <th class="text-center">Role</th>
                                                 <th class="text-center">Joining Date</th>
-                                                <th class="text-center">Address</th>
+                                                <th class="text-center">Salary</th>
                                                 <th class="text-center">Mobile Number</th>
                                                 <th class="text-center">Department</th>
                                                 <th class="text-center">Actions</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <?php $i = 0;?>
+                                            <?php
+                                            $i = 0;
+                                            if (session('currency') == 'kzt') {
+                                                $currency = 1;
+                                            }
+                                            if (session('currency') == 'rub') {
+                                                $currency = 5;
+                                            }
+                                            if (session('currency') == 'usd') {
+                                                $currency = 380;
+                                            }
+                                            ?>
                                             @foreach($emps as $emp)
                                                 <tr>
                                                     <td class="text-center">{{$i+=1}}</td>
@@ -104,7 +115,7 @@
                                                     <td class="text-center">{{convertStatusBack($emp->employee['status'])}}</td>
                                                     <td class="text-center">{{isset($emp->role->role->name)?$emp->role->role->name:''}}</td>
                                                     <td class="text-center">{{date('Y-m-d', strtotime($emp->employee['date_of_joining']))}}</td>
-                                                    <td class="text-center">{{$emp->employee['current_address']}}</td>
+                                                    <td class="text-center">{{round($emp->employee['salary']/$currency)}}</td>
                                                     <td class="text-center">{{$emp->employee['number']}}</td>
                                                     <td class="text-center">{{$emp->employee['department']}}</td>
                                                     <td class="text-center">

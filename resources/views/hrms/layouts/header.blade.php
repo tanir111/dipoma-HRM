@@ -18,6 +18,28 @@
             <div class="navbar-btn btn-group">
         <li class="dropdown dropdown-fuse">
             <a href="#" class="dropdown-toggle fw600" data-toggle="dropdown">
+                <span class="hidden-xs"><name>Валюта</name></span>
+                <span class="fa fa-money"></span>
+            </a>
+
+            <ul class="dropdown-menu list-group keep-dropdown w250" role="menu">
+                <li class="dropdown-footer text-center">
+                    <a class="dropdown-item" href="{{URL::route('setCurrencyKZT')}}">KZT</a>
+                </li>
+                <li class="dropdown-footer text-center">
+                    <a class="dropdown-item" href="{{URL::route('setCurrencyRUB')}}">RUB</a>
+                </li>
+                <li class="dropdown-footer text-center">
+                    <a class="dropdown-item" href="{{URL::route('setCurrencyUSD')}}">USD</a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li class="dropdown dropdown-fuse">
+            <div class="navbar-btn btn-group">
+        <li class="dropdown dropdown-fuse">
+            <a href="#" class="dropdown-toggle fw600" data-toggle="dropdown">
                 <span class="hidden-xs"><name>{{\Auth::user()->name}}</name> </span>
                 <span class="fa fa-caret-down hidden-xs mr15"></span>
                 @if(Auth::user()->employee->photo == "")

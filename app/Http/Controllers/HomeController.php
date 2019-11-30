@@ -41,4 +41,24 @@ class HomeController extends Controller
         Session::put('language', 'ru');
         return redirect()->back();
     }
+
+
+
+    public function setCurrencyKZT()
+    {
+        Session::put('currency', 'kzt');
+        return redirect()->back();
+    }
+
+    public function setCurrencyRUB()
+    {
+        Session::put('currency', 'rub');
+        return redirect()->back();
+    }
+
+    public function setCurrencyUSD()
+    {
+        Session::put('currency', 'usd');
+        return redirect()->back();
+    }
 }

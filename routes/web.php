@@ -15,9 +15,17 @@
 
 Route::group(['middleware' => ['language',]], function () {
 
+    //setlang route will change language of the system
+
     Route::get('/setlangrus', array('as' => 'setlangrus', 'uses' => 'HomeController@setLangRus'));
     Route::get('/setlangeng', array('as' => 'setlangeng', 'uses' => 'HomeController@setLangEng'));
-    
+
+    //setval change валюта of system
+
+    Route::get('/setCurrencyKZT', array('as' => 'setCurrencyKZT', 'uses' => 'HomeController@setCurrencyKZT'));
+    Route::get('/setCurrencyRUB', array('as' => 'setCurrencyRUB', 'uses' => 'HomeController@setCurrencyRUB'));
+    Route::get('/setCurrencyUSD', array('as' => 'setCurrencyUSD', 'uses' => 'HomeController@setCurrencyUSD'));
+
     Route::group(['middleware' => ['guest']], function () {
 
         Route::get('/', 'AuthController@showLogin');
