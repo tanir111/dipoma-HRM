@@ -96,14 +96,14 @@
             </ul>
         </li>
 
-{{--        <li>--}}
+        <li>
 
-{{--            <a href="/bank-account-details">--}}
-{{--                <span class="fa fa-bank"></span>--}}
-{{--                <span class="sidebar-title">Bank Account</span>--}}
+            <a href="/bank-account-details">
+                <span class="fa fa-bank"></span>
+                <span class="sidebar-title">Bank Account</span>
 
-{{--            </a>--}}
-{{--        </li>--}}
+            </a>
+        </li>
 
         <li>
             <a class="accordion-toggle" href="/dashboard">
@@ -201,24 +201,24 @@
         </ul>
     </li>
 
-{{--    @if(Auth::user()->isHR())--}}
-{{--        <li>--}}
-{{--            <a class="accordion-toggle" href="/dashboard">--}}
-{{--                <span class="fa fa-arrow-circle-o-up"></span>--}}
-{{--                <span class="sidebar-title">Promotions</span>--}}
-{{--                <span class="caret"></span>--}}
-{{--            </a>--}}
-{{--            <ul class="nav sub-nav">--}}
-{{--                <li>--}}
-{{--                    <a href="/promotion">--}}
-{{--                        <span class="glyphicon glyphicon-book"></span> Promote </a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="/show-promotion">--}}
-{{--                        <span class="glyphicon glyphicon-modal-window"></span> Promotion Listings </a>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
-{{--        </li>--}}
+    @if(Auth::user()->isHR())
+        <li>
+            <a class="accordion-toggle" href="/dashboard">
+                <span class="fa fa-arrow-circle-o-up"></span>
+                <span class="sidebar-title">Promotions</span>
+                <span class="caret"></span>
+            </a>
+            <ul class="nav sub-nav">
+                <li>
+                    <a href="/promotion">
+                        <span class="glyphicon glyphicon-book"></span> Promote </a>
+                </li>
+                <li>
+                    <a href="/show-promotion">
+                        <span class="glyphicon glyphicon-modal-window"></span> Promotion Listings </a>
+                </li>
+            </ul>
+        </li>
 
 {{--        <li>--}}
 {{--            <a class="accordion-toggle" href="/dashboard">--}}
@@ -238,32 +238,32 @@
 {{--            </ul>--}}
 {{--        </li>--}}
 
-{{--        <li>--}}
-{{--            <a class="accordion-toggle" href="/dashboard">--}}
-{{--                <span class="fa fa fa-trophy"></span>--}}
-{{--                <span class="sidebar-title">Awards</span>--}}
-{{--                <span class="caret"></span>--}}
-{{--            </a>--}}
-{{--            <ul class="nav sub-nav">--}}
-{{--                <li>--}}
-{{--                    <a href="/add-award">--}}
-{{--                        <span class="fa fa-adn"></span> Add Award </a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="/award-listing">--}}
-{{--                        <span class="glyphicon glyphicon-calendar"></span> Award Listings </a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="/assign-award">--}}
-{{--                        <span class="fa fa-desktop"></span> Awardees </a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="/awardees-listing">--}}
-{{--                        <span class="fa fa-clipboard"></span> Awardees Listings </a>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
-{{--        </li>--}}
-{{--    @endif--}}
+        <li>
+            <a class="accordion-toggle" href="/dashboard">
+                <span class="fa fa fa-trophy"></span>
+                <span class="sidebar-title">Awards</span>
+                <span class="caret"></span>
+            </a>
+            <ul class="nav sub-nav">
+                <li>
+                    <a href="/add-award">
+                        <span class="fa fa-adn"></span> Add Award </a>
+                </li>
+                <li>
+                    <a href="/award-listing">
+                        <span class="glyphicon glyphicon-calendar"></span> Award Listings </a>
+                </li>
+                <li>
+                    <a href="/assign-award">
+                        <span class="fa fa-desktop"></span> Awardees </a>
+                </li>
+                <li>
+                    <a href="/awardees-listing">
+                        <span class="fa fa-clipboard"></span> Awardees Listings </a>
+                </li>
+            </ul>
+        </li>
+    @endif
 
 
 {{--    <li>--}}
@@ -295,6 +295,8 @@
 {{--            </li>--}}
 {{--        </ul>--}}
 {{--    </li>--}}
+
+
 {{--    @if(Auth::user()->isHR())--}}
 {{--        <li>--}}
 {{--            <a class="accordion-toggle" href="#">--}}
@@ -331,7 +333,7 @@
 
 {{--    @endif--}}
 
-    {{--<li class="sidebar-label pt30"> Extras</li>--}}
+    <li class="sidebar-label pt30"> Extras</li>
     <li>
         <a href="/create-meeting">
             <span class="fa fa-calendar-o"></span>

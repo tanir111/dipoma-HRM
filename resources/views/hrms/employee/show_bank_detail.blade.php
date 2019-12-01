@@ -1,6 +1,13 @@
 @extends('hrms.layouts.base')
 
 @section('content')
+
+    {!! Html::script('/assets/js/jquery/jquery-1.11.3.min.js') !!}
+    {!! Html::script('/assets/js/jquery/jquery_ui/jquery-ui.min.js') !!}
+
+    <script src="/assets/jquery.maskedinput.js" type="text/javascript"></script>
+    <script src="/assets/jquery.maskedinput.min.js" type="text/javascript"></script>
+
     <!-- START CONTENT -->
     <input type="hidden" value="{{csrf_token()}}" id="token">
     <div class="content">
@@ -53,8 +60,6 @@
                                             <th class="text-center">Employee</th>
                                             <th class="text-center">Bank Name</th>
                                             <th class="text-center">Account Number</th>
-                                            <th class="text-center">Ifsc Code</th>
-                                            <th class="text-center">Pf Account Number</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
                                         </thead>
@@ -66,8 +71,6 @@
                                                 <td class="text-center">{{$emp->name}}</td>
                                                 <td class="text-center">{{$emp->employee['bank_name']}}</td>
                                                 <td class="text-center">{{$emp->employee['account_number']}}</td>
-                                                <td class="text-center">{{$emp->employee['ifsc_code']}}</td>
-                                                <td class="text-center">{{$emp->employee['pf_account_number']}}</td>
                                                 <td class="text-center">
                                                     <div class="btn-group text-right">
                                                         <button type="button"
@@ -76,9 +79,7 @@
                                                                 "{{$emp->employee['id']}}",
                                                                 "{{$emp->employee['name']}}",
                                                                 "{{$emp->employee['bank_name']}}",
-                                                                "{{$emp->employee['account_number']}}",
-                                                                "{{$emp->employee['ifsc_code']}}",
-                                                                "{{$emp->employee['pf_account_number']}}"
+                                                                "{{$emp->employee['account_number']}}"
                                                                 ]'> Edit
                                                         </button>
                                                     </div>
@@ -129,15 +130,14 @@
                         <input type="text" id="account_number" class="form-control">
                     </div>
 
-                    <div class="form-group">
-                        <label for="ifsc_code">Ifsc Code</label>
-                        <input type="text" id="ifsc_code" class="form-control">
-                    </div>
 
-                    <div class="form-group">
-                        <label for="pf_account_number">Pf Account Number</label>
-                        <input type="text" id="pf_account_number" class="form-control">
-                    </div>
+                    <script>
+                        $(document).ready(function($){
+                            $("#account_number").mask("9999-9999-9999-9999");
+                        });
+                    </script>
+
+
                     <input type="hidden" id="emp_id" class="form-control">
                 </div>
                 <div class="modal-footer">

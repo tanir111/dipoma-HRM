@@ -59,8 +59,6 @@ Route::group(['middleware' => ['language',]], function () {
 
         Route::get('logout', 'AuthController@doLogout');
 
-        Route::get('welcome', 'AuthController@welcome');
-
         Route::get('not-found', 'AuthController@notFound');
 
         Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'AuthController@dashboard']);

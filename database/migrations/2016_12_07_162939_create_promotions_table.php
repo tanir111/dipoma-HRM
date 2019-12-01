@@ -19,7 +19,7 @@ class CreatePromotionsTable extends Migration
             $table->string('new_designation');
             $table->integer('old_salary');
             $table->integer('new_salary');
-            $table->date('date_of_promotion');
+            $table->string('date_of_promotion');
             $table->foreign('emp_id')->references('id')->on('employees')->onDelete('cascade');
             $table->timestamps();
         });

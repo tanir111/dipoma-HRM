@@ -33,7 +33,7 @@
             if ($user) {
 
                 if (\Auth::attempt(['email' => $email, 'password' => $password])) {
-                    return redirect()->to('welcome');
+                    return redirect()->to('dashboard');
                 } else {
                     \Session::flash('class', 'alert-danger');
                     \Session::flash('message', 'User id or password does not match!');

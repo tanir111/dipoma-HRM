@@ -261,7 +261,7 @@
                     </a>
                 </div>
                 <!-- -------------- /Sidebar Hide Button -------------- -->
-
+            </header>
         </div>
         <!-- -------------- /Sidebar Left Wrapper  -------------- -->
 

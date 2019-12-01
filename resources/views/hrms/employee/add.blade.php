@@ -15,6 +15,45 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet'
           type='text/css'>
 
+    <!-- -------------- Scripts -------------- -->
+
+    <!-- -------------- jQuery -------------- -->
+
+{!! Html::script('/assets/js/jquery/jquery-1.11.3.min.js') !!}
+{!! Html::script('/assets/js/jquery/jquery_ui/jquery-ui.min.js') !!}
+
+<!-- -------------- HighCharts Plugin -------------- -->
+{!! Html::script('/assets/js/plugins/highcharts/highcharts.js') !!}
+
+<!-- -------------- MonthPicker JS -------------- -->
+{!! Html::script('/assets/allcp/forms/js/jquery-ui-monthpicker.min.js') !!}
+{!! Html::script('/assets/allcp/forms/js/jquery-ui-datepicker.min.js') !!}
+{!! Html::script('/assets/allcp/forms/js/jquery.spectrum.min.js') !!}
+{!! Html::script('/assets/allcp/forms/js/jquery.stepper.min.js') !!}
+
+
+<!-- -------------- Plugins -------------- -->
+{!! Html::script('/assets/allcp/forms/js/jquery.validate.min.js') !!}
+{!! Html::script('/assets/allcp/forms/js/jquery.steps.min.js') !!}
+
+<!-- -------------- Theme Scripts -------------- -->
+    {!! Html::script('/assets/js/utility/utility.js') !!}
+    {!! Html::script('/assets/js/demo/demo.js') !!}
+    {!! Html::script('/assets/js/main.js') !!}
+    {!! Html::script('/assets/js/demo/widgets_sidebar.js') !!}
+    {!! Html::script('/assets/js/custom_form_wizard.js') !!}
+
+    {!!  Html::script ('/assets/js/pages/forms-widgets.js')!!}
+    @push('scripts')
+        <script src="/assets/js/custom_form_wizard.js"></script>
+@endpush
+
+<!-- -------------- Select2 JS -------------- -->
+    <script src="/assets/js/plugins/select2/select2.min.js"></script>
+    <script src="/assets/js/function.js"></script>
+
+
+    <!-- -------------- /Scripts -------------- -->
 
     <!-- -------------- Icomoon -------------- -->
 {!! Html::style('/assets/fonts/icomoon/icomoon.css') !!}
@@ -1079,45 +1118,7 @@
     }
 </style>
 
-<!-- -------------- Scripts -------------- -->
 
-<!-- -------------- jQuery -------------- -->
-
-{!! Html::script('/assets/js/jquery/jquery-1.11.3.min.js') !!}
-{!! Html::script('/assets/js/jquery/jquery_ui/jquery-ui.min.js') !!}
-
-<!-- -------------- HighCharts Plugin -------------- -->
-{!! Html::script('/assets/js/plugins/highcharts/highcharts.js') !!}
-
-<!-- -------------- MonthPicker JS -------------- -->
-{!! Html::script('/assets/allcp/forms/js/jquery-ui-monthpicker.min.js') !!}
-{!! Html::script('/assets/allcp/forms/js/jquery-ui-datepicker.min.js') !!}
-{!! Html::script('/assets/allcp/forms/js/jquery.spectrum.min.js') !!}
-{!! Html::script('/assets/allcp/forms/js/jquery.stepper.min.js') !!}
-
-
-<!-- -------------- Plugins -------------- -->
-{!! Html::script('/assets/allcp/forms/js/jquery.validate.min.js') !!}
-{!! Html::script('/assets/allcp/forms/js/jquery.steps.min.js') !!}
-
-<!-- -------------- Theme Scripts -------------- -->
-{!! Html::script('/assets/js/utility/utility.js') !!}
-{!! Html::script('/assets/js/demo/demo.js') !!}
-{!! Html::script('/assets/js/main.js') !!}
-{!! Html::script('/assets/js/demo/widgets_sidebar.js') !!}
-{!! Html::script('/assets/js/custom_form_wizard.js') !!}
-
-{!!  Html::script ('/assets/js/pages/forms-widgets.js')!!}
-@push('scripts')
-    <script src="/assets/js/custom_form_wizard.js"></script>
-@endpush
-
-<!-- -------------- Select2 JS -------------- -->
-<script src="/assets/js/plugins/select2/select2.min.js"></script>
-<script src="/assets/js/function.js"></script>
-
-
-<!-- -------------- /Scripts -------------- -->
 </body>
 
 </html>
