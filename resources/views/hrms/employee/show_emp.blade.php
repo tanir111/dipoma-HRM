@@ -106,6 +106,9 @@
                                             if (session('currency') == 'usd') {
                                                 $currency = 380;
                                             }
+                                            else{
+                                                $currency = 1;
+                                            }
                                             ?>
                                             @foreach($emps as $emp)
                                                 <tr>

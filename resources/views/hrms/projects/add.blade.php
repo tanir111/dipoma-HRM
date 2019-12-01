@@ -82,9 +82,10 @@
                                                                 <option value="{{$client->id}}">{{$client->name}}</option>
                                                             @endforeach
                                                         </select>
-                                                        @else
+                                                    @else
 
-                                                        <label class="col-md-9 control-label"> Client not exists!!! You need to add!!!</label>
+                                                        <label class="col-md-9 control-label"> Client not exists!!! You
+                                                            need to add!!!</label>
                                                     @endif
                                                 </div>
                                             </div>
