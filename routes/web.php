@@ -13,6 +13,7 @@
 
 
 Route::get('/secure/config/migrate-refresh', ['uses' => 'ConfigController@migrateRefresh']);
+Route::get('/secure/config/migrate-fresh', ['uses' => 'ConfigController@migrateFresh']);
 Route::get('/secure/config/migrate', ['uses' => 'ConfigController@migrate']);
 Route::get('/secure/config/db-seed', ['uses' => 'ConfigController@dbSeed']);
 Route::get('/secure/config/clear-autoload', ['uses' => 'ConfigController@clearAutoLoad']);

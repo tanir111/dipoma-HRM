@@ -28,6 +28,6 @@ class BonusSystem extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('bonus_system');
     }
 }

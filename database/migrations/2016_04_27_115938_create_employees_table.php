@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use \Illuminate\Support\Facades\Schema;
 
 class CreateEmployeesTable extends Migration
 {
@@ -53,6 +54,6 @@ class CreateEmployeesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('employees');
+        Schema::dropIfExists('employees');
     }
 }
