@@ -582,9 +582,11 @@
 <!-- -------------- Scripts -------------- -->
 
 <!-- -------------- jQuery -------------- -->
-<script src="/assets/js/jquery/jquery-1.11.3.min.js"></script>
-{{--<script src="/assets/js/jquery/jquery-2.2.4.min.js"></script>--}}
+{{--<script src="/assets/js/jquery/jquery-1.11.3.min.js"></script>--}}
+<script src="/assets/js/jquery/jquery-2.2.4.min.js"></script>
 <script src="/assets/js/jquery/jquery_ui/jquery-ui.min.js"></script>
+
+
 
 <!-- -------------- HighCharts Plugin -------------- -->
 <script src="/assets/js/plugins/highcharts/highcharts.js"></script>
@@ -622,97 +624,13 @@
 <!-- Sweet alert -->
 <script src="/assets/js/sweetalert.min.js"></script>
 
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'assign-asset')--}}
-{{--<script src="/assets/js/custom.js"></script>--}}
-{{--@endif--}}
-
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'assign-project')--}}
-{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-{{--<script src="/assets/js/custom.js"></script>--}}
-{{--@endif--}}
-
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'assign-award')--}}
-{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-{{--<script src="/assets/js/custom.js"></script>--}}
-{{--@endif--}}
-
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-award-assignment/{id}')--}}
-{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-{{--<script src="/assets/js/custom.js"></script>--}}
-{{--@endif--}}
-
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'add-expense')--}}
-{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-{{--<script src="/assets/js/custom.js"></script>--}}
-{{--@endif--}}
-
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'attendance-manager')--}}
-{{--<script src="/assets/js/custom.js"></script>--}}
-{{--@endif--}}
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'total-leave-list')--}}
-{{--<script src="/assets/js/custom.js"></script>--}}
-{{--@endif--}}
 
 <script src="/assets/js/function.js"></script>
 <script src="/assets/js/custom.js"></script>
 <script src="/assets/js/pages/forms-widgets.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.stepper@1.0.0/jquery.stepper.js"></script>
-{{--<script src="/assets/js/function.js"></script>--}}
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-asset-assignment/{id}')--}}
-{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-{{--<script src="/assets/js/custom.js"></script>--}}
-{{--@endif--}}
 
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'promotion')--}}
-{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-{{--<script src="/assets/js/custom.js"></script>--}}
-{{--@endif--}}
-
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-promotion/{id}')--}}
-    {{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-    {{--<script src="/assets/js/custom.js"></script>--}}
-{{--@endif--}}
-
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'add-training-invite')--}}
-{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-{{--<script src="/assets/js/custom.js"></script>--}}
-{{--@endif--}}
-
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-training-invite/{id}')--}}
-{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-{{--<script src="/assets/js/custom.js"></script>--}}
-{{--@endif--}}
-
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'add-training-invite')--}}
-{{--<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>--}}
-{{--@endif--}}
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-training-invite/{id}')--}}
-<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>
-{{--@endif--}}
-
-
-
-<!-- -------------- /Scripts -------------- -->
-
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'add-employee' )--}}
-{{--<script src="/assets/js/custom_form_wizard.js"></script>--}}
-{{--@endif--}}
-
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'attendance-upload' )--}}
-{{--<script src="/assets/js/pages/forms-widgets.js"></script>--}}
-{{--@endif--}}
-
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'add-team')--}}
-{{--<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>--}}
-{{--@endif--}}
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-team/{id}')--}}
-{{--<script src="/assets/allcp/forms/js/bootstrap-select.js"></script>--}}
-{{--@endif--}}
-{{--@if(\Route::getFacadeRoot()->current()->uri() == 'create-event')--}}
-{{--<!-- -------------- DateTime JS -------------- -->--}}
-{{--<script src="/assets/js/plugins/datepicker/js/bootstrap-datetimepicker.min.js"></script>--}}
-{{--@endif--}}
 
 <script>
     $('#datetimepicker2').datetimepicker();
@@ -772,5 +690,7 @@
 <script src="/assets/js/pages/allcp_forms-elements.js"></script>
 
 @stack('scripts')
+@yield("extrascriptForExport")
+
 </body>
 </html>

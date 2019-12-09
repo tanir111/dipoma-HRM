@@ -27,6 +27,7 @@ class EmployeeRequest extends Request
             'full_final' => 'required',
             'emp_code' => 'required',
             'emp_name' => 'required',
+            'emp_surname' => 'required',
             'emp_status' => 'required',
             'mob_number' => 'required|digits:10|',
             'doj' => 'date',

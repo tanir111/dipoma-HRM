@@ -33,7 +33,8 @@
             onFinished: function (event, currentIndex) {
                 event.preventDefault();
                 var emp_name = $('#emp_name').val();
-                //alert(emp_name)
+                var emp_surname = $('#emp_surname').val();
+
                 var emp_code = $('#emp_code').val();
                 var emp_status = $("input[name='emp_status']:checked").val();
                 var role = $('#role').val();
@@ -48,8 +49,6 @@
                 }
                 console.log('gender ' + gender);
                 var emergency_number = $('#emergency_number').val();
-                var pan_number = $('#pan_number').val();
-                var father_name = $('#father_name').val();
                 var address = $('#address').val();
                 var permanent_address = $('#permanent_address').val();
                 //var formalities = $('#formalities').val();
@@ -64,9 +63,6 @@
                 var salary = $('#salary').val();
                 var bank_account_number = $('#bank_account_number').val();
                 var bank_name = $('#bank_name').val();
-                var ifsc_code = $('#ifsc_code').val();
-                var pf_account_number = $('#pf_account_number').val();
-                var un_number = $('#un_number').val();
                 var pf_status = $("input[name='pf_status']:checked").val();
                 var datepicker6 = $('#datepicker6').val();
                 var notice_period = $('#notice_period').val();
@@ -81,6 +77,7 @@
                     formData.append('photo', photo.files[0], photo.value);
                 }
                 formData.append('emp_name', emp_name);
+                formData.append('emp_surname', emp_surname);
                 formData.append('emp_code', emp_code);
                 formData.append('emp_status', emp_status);
                 formData.append('role', role);
@@ -90,21 +87,16 @@
                 formData.append('number', mobile_phone);
                 formData.append('qualification', qualification);
                 formData.append('emergency_number', emergency_number);
-                formData.append('pan_number', pan_number);
                 formData.append('current_address', address);
                 formData.append('permanent_address', permanent_address);
                 formData.append('formalities', formalities);
                 formData.append('offer_acceptance', offer_acceptance);
                 formData.append('probation_period', probation_period);
                 formData.append('date_of_confirmation', datepicker5);
-                formData.append('father_name', father_name);
                 formData.append('department', department);
                 formData.append('salary', salary);
                 formData.append('account_number', bank_account_number);
                 formData.append('bank_name', bank_name);
-                formData.append('ifsc_code', ifsc_code);
-                formData.append('pf_account_number', pf_account_number);
-                formData.append('un_number', un_number);
                 formData.append('pf_status', pf_status);
                 formData.append('date_of_resignation', datepicker6);
                 formData.append('notice_period', notice_period);

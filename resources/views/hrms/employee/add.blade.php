@@ -427,6 +427,28 @@
                                 </div>
 
 
+
+                                <div class="section">
+                                    <label for="input002"><h6 class="mb20 mt40">Employee Surname </h6></label>
+                                    <label for="input002" class="field prepend-icon">
+                                        @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+                                            <input type="text" name="emp_surname" id="emp_surname" class="gui-input"
+                                                   value="@if($emps && $emps->employee->surname){{$emps->employee->surname}}@endif"
+                                                   required>
+                                            <label for="input002" class="field-icon">
+                                                <i class="fa fa-user"></i>
+                                            </label>
+                                        @else
+                                            <input type="text" name="emp_surname" id="emp_surname" class="gui-input"
+                                                   placeholder="employee surname..." required>
+                                            <label for="input002" class="field-icon">
+                                                <i class="fa fa-user"></i>
+                                            </label>
+                                        @endif
+                                    </label>
+                                </div>
+
+
                                 <div class="section">
                                     <label for="input002"><h6 class="mb20 mt40">Employment Status </h6></label>
                                     <div class="option-group field">
@@ -440,8 +462,10 @@
                                                    @if(isset($emps))@if($emps->employee->status == '0') checked @endif @endif>
                                             <span class="radio"></span>Ex</label>
                                         @else
-                                            <input type="radio" name="emp_status" id="emp_status" value="1">
+                                            <label class = "field option mb5">
+                                                <input type="radio" name="emp_status" id="emp_status" value="1">
                                             <span class="radio"></span>Present</label>
+
                                             <label class="field option mb5">
                                                 <input type="radio" name="emp_status" id="emp_status" value="0" checked>
                                                 <span class="radio"></span>Ex</label>
@@ -799,7 +823,6 @@
                                                 <i class="fa fa-money"></i>
                                             </label>
                                         @else
-                                            <
                                             <input type="text" name="salary"
                                                    id="salary" class="gui-input">
                                             <label for="input002" class="field-icon">

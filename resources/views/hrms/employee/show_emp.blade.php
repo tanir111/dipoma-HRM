@@ -1,5 +1,18 @@
 @extends('hrms.layouts.base')
-
+@php
+    $i = 0;
+    if (session('currency') == 'kzt') {
+        $currency = 1;
+    }
+    if (session('currency') == 'rub') {
+        $currency = 5;
+    }
+    if (session('currency') == 'usd') {
+        $currency = 380;
+    } else {
+        $currency = 1;
+    }
+@endphp
 @section('content')
     <!-- START CONTENT -->
     <div class="content">
@@ -60,11 +73,11 @@
                                         <div class="col-md-2">
                                             <input type="submit" value="Search" name="button" class="btn btn-primary">
                                         </div>
-
-                                        <div class="col-md-2">
-                                            <input type="submit" value="Export" name="button" class="btn btn-success">
-                                        </div>
                                         {!! Form::close() !!}
+                                        <div class="col-md-2">
+                                            <button onclick="exportExcel()" class="btn btn-success">Export</button>
+                                        </div>
+
                                         <div class="col-md-2">
                                             <a href="/employee-manager">
                                                 <input type="submit" value="Reset" class="btn btn-warning"></a>
@@ -95,21 +108,6 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <?php
-                                            $i = 0;
-                                            if (session('currency') == 'kzt') {
-                                                $currency = 1;
-                                            }
-                                            if (session('currency') == 'rub') {
-                                                $currency = 5;
-                                            }
-                                            if (session('currency') == 'usd') {
-                                                $currency = 380;
-                                            }
-                                            else{
-                                                $currency = 1;
-                                            }
-                                            ?>
                                             @foreach($emps as $emp)
                                                 <tr>
                                                     <td class="text-center">{{$i+=1}}</td>
@@ -158,6 +156,30 @@
                 </div>
             </div>
         </section>
-
     </div>
+
+
+
+@endsection
+
+
+
+@section("extrascriptForExport")
+    <script src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+    <!-- <script src="xlsx.js"></script> -->
+    <script>
+        var data = '{!! $jsonEmps !!}';
+        data = JSON.parse(data);
+
+        function exportExcel() {
+            createXLSLFormatObj = document.getElementById('table');
+            var filename = "Employee.xlsx";
+            var ws_name = "Employee";
+            var wb = XLSX.utils.book_new(),
+                ws = XLSX.utils.json_to_sheet(data);
+            XLSX.utils.book_append_sheet(wb, ws, ws_name);
+            XLSX.writeFile(wb, filename);
+        }
+
+    </script>
 @endsection

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Jobs\ExportData;
 use App\Models\Employee;
 use App\Models\EmployeeUpload;
+use App\Models\Event;
+use App\Models\Meeting;
 use App\Models\Role;
 use App\Models\UserRole;
 use App\Promotion;
@@ -13,7 +15,9 @@ use Carbon\Carbon;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 
+
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\Concerns\ToModel;
@@ -41,18 +45,23 @@ class EmpController extends Controller
 
         $user = new User;
         $user->name = $request->emp_name;
-        $user->email = str_replace(' ', '_', $request->emp_name) . '@'.env('APP_NAME').'.com';
+        $user->surname = $request->emp_surname;
+
+        $user->email = str_replace(' ', '_', $request->emp_surname.$request->emp_name).'@'.env('APP_NAME').'.com';
         $user->password = bcrypt('123456');
         $user->save();
+
+
 
         $emp = new Employee;
         $emp->photo = $filename;
         $emp->name = $request->emp_name;
+        $emp->surname = $request->emp_surname;
         $emp->code = $request->emp_code;
         $emp->status = $request->emp_status;
         $emp->gender = $request->gender;
-        $emp->date_of_birth = $request->dob;
-        $emp->date_of_joining = $request->doj;
+        $emp->date_of_birth = $request->date_of_birth;
+        $emp->date_of_joining = $request->date_of_joining;
         $emp->number = $request->number;
         $emp->qualification = $request->qualification;
         $emp->emergency_number = $request->emergency_number;
@@ -74,6 +83,7 @@ class EmpController extends Controller
         $emp->user_id = $user->id;
         $emp->save();
 
+
         $userRole = new UserRole();
         $userRole->role_id = $request->role;
         $userRole->user_id = $user->id;
@@ -91,7 +101,38 @@ class EmpController extends Controller
         $column = '';
         $string = '';
 
-        return view('hrms.employee.show_emp', compact('emps', 'column', 'string'));
+        $jsonEmpsCreate = Employee::select([
+            'id',
+            'code',
+            'name',
+            'surname',
+            'status',
+            'gender',
+            'date_of_birth',
+            'date_of_joining',
+            'number',
+            'qualification',
+            'emergency_number',
+            'current_address',
+            'permanent_address',
+            'formalities',
+            'offer_acceptance',
+            'probation_period',
+            'date_of_confirmation',
+            'department',
+            'salary',
+            'account_number',
+            'bank_name',
+            'pf_status',
+            'date_of_resignation',
+            'notice_period',
+            'last_working_day',
+            'full_final',
+            'created_at',
+        ])->get();
+        $jsonEmps = json_encode($jsonEmpsCreate);
+
+        return view('hrms.employee.show_emp', compact('emps', 'column', 'string' , 'jsonEmps'));
     }
 
     public function showEdit($id)
@@ -115,11 +156,13 @@ class EmpController extends Controller
         }
         $photo = '/assets/img/avatars/' . $filename;
         $emp_name = $request->emp_name;
+        $emp_surname = $request->emp_surname;
         $emp_code = $request->emp_code;
         $emp_status = $request->status;
         $emp_role = $request->role;
         $gender = $request->gender;
         $dob = $request->date_of_birth;
+
         $doj = $request->date_of_joining;
         $mob_number = $request->number;
         $qualification = $request->qualification;
@@ -150,6 +193,9 @@ class EmpController extends Controller
         if (!empty($emp_name)) {
             $edit->name = $emp_name;
         }
+        if(!empty($emp_surname)){
+            $edit->surname = $emp_surname;
+         }
         if (!empty($emp_code)) {
             $edit->code = $emp_code;
         }
@@ -253,7 +299,7 @@ class EmpController extends Controller
         /* try {*/
         foreach ($files as $file) {
             Excel::load($file, function ($reader) {
-                $rows = $reader->get(['emp_name', 'emp_code', 'emp_status', 'role',
+                $rows = $reader->get(['emp_name', 'emp_surname', 'emp_code', 'emp_status', 'role',
                     'gender', 'dob', 'doj', 'mob_number', 'qualification', 'emer_number',
                     'address', 'permanent_address', 'formalities', 'offer_acceptance',
                     'prob_period', 'doc', 'department', 'salary', 'account_number',
@@ -263,7 +309,8 @@ class EmpController extends Controller
                     \Log::info($row->role);
                     $user = new User;
                     $user->name = $row->emp_name;
-                    $user->email = str_replace(' ', '_', $row->emp_name) . '@'.env('APP_NAME').'.com';
+                    $user->surname = $row->emp_surname;
+                    $user->email = str_replace(' ', '_', $row->emp_surname.$row->emp_name). '@'.env('APP_NAME').'.com';
                     $user->password = bcrypt('123456');
                     $user->save();
                     $attachment = new Employee();
@@ -434,11 +481,11 @@ class EmpController extends Controller
                 )->with('employee')->get();
             }
 
-            $fileName = 'Employee_Listing_' . rand(1, 1000) . '.csv';
+            $fileName = 'Employee_Listing_' . rand(1, 1000) . '.xls';
             $filePath = storage_path('export/') . $fileName;
             $file = new \SplFileObject($filePath, "a");
             // Add header to csv file.
-            $headers = array("id" , "code", "name", "status", "gender", "date_of_birth",
+            $headers = array("id" , "code", "name", "surname", "status", "gender", "date_of_birth",
                 "date_of_joining", "number", "qualification", "emergency_number",
                 "current_address", "permanent_address", "formalities", "offer_acceptance",
                 "probation_period", "date_of_confirmation", "department", "salary", "account_number", "bank_name",
@@ -450,6 +497,7 @@ class EmpController extends Controller
                         $emp->id,
                         $emp->employee->code,
                         $emp->employee->name,
+                        $emp->employee->surname,
                         $emp->employee->status,
                         $emp->employee->gender,
                         $emp->employee->date_of_birth,
@@ -477,7 +525,6 @@ class EmpController extends Controller
                     ]
                 );
             }
-
             return response()->download(storage_path('export/') . $fileName);
         }
     }
@@ -546,7 +593,14 @@ class EmpController extends Controller
 
         \Session::flash('flash_message', 'Employee successfully Promoted!');
 
-        return redirect()->back();
+        if(Auth::user()->role() == 'Admin'){
+            return redirect()->back();
+        }
+        else{
+            $events   = $this->convertToArray(Event::where('date', '>', Carbon::now())->orderBy('date', 'desc')->take(3)->get());
+            $meetings = $this->convertToArray(Meeting::where('date', '>', Carbon::now())->orderBy('date', 'desc')->take(3)->get());
+            return view('hrms.dashboard', compact('events', 'meetings'));
+        }
     }
 
     public function showPromotion()
@@ -554,6 +608,16 @@ class EmpController extends Controller
         $promotions = Promotion::with('employee')->paginate(10);
 
         return view('hrms.promotion.show_promotion', compact('promotions'));
+    }
+
+    public function convertToArray($values)
+    {
+        $result = [];
+        foreach ($values as $key => $value) {
+            $result[$key] = $value;
+        }
+
+        return $result;
     }
 
 }

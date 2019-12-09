@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  auth_postgres:
+    image: postgres:9.6-alpine
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: madiakpan
+      POSTGRES_PASSWORD: madiakpan
+      #      POSTGRES_MULTIPLE_DATABASES: "social_auth","social_chat"
+      POSTGRES_DB: diploma
+
+volumes:
+  db_data: {}
