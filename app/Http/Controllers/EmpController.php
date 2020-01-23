@@ -47,10 +47,9 @@ class EmpController extends Controller
         $user->name = $request->emp_name;
         $user->surname = $request->emp_surname;
 
-        $user->email = str_replace(' ', '_', $request->emp_surname.$request->emp_name).'@'.env('APP_NAME').'.com';
+        $user->email = str_replace(' ', '_', $request->emp_surname . $request->emp_name) . '@' . env('APP_NAME') . '.com';
         $user->password = bcrypt('123456');
         $user->save();
-
 
 
         $emp = new Employee;
@@ -132,7 +131,7 @@ class EmpController extends Controller
         ])->get();
         $jsonEmps = json_encode($jsonEmpsCreate);
 
-        return view('hrms.employee.show_emp', compact('emps', 'column', 'string' , 'jsonEmps'));
+        return view('hrms.employee.show_emp', compact('emps', 'column', 'string', 'jsonEmps'));
     }
 
     public function showEdit($id)
@@ -193,9 +192,9 @@ class EmpController extends Controller
         if (!empty($emp_name)) {
             $edit->name = $emp_name;
         }
-        if(!empty($emp_surname)){
+        if (!empty($emp_surname)) {
             $edit->surname = $emp_surname;
-         }
+        }
         if (!empty($emp_code)) {
             $edit->code = $emp_code;
         }
@@ -310,7 +309,7 @@ class EmpController extends Controller
                     $user = new User;
                     $user->name = $row->emp_name;
                     $user->surname = $row->emp_surname;
-                    $user->email = str_replace(' ', '_', $row->emp_surname.$row->emp_name). '@'.env('APP_NAME').'.com';
+                    $user->email = str_replace(' ', '_', $row->emp_surname . $row->emp_name) . '@' . env('APP_NAME') . '.com';
                     $user->password = bcrypt('123456');
                     $user->save();
                     $attachment = new Employee();
@@ -485,7 +484,7 @@ class EmpController extends Controller
             $filePath = storage_path('export/') . $fileName;
             $file = new \SplFileObject($filePath, "a");
             // Add header to csv file.
-            $headers = array("id" , "code", "name", "surname", "status", "gender", "date_of_birth",
+            $headers = array("id", "code", "name", "surname", "status", "gender", "date_of_birth",
                 "date_of_joining", "number", "qualification", "emergency_number",
                 "current_address", "permanent_address", "formalities", "offer_acceptance",
                 "probation_period", "date_of_confirmation", "department", "salary", "account_number", "bank_name",
@@ -593,11 +592,10 @@ class EmpController extends Controller
 
         \Session::flash('flash_message', 'Employee successfully Promoted!');
 
-        if(Auth::user()->role() == 'Admin'){
+        if (Auth::user()->role() == 'Admin') {
             return redirect()->back();
-        }
-        else{
-            $events   = $this->convertToArray(Event::where('date', '>', Carbon::now())->orderBy('date', 'desc')->take(3)->get());
+        } else {
+            $events = $this->convertToArray(Event::where('date', '>', Carbon::now())->orderBy('date', 'desc')->take(3)->get());
             $meetings = $this->convertToArray(Meeting::where('date', '>', Carbon::now())->orderBy('date', 'desc')->take(3)->get());
             return view('hrms.dashboard', compact('events', 'meetings'));
         }
