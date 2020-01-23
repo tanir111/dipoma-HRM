@@ -60,7 +60,7 @@
                                             <?php
                                             $i = 0;
                                             if (request()->page) {
-                                                $i = (request()->page) * 10;
+                                                $i = (request()->page - 1) * 10;
                                             }
                                             ?>
                                             @foreach($roles as $role)
