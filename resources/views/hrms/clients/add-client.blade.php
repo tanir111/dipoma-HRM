@@ -47,39 +47,76 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label"> Client </label>
                                                 <div class="col-md-6">
-                                                    <input type="text" name="name" id="input002" class="select2-single form-control" placeholder="Name" required>
+                                                    <input type="text" name="name" id="input002"
+                                                           class="select2-single form-control" placeholder="Name"
+                                                           required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label"> Address </label>
                                                 <div class="col-md-6">
-                                                    <textarea class="select2-single form-control" rows="3" id="address" placeholder="Client Address" name="address"></textarea>
+                                                    <textarea class="select2-single form-control" rows="3" id="address"
+                                                              placeholder="Client Address" name="address"></textarea>
                                                 </div>
                                             </div>
 
-                                                <div class="form-group">
-                                                    <label class="col-md-3 control-label"> Company </label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="company" id="input002" class="select2-single form-control" placeholder="Company">
-                                                    </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"> Company </label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="company" id="input002"
+                                                           class="select2-single form-control"
+                                                           placeholder="Company">
                                                 </div>
+                                            </div>
 
-                                                <div class="form-group code-group">
-                                                    <label class="col-md-3 control-label"> Code </label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="code" id="code" class="select2-single form-control" placeholder="Unique Code" required>
-                                                    </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"> Contract number </label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="contract_number"
+                                                           class="form-control"
+                                                           placeholder="Contract number">
                                                 </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"> City</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="city"
+                                                           class="form-control"
+                                                           placeholder="City">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"> Contact</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="contact"
+                                                           class="form-control"
+                                                           placeholder="Contact">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group code-group">
+                                                <label class="col-md-3 control-label"> Code </label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="code" id="code"
+                                                           class="select2-single form-control" placeholder="Unique Code"
+                                                           required>
+                                                </div>
+                                            </div>
 
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label"></label>
                                                 <div class="col-md-2">
 
-                                                    <input type="submit" class="btn btn-bordered btn-info btn-block save-client" value="Submit">
+                                                    <input type="submit"
+                                                           class="btn btn-bordered btn-info btn-block save-client"
+                                                           value="Submit">
                                                 </div>
                                                 <div class="col-md-2"><a href="/add-client">
-                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a>
+                                                        <input type="button"
+                                                               class="btn btn-bordered btn-success btn-block"
+                                                               value="Reset"></a>
                                                 </div>
                                             </div>
                                             {!! Form::close() !!}

@@ -54,7 +54,9 @@
                                                 <th class="text-center">Address</th>
                                                 <th class="text-center">Company</th>
                                                 <th class="text-center">Code</th>
-                                                <th class="text-center">Actions</th>
+                                                <th class="text-center">City</th>
+                                                <th class="text-center">Contact</th>
+                                                <th class="text-center">Contract number</th>
                                             </tr>
                                             </thead>
 
@@ -66,6 +68,9 @@
                                                     <td class="text-center">{{$client->address}}</td>
                                                     <td class="text-center">{{$client->company}}</td>
                                                     <td class="text-center">{{$client->code}}</td>
+                                                    <td class="text-center">{{$client->city}}</td>
+                                                    <td class="text-center">{{$client->contact}}</td>
+                                                    <td class="text-center">{{$client->contract_number}}</td>
                                                     <td class="text-center">
                                                         <div class="btn-group text-right">
                                                             <button type="button"
