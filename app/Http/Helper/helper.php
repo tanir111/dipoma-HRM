@@ -41,7 +41,7 @@ function convertRole($role)
         'Manager' => '16'
         //bharo baki
     ];
-    if($role){
+    if ($role) {
         return $data[$role];
     }
     return $data;
@@ -60,7 +60,9 @@ function convertStatus($emp_status)
 
 function convertStatusBack($emp_status)
 {
-    if($emp_status){}else{$emp_status=1;}
+    if (!$emp_status) {
+        $emp_status = 1;
+    }
 
     $data = [
         '1' => 'Present',
@@ -81,6 +83,7 @@ function covertDateToDay($date)
     $day = date("l", $day);
     return strtoupper($day);
 }
+
 /*
 function getFormattedDate($date)
 {
@@ -91,7 +94,7 @@ function getFormattedDate($date)
 
 function getFormattedDate($date)
 {
-    $date =  strtotime($date);
+    $date = strtotime($date);
     return date('Y-m-d', $date);
 }
 
@@ -195,36 +198,36 @@ function qualification()
         'Other' => 'Other'
     ];
 
-        return $data;
+    return $data;
+}
+
+function getGender($gender)
+{
+    $data = [
+        '0' => 'Male',
+        '1' => 'Female',
+    ];
+
+    return $data[$gender];
+}
+
+function formatDate($date)
+{
+    $created_at = $date;
+    $today = \Carbon\Carbon::now();
+    $difference = date_diff($created_at, $today);
+
+    if ($difference->days > 1) {
+        //{{$job->created_at ? $job->created_at->format('l jS \\of F Y') : ''}}
+        return $date->format('l jS \\of F Y H:m:s');
     }
 
-    function getGender($gender)
-    {
-        $data = [
-            '0' => 'Male',
-            '1' => 'Female',
-        ];
+    return $date->diffForHumans();
+}
 
-        return $data[$gender];
-    }
+function getUserData($userId)
+{
+    $user = \App\User::where('id', $userId)->with('employee')->first();
 
-    function formatDate($date)
-    {
-        $created_at = $date;
-        $today      = \Carbon\Carbon::now();
-        $difference = date_diff($created_at, $today);
-
-        if ($difference->days > 1) {
-            //{{$job->created_at ? $job->created_at->format('l jS \\of F Y') : ''}}
-            return $date->format('l jS \\of F Y H:m:s');
-        }
-
-        return $date->diffForHumans();
-    }
-
-    function getUserData($userId)
-    {
-        $user = \App\User::where('id', $userId)->with('employee')->first();
-
-        return $user;
-    }
+    return $user;
+}
