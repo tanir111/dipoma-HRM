@@ -47,8 +47,8 @@ class EmpController extends Controller
         $user->name = $request->emp_name;
         $user->surname = $request->emp_surname;
 
-        $user->email = str_replace(' ', '_', $request->emp_surname . $request->emp_name) . '@' . env('APP_NAME') . '.com';
-        $user->password = bcrypt('123456');
+        $user->email = $request->emp_email;
+        $user->password = bcrypt($request->emp_password);
         $user->save();
 
 

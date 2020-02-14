@@ -34,6 +34,8 @@
                 event.preventDefault();
                 var emp_name = $('#emp_name').val();
                 var emp_surname = $('#emp_surname').val();
+                var emp_email = $('#emp_email').val();
+                var emp_password = $('#emp_password').val();
 
                 var emp_code = $('#emp_code').val();
                 var emp_status = $("input[name='emp_status']:checked").val();
@@ -76,6 +78,8 @@
                 if (photo.value != '') {
                     formData.append('photo', photo.files[0], photo.value);
                 }
+                formData.append('emp_email', emp_email);
+                formData.append('emp_password', emp_password);
                 formData.append('emp_name', emp_name);
                 formData.append('emp_surname', emp_surname);
                 formData.append('emp_code', emp_code);

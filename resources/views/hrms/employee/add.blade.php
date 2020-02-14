@@ -386,6 +386,46 @@
                                 <!-- -------------- /section -------------- -->
 
                                 <div class="section">
+                                    <label for="input002"><h6 class="mb20 mt40">Employee email in system</h6></label>
+                                    <label for="input002" class="field prepend-icon">
+                                        @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+                                            <input type="email" name="emp_email" id="emp_email" class="gui-input"
+                                                   value="@if($emps && $emps->email)@endif"
+                                                   required>
+                                            <label for="input002" class="field-icon">
+                                                <i class="fa fa-inbox"></i>
+                                            </label>
+                                        @else
+                                            <input type="email" name="emp_email" id="emp_email" class="gui-input"
+                                                   placeholder="employee email..." required>
+                                            <label for="input002" class="field-icon">
+                                                <i class="fa fa-inbox"></i>
+                                            </label>
+                                        @endif
+                                    </label>
+                                </div>
+
+                                <div class="section">
+                                    <label for="input002"><h6 class="mb20 mt40">Employee password in system</h6></label>
+                                    <label for="input002" class="field prepend-icon">
+                                        @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
+                                            <input type="password" name="emp_password" id="emp_password" class="gui-input"
+                                                   required>
+                                            <label for="input002" class="field-icon">
+                                                <i class="fa fa-barcode"></i>
+                                            </label>
+                                        @else
+                                            <input type="password" name="emp_password" id="emp_password" class="gui-input"
+                                                   placeholder="Employee password..." required>
+                                            <label for="input002" class="field-icon">
+                                                <i class="fa fa-inbox"></i>
+                                            </label>
+                                        @endif
+                                    </label>
+                                </div>
+
+
+                                <div class="section">
                                     <label for="input002"><h6 class="mb20 mt40">Employee Code</h6></label>
                                     <label for="input002" class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
@@ -427,7 +467,6 @@
                                 </div>
 
 
-
                                 <div class="section">
                                     <label for="input002"><h6 class="mb20 mt40">Employee Surname </h6></label>
                                     <label for="input002" class="field prepend-icon">
@@ -462,9 +501,9 @@
                                                    @if(isset($emps))@if($emps->employee->status == '0') checked @endif @endif>
                                             <span class="radio"></span>Ex</label>
                                         @else
-                                            <label class = "field option mb5">
+                                            <label class="field option mb5">
                                                 <input type="radio" name="emp_status" id="emp_status" value="1">
-                                            <span class="radio"></span>Present</label>
+                                                <span class="radio"></span>Present</label>
 
                                             <label class="field option mb5">
                                                 <input type="radio" name="emp_status" id="emp_status" value="0" checked>
@@ -517,14 +556,14 @@
 
                                     <div class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
-                                            <input type="text" id="datepicker1" class="gui-input fs13" name="dob"
+                                            <input type="date" id="datepicker1" class="gui-input" name="dob"
                                                    value="@if($emps && $emps->employee->date_of_birth){{$emps->employee->date_of_birth}}@endif"
                                                    required>
                                             <label class="field-icon">
                                                 <i class="fa fa-calendar"></i>
                                             </label>
                                         @else
-                                            <input type="text" id="datepicker1" class="gui-input fs13" name="dob"
+                                            <input type="date" id="datepicker1" class="gui-input" name="dob"
                                                    required>
                                             <label class="field-icon">
                                                 <i class="fa fa-calendar"></i>
@@ -539,14 +578,14 @@
 
                                     <div class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
-                                            <input type="text" id="datepicker4" class="gui-input fs13" name="doj"
+                                            <input type="date" id="datepicker4" class="gui-input" name="doj"
                                                    value="@if($emps && $emps->employee->date_of_joining){{$emps->employee->date_of_joining}}@endif"
                                                    required>
                                             <label class="field-icon">
                                                 <i class="fa fa-calendar"></i>
                                             </label>
                                         @else
-                                            <input type="text" id="datepicker4" class="gui-input fs13" name="doj"
+                                            <input type="date" id="datepicker4" class="gui-input" name="doj"
                                                    required>
                                             <label class="field-icon">
                                                 <i class="fa fa-calendar"></i>
@@ -769,13 +808,13 @@
 
                                     <div class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
-                                            <input type="text" id="datepicker5" class="gui-input fs13" name="doc"
+                                            <input type="datet" id="datepicker5" class="gui-input" name="doc"
                                                    value="@if($emps && $emps->employee->date_of_confirmation){{$emps->employee->date_of_confirmation}}@endif"/>
                                             <label class="field-icon">
                                                 <i class="fa fa-calendar"></i>
                                             </label>
                                         @else
-                                            <input type="text" id="datepicker5" class="gui-input fs13" name="doc"/>
+                                            <input type="date" id="datepicker5" class="gui-input" name="doc"/>
                                             <label class="field-icon">
                                                 <i class="fa fa-calendar"></i>
                                             </label>
@@ -834,7 +873,7 @@
 
                                 <script>
                                     $(function () {
-                                        $("#salary").mask("99999999", {placeholder: " " });
+                                        $("#salary").mask("99999999", {placeholder: " "});
                                     });
                                 </script>
                                 <!-- -------------- /section -------------- -->
@@ -937,13 +976,13 @@
 
                                     <div class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
-                                            <input type="text" id="datepicker6" class="gui-input fs13" name="dor"
+                                            <input type="date" id="datepicker6" class="gui-input" name="dor"
                                                    value="@if($emps && $emps->employee->date_of_resignation){{$emps->employee->date_of_resignation}}@endif"/>
                                             <label class="field-icon">
                                                 <i class="fa fa-calendar"></i>
                                             </label>
                                         @else
-                                            <input type="text" id="datepicker6" class="gui-input fs13" name="dor"/>
+                                            <input type="date" id="datepicker6" class="gui-input" name="dor"/>
                                             <label class="field-icon">
                                                 <i class="fa fa-calendar"></i>
                                             </label>
@@ -978,14 +1017,14 @@
 
                                     <div class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
-                                            <input type="text" id="datepicker7" class="gui-input fs13"
+                                            <input type="date" id="datepicker7" class="gui-input"
                                                    name="last_working_day"
                                                    value="@if($emps && $emps->employee->last_working_day){{$emps->employee->last_working_day}} @endif"/>
                                             <label class="field-icon">
                                                 <i class="fa fa-calendar"></i>
                                             </label>
                                         @else
-                                            <input type="text" id="datepicker7" class="gui-input fs13"
+                                            <input type="date" id="datepicker7" class="gui-input"
                                                    name="last_working_day"/>
                                             <label class="field-icon">
                                                 <i class="fa fa-calendar"></i>
