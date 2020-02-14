@@ -96,13 +96,12 @@
                                             <thead>
                                             <tr class="bg-light">
                                                 <th class="text-center">Id</th>
-                                                <th class="text-center">Code</th>
+                                                <th class="text-center">IIN</th>
                                                 <th class="text-center">Email</th>
                                                 <th class="text-center">Name</th>
+                                                <th class="text-center">Surname</th>
                                                 <th class="text-center">Status</th>
-                                                <th class="text-center">Role</th>
                                                 <th class="text-center">Joining Date</th>
-                                                <th class="text-center">Salary</th>
                                                 <th class="text-center">Mobile Number</th>
                                                 <th class="text-center">Department</th>
                                                 <th class="text-center">Actions</th>
@@ -115,10 +114,9 @@
                                                     <td class="text-center">{{$emp->employee['code']}}</td>
                                                     <td class="text-center">{{$emp->email}}</td>
                                                     <td class="text-center">{{$emp->name}}</td>
+                                                    <td class="text-center">{{$emp->surname}}</td>
                                                     <td class="text-center">{{convertStatusBack($emp->employee['status'])}}</td>
-                                                    <td class="text-center">{{isset($emp->role->role->name)?$emp->role->role->name:''}}</td>
                                                     <td class="text-center">{{date('Y-m-d', strtotime($emp->employee['date_of_joining']))}}</td>
-                                                    <td class="text-center">{{round($emp->employee['salary'] ? $emp->employee['salary']  : 0 /$currency)}}</td>
                                                     <td class="text-center">{{$emp->employee['number']}}</td>
                                                     <td class="text-center">{{$emp->employee['department']}}</td>
                                                     <td class="text-center">

@@ -426,7 +426,7 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40">Employee Code</h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">Employee IIN</h6></label>
                                     <label for="input002" class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                             <input type="text" name="emp_code" id="emp_code" class="gui-input"
@@ -437,7 +437,7 @@
                                             </label>
                                         @else
                                             <input type="text" name="emp_code" id="emp_code" class="gui-input"
-                                                   placeholder="employee code..." required>
+                                                   placeholder="employee iin..." required>
                                             <label for="input002" class="field-icon">
                                                 <i class="fa fa-barcode"></i>
                                             </label>
