@@ -15,6 +15,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 
+use Validator;
+
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
@@ -294,158 +296,19 @@ class EmpController extends Controller
 
     public function uploadFile(Request $request)
     {
-        $files = Input::file('upload_file');
+        $validator = Validator::make($request->all(), [
+            'file' => 'required|mimes:xls,xlsx'
+        ]);
 
-        /* try {*/
-        foreach ($files as $file) {
-            Excel::load($file, function ($reader) {
-                $rows = $reader->get(['emp_name', 'emp_surname', 'emp_code', 'emp_status', 'role',
-                    'gender', 'dob', 'doj', 'mob_number', 'qualification', 'emer_number',
-                    'address', 'permanent_address', 'formalities', 'offer_acceptance',
-                    'prob_period', 'doc', 'department', 'salary', 'account_number',
-                    'bank_name', 'pf_status', 'dor', 'notice_period', 'last_working_day', 'full_final']);
-
-                foreach ($rows as $row) {
-                    \Log::info($row->role);
-                    $user = new User;
-                    $user->name = $row->emp_name;
-                    $user->surname = $row->emp_surname;
-                    $user->email = str_replace(' ', '_', $row->emp_surname.$row->emp_name). '@'.env('APP_NAME').'.com';
-                    $user->password = bcrypt('123456');
-                    $user->save();
-                    $attachment = new Employee();
-                    $attachment->photo = '/img/Emp.jpg';
-                    $attachment->name = $row->emp_name;
-                    $attachment->code = $row->emp_code;
-                    $attachment->status = convertStatus($row->emp_status);
-
-                    if (empty($row->gender)) {
-                        $attachment->gender = 'Not Exist';
-                    } else {
-                        $attachment->gender = $row->gender;
-                    }
-                    if (empty($row->dob)) {
-                        $attachment->date_of_birth = '00-00-0000';
-                    } else {
-                        $attachment->date_of_birth = date('m-d-Y', strtotime($row->dob));
-                    }
-                    if (empty($row->doj)) {
-                        $attachment->date_of_joining = '00-00-0000';
-                    } else {
-                        $attachment->date_of_joining = date('m-d-Y', strtotime($row->doj));
-                    }
-                    if (empty($row->mob_number)) {
-                        $attachment->number = '1234567890';
-                    } else {
-                        $attachment->number = $row->mob_number;
-                    }
-                    if (empty($row->qualification)) {
-                        $attachment->qualification = 'Not Exist';
-                    } else {
-                        $attachment->qualification = $row->qualification;
-                    }
-                    if (empty($row->emer_number)) {
-                        $attachment->emergency_number = '1234567890';
-                    } else {
-                        $attachment->emergency_number = $row->emer_number;
-                    }
-                    if (empty($row->address)) {
-                        $attachment->current_address = 'Not Exist';
-                    } else {
-                        $attachment->current_address = $row->address;
-                    }
-                    if (empty($row->permanent_address)) {
-                        $attachment->permanent_address = 'Not Exist';
-                    } else {
-                        $attachment->permanent_address = $row->permanent_address;
-                    }
-                    if (empty($row->emp_formalities)) {
-                        $attachment->formalities = '1';
-                    } else {
-                        $attachment->formalities = $row->emp_formalities;
-                    }
-                    if (empty($row->offer_acceptance)) {
-                        $attachment->offer_acceptance = '1';
-                    } else {
-                        $attachment->offer_acceptance = $row->offer_acceptance;
-                    }
-                    if (empty($row->prob_period)) {
-                        $attachment->probation_period = 'Not Exist';
-                    } else {
-                        $attachment->probation_period = $row->prob_period;
-                    }
-                    if (empty($row->doc)) {
-                        $attachment->date_of_confirmation = '00-00-0000';
-                    } else {
-                        $attachment->date_of_confirmation = date('m-d-Y', strtotime($row->doc));
-                    }
-                    if (empty($row->department)) {
-                        $attachment->department = 'Not Exist';
-                    } else {
-                        $attachment->department = $row->department;
-                    }
-                    if (empty($row->salary)) {
-                        $attachment->salary = '00000';
-                    } else {
-                        $attachment->salary = $row->salary;
-                    }
-                    if (empty($row->account_number)) {
-                        $attachment->account_number = 'Not Exist';
-                    } else {
-                        $attachment->account_number = $row->account_number;
-                    }
-                    if (empty($row->bank_name)) {
-                        $attachment->bank_name = 'Not Exist';
-                    } else {
-                        $attachment->bank_name = $row->bank_name;
-                    }
-                    if (empty($row->pf_status)) {
-                        $attachment->pf_status = '1';
-                    } else {
-                        $attachment->pf_status = $row->pf_status;
-                    }
-                    if (empty($row->dor)) {
-                        $attachment->date_of_resignation = '00-00-0000';
-                    } else {
-                        $attachment->date_of_resignation = date('m-d-Y', strtotime($row->dor));
-                    }
-                    if (empty($row->notice_period)) {
-                        $attachment->notice_period = 'Not exist';
-                    } else {
-                        $attachment->notice_period = $row->notice_period;
-                    }
-                    if (empty($row->last_working_day)) {
-                        $attachment->last_working_day = '00-00-0000';
-                    } else {
-                        $attachment->last_working_day = date('m-d-Y', strtotime($row->last_working_day));
-                    }
-                    if (empty($row->full_final)) {
-                        $attachment->full_final = 'Not exist';
-                    } else {
-                        $attachment->full_final = $row->full_final;
-                    }
-                    $attachment->user_id = $user->id;
-                    $attachment->save();
-
-                    $userRole = new UserRole();
-                    $userRole->role_id = convertRole($row->role);
-                    $userRole->user_id = $user->id;
-                    $userRole->save();
-
-                }
-
-                return 1;
-                //return redirect('upload_form');*/
-            }
-            );
-
+        if ($validator->passes()) {
+            $dataTime = date('Ymd_His');
+            $file = $request->file('file');
+            $fileName = $dataTime . '-' . $file->getClientOriginalName();
+            $savePath = public_path('/excel_files/').$fileName;
+            $file->move($savePath);
+        } else {
+            return $validator->errors()->all();
         }
-        /*catch (\Exception $e) {
-           return $e->getMessage();*/
-
-        \Session::flash('success', ' Employee details uploaded successfully.');
-
-        return redirect()->back();
     }
 
     public function searchEmployee(Request $request)
