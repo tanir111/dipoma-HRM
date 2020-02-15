@@ -16,6 +16,8 @@ return [
     'dashboard' => 'Dashboard',
     'logout'=>'Logout',
     'change_password'=>'Change Password',
+    'password'=>'Password',
+    'email_in_system'=>'Email in system',
     'currency'=>'Currency',
 
     'add_employee'=>'Add Employee',
@@ -104,7 +106,7 @@ return [
     'personal_details'=>'Personal Details',
     'photo'=>'Photo',
     'choose_file'=>'Choose File',
-    'employee_code'=>'Employee Code',
+    'employee_code'=>'Employee IIN',
     'employee_name'=>'Employee Name',
     'employee_surname'=>'Employee Surname',
     'employment_status'=>'Employment Status',

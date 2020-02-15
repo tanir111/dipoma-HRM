@@ -16,6 +16,8 @@ return [
     'dashboard' => 'Панель приборов',
     'logout'=>'Выход',
     'change_password'=>'Сменить пароль',
+    'password'=>'Пароль',
+    'email_in_system'=>'Email в системе',
     'currency'=>'Валюта',
 
     'add_employee'=>'Добавить сотрудника',
@@ -104,7 +106,7 @@ return [
     'personal_details'=>'Личные данные',
     'photo'=>'Фото',
     'choose_file'=>'Выбрать файл',
-    'employee_code'=>'Код сотрудника',
+    'employee_code'=>'ИИН сотрудника',
     'employee_name'=>'Имя сотрудника',
     'employee_surname'=>'Фамилия сотрудника',
     'employment_status'=>'Статус занятости',
