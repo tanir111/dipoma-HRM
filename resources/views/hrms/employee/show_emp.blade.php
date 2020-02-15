@@ -98,7 +98,7 @@
                                                 <th class="text-center">{{trans('messages.id')}}</th>
                                                 <th class="text-center">{{trans('messages.employee_code')}}</th>
                                                 <th class="text-center">{{trans('messages.name')}}</th>
-                                                <th class="text-center">{{trans('messages.surname')}}</th>
+                                                <th class="text-center">{{trans('messages.employee_surname')}}</th>
                                                 <th class="text-center">{{trans('messages.email_in_system')}}</th>
                                                 <th class="text-center">{{trans('messages.status')}}</th>
                                                 <th class="text-center">{{trans('messages.role')}}</th>
