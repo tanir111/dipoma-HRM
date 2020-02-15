@@ -54,6 +54,7 @@
                                         <th class="text-center">{{trans('messages.manager')}}</th>
                                         <th class="text-center">{{trans('messages.team_leader')}}</th>
                                         <th class="text-center">{{trans('messages.member')}}</th>
+                                        <th class="text-center">{{trans('messages.type')}}</th>
                                         <th class="text-center">{{trans('messages.action')}}</th>
                                     </tr>
                                     </thead>
@@ -66,6 +67,7 @@
                                             <td class="text-center">{{$team->manager->name}}</td>
                                             <td class="text-center">{{$team->leader->name}}</td>
                                             <td class="text-center">{{$team->employee->name}}</td>
+                                            <td class="text-center">{{$team->type}}</td>
 
                                              <td class="text-center">
                                                 <div class="btn-group text-right">

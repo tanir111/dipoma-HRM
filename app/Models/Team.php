@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
+    const JUNIOR = 'jun';
+    const MIDDLE = 'mid';
+    const SENIOR = 'sen';
+
     public function employee()
     {
         return $this->hasOne(User::class, 'id', 'member_id');
