@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\EmployeeLeaves;
 use App\Models\Client;
+use App\Models\Employee;
 use App\Models\Event;
+use App\Models\Holiday;
 use App\Models\Meeting;
 use App\Models\Project;
 use App\User;
@@ -59,13 +61,18 @@ class AuthController extends Controller
         $events = $this->convertToArray(Event::where('date', '>', Carbon::now())->orderBy('date', 'desc')->take(3)->get());
         $meetings = $this->convertToArray(Meeting::where('date', '>', Carbon::now())->orderBy('date', 'desc')->take(3)->get());
 
-        $clientsCount = Client::all()->count();
-        $projectsCount = Project::all()->count();
+        $clientsCount = Client::count();
+        $projectsCount = Project::count();
+        $holidaysCount = Holiday::count();
 
+        $leaveCount = EmployeeLeaves::count();
         $appliedCount = EmployeeLeaves::where('status', 1)->count();
         $notAppliedCount = EmployeeLeaves::where('status', 2)->count();
-
-        return view('hrms.dashboard', compact('events', 'meetings', 'clientsCount', 'projectsCount', 'appliedCount', 'notAppliedCount'));
+        $employeeCount = Employee::count();
+        return view('hrms.dashboard', compact(
+            'events', 'meetings', 'clientsCount',
+            'projectsCount', 'appliedCount', 'notAppliedCount',
+            'employeeCount', 'leaveCount', 'holidaysCount'));
     }
 
     public function welcome()

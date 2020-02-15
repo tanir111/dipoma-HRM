@@ -268,6 +268,7 @@ return [
 
     'contract_number' => 'Contract number',
     'contact' => 'Contact',
+    'holidays' => 'Holidays',
     'city' => 'City',
 
 

@@ -111,7 +111,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-6">
@@ -124,16 +123,27 @@
                                     <canvas id="myChart2"></canvas>
                                 </div>
                             </div>
+
+                            <div class="col-sm-6">
+                                <div class="panel panel-tile">
+                                    <div class="panel-body">
+                                        <div class="row pv10">
+                                            <div>
+                                                <h3 class="text-bold">{{trans('messages.employees')}}: {{$employeeCount}}</h3>
+                                                <h3 class="text-bold">{{trans('messages.projects')}}: {{$projectsCount}}</h3>
+                                                <h3 class="text-bold">{{trans('messages.clients')}}: {{$clientsCount}}</h3>
+                                                <h3 class="text-bold">{{trans('messages.leaves')}}: {{$leaveCount}}</h3>
+                                                <h3 class="text-bold">{{trans('messages.holidays')}}: {{$holidaysCount}}</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-
-
-
-
                     <script>
-
-
                         function createChart(id, data, colors, labels) {
                             var ctx = document.getElementById(id).getContext('2d');
                             data = {
