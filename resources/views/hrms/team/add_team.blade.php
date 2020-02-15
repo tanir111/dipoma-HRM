@@ -57,7 +57,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label"> {{trans('messages.select_team_manager')}}</label>
                                                 <div class="col-md-6">
-                                                    <select class="selectpicker form-control" data-done-button="true"
+                                                    <select class=" form-control" data-done-button="true"
                                                             name="manager_id" required>
                                                         <option value=""
                                                                 selected>{{trans('messages.select_one')}}</option>
@@ -71,7 +71,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">{{trans('messages.select_team_leader')}}</label>
                                                 <div class="col-md-6">
-                                                    <select class="selectpicker form-control" data-done-button="true"
+                                                    <select class=" form-control" data-done-button="true"
                                                             name="leader_id" required>
                                                         <option value=""
                                                                 selected>{{trans('messages.select_one')}}</option>
@@ -85,7 +85,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">{{trans('messages.select_team_junior')}}</label>
                                                 <div class="col-md-6">
-                                                    <select class="selectpicker form-control" data-done-button="true"
+                                                    <select class=" form-control" data-done-button="true"
                                                             name="member_id[0]" required>
                                                         <option value=""
                                                                 selected>{{trans('messages.select_one')}}</option>
@@ -98,7 +98,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">{{trans('messages.select_team_middle')}}</label>
                                                 <div class="col-md-6">
-                                                    <select class="selectpicker form-control" data-done-button="true"
+                                                    <select class=" form-control" data-done-button="true"
                                                             name="member_id[1]" required>
                                                         <option value=""
                                                                 selected>{{trans('messages.select_one')}}</option>
@@ -112,7 +112,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">{{trans('messages.select_team_senior')}}</label>
                                                 <div class="col-md-6">
-                                                    <select class="selectpicker form-control" data-done-button="true"
+                                                    <select class=" form-control" data-done-button="true"
                                                             name="member_id[2]" required>
                                                         <option value=""
                                                                 selected>{{trans('messages.select_one')}}</option>

@@ -123,6 +123,9 @@
                         $('.modal-title').append(parsed.title);
                         $('.modal-body').append(parsed.message);
                         $('#notification-modal').modal('show');
+                        setTimeout(() => {
+                            location.reload();
+                        }, 1000);
                     }
                 });
 

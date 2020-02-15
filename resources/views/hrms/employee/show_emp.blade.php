@@ -3,11 +3,9 @@
     $i = 0;
     if (session('currency') == 'kzt') {
         $currency = 1;
-    }
-    if (session('currency') == 'rub') {
+    } else if (session('currency') == 'rub') {
         $currency = 5;
-    }
-    if (session('currency') == 'usd') {
+    }else if (session('currency') == 'usd') {
         $currency = 380;
     } else {
         $currency = 1;
@@ -70,20 +68,43 @@
                                                 <i class="arrow double"></i>
                                             </label>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-1">
                                             <input type="submit" value="{{trans('messages.search')}}" name="button"
                                                    class="btn btn-primary">
                                         </div>
                                         {!! Form::close() !!}
-                                        <div class="col-md-2">
+                                        <div class="col-md-1">
                                             <button onclick="exportExcel()"
                                                     class="btn btn-success">{{trans('messages.export')}}</button>
                                         </div>
 
-                                        <div class="col-md-2">
+                                        <div class="col-md-1">
                                             <a href="/employee-manager">
                                                 <input type="submit" value="{{trans('messages.reset')}}"
                                                        class="btn btn-warning"></a>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="dropdown dropdown-fuse">
+                                                <a href="#" class="btn btn-success dropdown-toggle fw600" data-toggle="dropdown">
+                                                    <span class="hidden-xs"><name>{{trans('messages.currency')}}</name></span>
+                                                    <span class="fa fa-money"></span>
+                                                </a>
+
+                                                <ul class="dropdown-menu list-group keep-dropdown w250" role="menu">
+                                                    <p class="dropdown-footer text-center">
+                                                        <a class="dropdown-item"
+                                                           href="{{URL::route('setCurrencyKZT')}}">KZT</a>
+                                                    </p>
+                                                    <p class="dropdown-footer text-center">
+                                                        <a class="dropdown-item"
+                                                           href="{{URL::route('setCurrencyRUB')}}">RUB</a>
+                                                    </p>
+                                                    <p class="dropdown-footer text-center">
+                                                        <a class="dropdown-item"
+                                                           href="{{URL::route('setCurrencyUSD')}}">USD</a>
+                                                    </p>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -118,7 +139,7 @@
                                                     <td class="text-center">{{$i+=1}}</td>
                                                     <td class="text-center">{{$emp->employee['code']}}</td>
                                                     <td class="text-center">{{$emp->name}}</td>
-                                                    <td class="text-center">{{$emp->salary}}</td>
+                                                    <td class="text-center">{{round(round($emp->employee['salary'] ? $emp->employee['salary']  : 0)/$currency)}}</td>
                                                     <td class="text-center">{{$emp->surname}}</td>
                                                     <td class="text-center">{{$emp->email}}</td>
                                                     <td class="text-center">{{convertStatusBack($emp->employee['status'])}}</td>
