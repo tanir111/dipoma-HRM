@@ -47,32 +47,35 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">{{trans('messages.client')}}</label>
                                                 <div class="col-md-6">
-                                                    <input type="text" name="name" id="input002" class="select2-single form-control" placeholder="Name" value="{{$client->name}}" required>
+                                                    <input type="text" name="name" id="input002"
+                                                           class="select2-single form-control" placeholder="Name"
+                                                           value="{{$client->name}}" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> City</label>
+                                                <label class="col-md-3 control-label"> {{trans('messages.city')}}</label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="city"
                                                            class="form-control"
                                                            value="{{$client->city}}"
-                                                           placeholder="City">
+                                                           placeholder="{{trans('messages.city')}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Contact</label>
+                                                <label class="col-md-3 control-label"> {{trans('messages.contact')}}</label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="contact"
                                                            class="form-control"
                                                            value="{{$client->contact}}"
-                                                           placeholder="Contact">
+                                                           placeholder="{{trans('messages.contact')}}">
                                                 </div>
                                             </div>
                                             <div class="form-group code-group">
                                                 <label class="col-md-3 control-label"> {{trans('messages.code')}} </label>
                                                 <div class="col-md-6">
-                                                    <input type="text" name="code" class="select2-single form-control" placeholder="Unique Code" required value="{{$client->code}}">
+                                                    <input type="text" name="code" class="select2-single form-control"
+                                                           placeholder="Unique Code" required value="{{$client->code}}">
                                                 </div>
                                             </div>
 
@@ -80,10 +83,13 @@
                                                 <label class="col-md-3 control-label"></label>
                                                 <div class="col-md-2">
 
-                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{trans('messages.submit')}}">
+                                                    <input type="submit" class="btn btn-bordered btn-info btn-block"
+                                                           value="{{trans('messages.submit')}}">
                                                 </div>
                                                 <div class="col-md-2"><a href="/add-client">
-                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="{{trans('messages.reset')}}"></a>
+                                                        <input type="button"
+                                                               class="btn btn-bordered btn-success btn-block"
+                                                               value="{{trans('messages.reset')}}"></a>
                                                 </div>
                                             </div>
                                             {!! Form::close() !!}

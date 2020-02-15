@@ -266,6 +266,10 @@ return [
     'schedule_meetings' => 'Schedule Meetings',
     'schedule_events' => 'Schedule Events',
 
+    'contract_number' => 'Contract number',
+    'contact' => 'Contact',
+    'city' => 'City',
+
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',

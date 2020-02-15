@@ -53,6 +53,9 @@
                                                 <th class="text-center">{{trans('messages.name')}}</th>
                                                 <th class="text-center">{{trans('messages.address')}}</th>
                                                 <th class="text-center">{{trans('messages.company')}}</th>
+                                                <th class="text-center">{{trans('messages.city')}}</th>
+                                                <th class="text-center">{{trans('messages.contact')}}</th>
+                                                <th class="text-center">{{trans('messages.contract_number')}}</th>
                                                 <th class="text-center">{{trans('messages.code')}}</th>
                                                 <th class="text-center">{{trans('messages.actions')}}</th>
                                             </tr>
@@ -65,12 +68,16 @@
                                                     <td class="text-center">{{$client->name}}</td>
                                                     <td class="text-center">{{$client->address}}</td>
                                                     <td class="text-center">{{$client->company}}</td>
+                                                    <td class="text-center">{{$client->city}}</td>
+                                                    <td class="text-center">{{$client->contact}}</td>
+                                                    <td class="text-center">{{$client->contract_number}}</td>
                                                     <td class="text-center">{{$client->code}}</td>
                                                     <td class="text-center">
                                                         <div class="btn-group text-right">
                                                             <button type="button"
                                                                     class="btn btn-success br2 btn-xs fs12 dropdown-toggle"
-                                                                    data-toggle="dropdown" aria-expanded="false"> {{trans('messages.action')}}
+                                                                    data-toggle="dropdown"
+                                                                    aria-expanded="false"> {{trans('messages.action')}}
                                                                 <span class="caret ml5"></span>
                                                             </button>
                                                             <ul class="dropdown-menu" role="menu">

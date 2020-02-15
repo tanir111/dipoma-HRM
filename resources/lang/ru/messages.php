@@ -266,7 +266,9 @@ return [
     'schedule_meetings'=>'Расписание встреч',
     'schedule_events'=>'Расписание событий',
 
-
+    'contract_number' => 'Номер контракта',
+    'contact' => 'Контакт',
+    'city' => 'Город',
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
