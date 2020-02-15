@@ -200,7 +200,7 @@
                         <input type="hidden" id="type">
 
                     <div id="loader" class="hidden text-center">
-                        <img src="/photos/76.gif" />
+                        <img style="width: 15px; height: 15px; margin: 0 auto;" src="{{asset('/photos/76.gif')}}" />
                     </div>
                     <div id="status-message" class="hidden">
 

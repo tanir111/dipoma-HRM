@@ -1,4 +1,3 @@
-
 var datepicker1 = $('#datepicker1');
 var datepicker4 = $('#datepicker4');
 
@@ -131,6 +130,7 @@ var th = ['', 'thousand', 'million', 'billion', 'trillion'];
 var dg = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 var tn = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
 var tw = ['twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+
 function toWords(s) {
     s = s.toString();
     s = s.replace(/[\, ]/g, '');
@@ -202,7 +202,7 @@ $('#proceed-button').click(function () {
     var type = $('#type').val();
     console.log('remarks ' + remarks);
     var leave_id = $('#leave_id').val();
-    var token = $('#token').val();
+    var token = $('meta[name="csrf-token"]').attr('content');
     var message = '';
     var divClass = 'alert-success';
     var url = '/approve-leave';
@@ -494,18 +494,15 @@ $(document).on('change', '#promotion_emp_id', function () {
     });
 });
 
-$('#post-update').click(function()
-{
+$('#post-update').click(function () {
     var postUpdate = $('#post-update');
     $('#post-button').css('padding-left', '80%');
     postUpdate.val('Posting...');
     var status = $('#status').val();
     var token = $('meta[name=csrf_token]').attr("content");
-    $.post('/status-update', {'status': status, '_token' : token}, function(data)
-    {
+    $.post('/status-update', {'status': status, '_token': token}, function (data) {
         var parsed = JSON.parse(data);
-        if(parsed.status)
-        {
+        if (parsed.status) {
             $('.append-post').prepend(parsed.html);
         }
         $('#post-button').css('padding-left', '90%');
@@ -513,20 +510,17 @@ $('#post-update').click(function()
     });
 });
 
-$('.post-reply').click(function()
-{
+$('.post-reply').click(function () {
     var postId = $(this).data('post_id');
     var postUpdate = $('.post-reply');
     $('.reply-button').css('padding-left', '75%');
     postUpdate.val('Replying...');
     var reply = $('.reply');
     var token = $('meta[name=csrf_token]').attr("content");
-    $.post('/post-reply', {'reply': reply.val(), 'post_id' : postId, '_token' : token}, function(data)
-    {
+    $.post('/post-reply', {'reply': reply.val(), 'post_id': postId, '_token': token}, function (data) {
         var parsed = JSON.parse(data);
-        if(parsed.status)
-        {
-            $('.container-for-reply-'+postId).append(parsed.html);
+        if (parsed.status) {
+            $('.container-for-reply-' + postId).append(parsed.html);
         }
         reply.val('');
         $('.reply-button').css('padding-left', '80%');
@@ -535,22 +529,19 @@ $('.post-reply').click(function()
 });
 
 
-$('#code').blur(function(){
+$('#code').blur(function () {
     var code = $(this).val();
     var codeGroup = $('.code-group');
 
-    $.get('/validate-code/'+code, function(data)
-    {
+    $.get('/validate-code/' + code, function (data) {
         var parsed = JSON.parse(data);
-        if(parsed.status)
-        {
+        if (parsed.status) {
             $('.btn-info').removeAttr('disabled');
             codeGroup.removeClass('has-error');
             codeGroup.addClass('has-success');
         }
-        else
-        {
-            $('.save-client').attr('disabled','disabled');
+        else {
+            $('.save-client').attr('disabled', 'disabled');
             codeGroup.removeClass('has-success');
             codeGroup.addClass('has-error');
         }

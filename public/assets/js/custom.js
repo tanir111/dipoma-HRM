@@ -5,285 +5,285 @@
 //  Your scripts should be placed here so you can be sure
 //  it won't disappear after update
 //
-(function($) {
+(function ($) {
 
-        $(document).ready(function() {
+    $(document).ready(function () {
 
-            "use strict";
-            // Time picker
-            $('.inline-tp').timepicker();
+        "use strict";
+        // Time picker
+        $('.inline-tp').timepicker();
 
-            $('#timepicker1').timepicker({
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
+        $('#timepicker1').timepicker({
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
                 }
-            });
-
-            $('#timepicker4').timepicker({
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            $('#timepicker2').timepicker({
-                showOn: 'both',
-                buttonText: '<i class="imoon imoon-clock"></i>',
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            $('#timepicker3').timepicker({
-                showOn: 'both',
-                disabled: true,
-                buttonText: '<i class="imoon imoon-clock"></i>',
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            /* @date time picker
-             ------------------------------------------------------------------ */
-            $('#datetimepicker1').datetimepicker({
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            $('#datetimepicker2').datetimepicker({
-                showOn: 'both',
-                buttonText: '<i class="fa fa-calendar-o"></i>',
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            $('#datetimepicker3').datetimepicker({
-                showOn: 'both',
-                buttonText: '<i class="fa fa-calendar-o"></i>',
-                disabled: true,
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            $('.inline-dtp').datetimepicker({
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-            });
-
-            /* @date picker
-             ------------------------------------------------------------------ */
-            $("#datepicker1").datepicker({
-                changeYear: true,
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                showButtonPanel: false,
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            $("#datepicker4").datepicker({
-                changeYear: true,
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                showButtonPanel: false,
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            $("#datepicker5").datepicker({
-                changeYear: true,
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                showButtonPanel: false,
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            $("#datepicker6").datepicker({
-                changeYear: true,
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                showButtonPanel: false,
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            $("#datepicker7").datepicker({
-                changeYear: true,
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                showButtonPanel: false,
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            $('#datepicker2').datepicker({
-                changeYear: true,
-                numberOfMonths: 3,
-                showOn: 'both',
-                buttonText: '<i class="fa fa-calendar-o"></i>',
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            $('#datepicker3').datepicker({
-                changeYear: true,
-                showOn: 'both',
-                disabled: true,
-                buttonText: '<i class="fa fa-calendar-o"></i>',
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            $('.inline-dp').datepicker({
-                changeYear: true,
-                numberOfMonths: 1,
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                showButtonPanel: false
-            });
-
-            /* @month picker
-             ------------------------------------------------------------------ */
-            $("#monthpicker1").monthpicker({
-                changeYear: true,
-                stepYears: 1,
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                showButtonPanel: true,
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            $("#monthpicker2").monthpicker({
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                showOn: 'both',
-                buttonText: '<i class="fa fa-calendar-o"></i>',
-                showButtonPanel: true,
-                beforeShow: function (input, inst) {
-                    var newclass = 'allcp-form';
-                    var themeClass = $(this).parents('.allcp-form').attr('class');
-                    var smartpikr = inst.dpDiv.parent();
-                    if (!smartpikr.hasClass(themeClass)) {
-                        inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
-                    }
-                }
-            });
-
-            $("#monthpicker3").monthpicker({
-                changeYear: false,
-                stepYears: 1,
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                showOn: 'both',
-                buttonText: '<i class="fa fa-calendar-o"></i>',
-                showButtonPanel: true,
-                disabled: true,
-            });
-
-            $('.inline-mp').monthpicker({
-                prevText: '<i class="fa fa-chevron-left"></i>',
-                nextText: '<i class="fa fa-chevron-right"></i>',
-                showButtonPanel: false
-            });
-
+            }
         });
-        })(jQuery);
+
+        $('#timepicker4').timepicker({
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        $('#timepicker2').timepicker({
+            showOn: 'both',
+            buttonText: '<i class="imoon imoon-clock"></i>',
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        $('#timepicker3').timepicker({
+            showOn: 'both',
+            disabled: true,
+            buttonText: '<i class="imoon imoon-clock"></i>',
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        /* @date time picker
+         ------------------------------------------------------------------ */
+        $('#datetimepicker1').datetimepicker({
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        $('#datetimepicker2').datetimepicker({
+            showOn: 'both',
+            buttonText: '<i class="fa fa-calendar-o"></i>',
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        $('#datetimepicker3').datetimepicker({
+            showOn: 'both',
+            buttonText: '<i class="fa fa-calendar-o"></i>',
+            disabled: true,
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        $('.inline-dtp').datetimepicker({
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+        });
+
+        /* @date picker
+         ------------------------------------------------------------------ */
+        $("#datepicker1").datepicker({
+            changeYear: true,
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            showButtonPanel: false,
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        $("#datepicker4").datepicker({
+            changeYear: true,
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            showButtonPanel: false,
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        $("#datepicker5").datepicker({
+            changeYear: true,
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            showButtonPanel: false,
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        $("#datepicker6").datepicker({
+            changeYear: true,
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            showButtonPanel: false,
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        $("#datepicker7").datepicker({
+            changeYear: true,
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            showButtonPanel: false,
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        $('#datepicker2').datepicker({
+            changeYear: true,
+            numberOfMonths: 3,
+            showOn: 'both',
+            buttonText: '<i class="fa fa-calendar-o"></i>',
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        $('#datepicker3').datepicker({
+            changeYear: true,
+            showOn: 'both',
+            disabled: true,
+            buttonText: '<i class="fa fa-calendar-o"></i>',
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        $('.inline-dp').datepicker({
+            changeYear: true,
+            numberOfMonths: 1,
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            showButtonPanel: false
+        });
+
+        /* @month picker
+         ------------------------------------------------------------------ */
+        $("#monthpicker1").monthpicker({
+            changeYear: true,
+            stepYears: 1,
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            showButtonPanel: true,
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        $("#monthpicker2").monthpicker({
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            showOn: 'both',
+            buttonText: '<i class="fa fa-calendar-o"></i>',
+            showButtonPanel: true,
+            beforeShow: function (input, inst) {
+                var newclass = 'allcp-form';
+                var themeClass = $(this).parents('.allcp-form').attr('class');
+                var smartpikr = inst.dpDiv.parent();
+                if (!smartpikr.hasClass(themeClass)) {
+                    inst.dpDiv.wrap('<div class="' + themeClass + '"></div>');
+                }
+            }
+        });
+
+        $("#monthpicker3").monthpicker({
+            changeYear: false,
+            stepYears: 1,
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            showOn: 'both',
+            buttonText: '<i class="fa fa-calendar-o"></i>',
+            showButtonPanel: true,
+            disabled: true,
+        });
+
+        $('.inline-mp').monthpicker({
+            prevText: '<i class="fa fa-chevron-left"></i>',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            showButtonPanel: false
+        });
+
+    });
+})(jQuery);
 
 
