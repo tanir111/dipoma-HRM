@@ -71,16 +71,19 @@
                                             </label>
                                         </div>
                                         <div class="col-md-2">
-                                            <input type="submit" value="{{trans('messages.search')}}" name="button" class="btn btn-primary">
+                                            <input type="submit" value="{{trans('messages.search')}}" name="button"
+                                                   class="btn btn-primary">
                                         </div>
                                         {!! Form::close() !!}
                                         <div class="col-md-2">
-                                            <button onclick="exportExcel()" class="btn btn-success">{{trans('messages.export')}}</button>
+                                            <button onclick="exportExcel()"
+                                                    class="btn btn-success">{{trans('messages.export')}}</button>
                                         </div>
 
                                         <div class="col-md-2">
                                             <a href="/employee-manager">
-                                                <input type="submit" value="{{trans('messages.reset')}}" class="btn btn-warning"></a>
+                                                <input type="submit" value="{{trans('messages.reset')}}"
+                                                       class="btn btn-warning"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -98,6 +101,7 @@
                                                 <th class="text-center">{{trans('messages.id')}}</th>
                                                 <th class="text-center">{{trans('messages.employee_code')}}</th>
                                                 <th class="text-center">{{trans('messages.name')}}</th>
+                                                <th class="text-center">{{trans('messages.salary')}}</th>
                                                 <th class="text-center">{{trans('messages.employee_surname')}}</th>
                                                 <th class="text-center">{{trans('messages.email_in_system')}}</th>
                                                 <th class="text-center">{{trans('messages.status')}}</th>
@@ -114,6 +118,7 @@
                                                     <td class="text-center">{{$i+=1}}</td>
                                                     <td class="text-center">{{$emp->employee['code']}}</td>
                                                     <td class="text-center">{{$emp->name}}</td>
+                                                    <td class="text-center">{{$emp->salary}}</td>
                                                     <td class="text-center">{{$emp->surname}}</td>
                                                     <td class="text-center">{{$emp->email}}</td>
                                                     <td class="text-center">{{convertStatusBack($emp->employee['status'])}}</td>
@@ -125,7 +130,8 @@
                                                         <div class="btn-group text-right">
                                                             <button type="button"
                                                                     class="btn btn-info br2 btn-xs fs12 dropdown-toggle"
-                                                                    data-toggle="dropdown" aria-expanded="false"> {{trans('messages.action')}}
+                                                                    data-toggle="dropdown"
+                                                                    aria-expanded="false"> {{trans('messages.action')}}
                                                                 <span class="caret ml5"></span>
                                                             </button>
                                                             <ul class="dropdown-menu" role="menu">

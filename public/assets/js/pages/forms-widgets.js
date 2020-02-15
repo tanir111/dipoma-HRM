@@ -118,6 +118,7 @@
          ------------------------------------------------------------------ */
         $("#datepicker1").datepicker({
             changeYear: true,
+            yearRange: '1950:2020',
             changeMonth: true,
             prevText: '<i class="fa fa-chevron-left"></i>',
             nextText: '<i class="fa fa-chevron-right"></i>',
@@ -135,6 +136,7 @@
         $("#datepicker4").datepicker({
             changeYear: true,
             changeMonth: true,
+            yearRange: '1950:2020',
             prevText: '<i class="fa fa-chevron-left"></i>',
             nextText: '<i class="fa fa-chevron-right"></i>',
             showButtonPanel: false,
@@ -151,6 +153,7 @@
         $("#datepicker5").datepicker({
             changeYear: true,
             changeMonth: true,
+            yearRange: '1950:2020',
             prevText: '<i class="fa fa-chevron-left"></i>',
             nextText: '<i class="fa fa-chevron-right"></i>',
             showButtonPanel: false,
@@ -167,6 +170,7 @@
         $("#datepicker6").datepicker({
             changeYear: true,
             changeMonth: true,
+            yearRange: '1950:2020',
             prevText: '<i class="fa fa-chevron-left"></i>',
             nextText: '<i class="fa fa-chevron-right"></i>',
             showButtonPanel: false,
@@ -183,6 +187,7 @@
         $("#datepicker7").datepicker({
             changeYear: true,
             changeMonth: true,
+            yearRange: '1950:2020',
             prevText: '<i class="fa fa-chevron-left"></i>',
             nextText: '<i class="fa fa-chevron-right"></i>',
             showButtonPanel: false,
@@ -199,6 +204,7 @@
         $('#datepicker2').datepicker({
             changeYear: true,
             changeMonth: true,
+            yearRange: '1950:2020',
             numberOfMonths: 3,
             showOn: 'both',
             buttonText: '<i class="fa fa-calendar-o"></i>',
@@ -217,6 +223,7 @@
         $('#datepicker3').datepicker({
             changeYear: true,
             changeMonth: true,
+            yearRange: '1950:2020',
             showOn: 'both',
             disabled: true,
             buttonText: '<i class="fa fa-calendar-o"></i>',
