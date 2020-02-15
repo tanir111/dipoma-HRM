@@ -115,25 +115,68 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="panel">
+                                    <h4>{{trans('messages.projects_to_clients')}}</h4>
                                     <canvas id="myChart1"></canvas>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="panel">
+                                    <h4>{{trans('messages.approval')}}</h4>
                                     <canvas id="myChart2"></canvas>
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <div class="panel panel-tile">
                                     <div class="panel-body">
                                         <div class="row pv10">
-                                            <div>
-                                                <h3 class="text-bold">{{trans('messages.employees')}}: {{$employeeCount}}</h3>
-                                                <h3 class="text-bold">{{trans('messages.projects')}}: {{$projectsCount}}</h3>
-                                                <h3 class="text-bold">{{trans('messages.clients')}}: {{$clientsCount}}</h3>
-                                                <h3 class="text-bold">{{trans('messages.leaves')}}: {{$leaveCount}}</h3>
-                                                <h3 class="text-bold">{{trans('messages.holidays')}}: {{$holidaysCount}}</h3>
+                                            <h4>{{trans('messages.metrics')}}</h4>
+                                            <div class="row col-sm-4">
+                                                <div class="col-xs-5">
+                                                    <h3 class="text-primary mn pl5">
+
+                                                        <h3 class="text-success-dark mn">
+                                                            {{$employeeCount}} </h3>
+                                                        {{trans('messages.employees')}}</h3>
+                                                </div>
+                                            </div>
+                                            <div class="row col-sm-4">
+                                                <div class="col-xs-5">
+                                                    <h3 class="text-primary mn pl5">
+
+                                                        <h3 class="text-success-dark mn">
+                                                            {{$projectsCount}} </h3>
+                                                        {{trans('messages.projects')}}</h3>
+                                                </div>
+                                            </div>
+                                            <div class="row col-sm-4">
+                                                <div class="col-xs-5">
+                                                    <h3 class="text-primary mn pl5">
+
+                                                        <h3 class="text-success-dark mn">
+                                                            {{$clientsCount}} </h3>
+                                                        {{trans('messages.clients')}}</h3>
+                                                </div>
+                                            </div>
+                                            <div class="row col-sm-4">
+                                                <div class="col-xs-5">
+                                                    <h3 class="text-primary mn pl5">
+
+                                                        <h3 class="text-success-dark mn">
+                                                            {{$leaveCount}} </h3>
+                                                        {{trans('messages.leaves')}}</h3>
+                                                </div>
+                                            </div>
+                                            <div class="row col-sm-4">
+                                                <div class="col-xs-5">
+                                                    <h3 class="text-primary mn pl5">
+
+                                                        <h3 class="text-success-dark mn">
+                                                            {{$holidaysCount}} </h3>
+                                                        {{trans('messages.holidays')}}</h3>
+                                                </div>
+                                                <div class="col-xs-7 text-right">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -149,7 +192,13 @@
                             data = {
                                 datasets: [{
                                     data: data,
-                                    backgroundColor: colors
+                                    backgroundColor: colors,
+                                    options: {
+                                        legend: {
+                                            display: true,
+                                            position: 'bottom'
+                                        }
+                                    }
                                 }],
 
                                 // These labels appear in the legend and in the tooltips when hovering different arcs

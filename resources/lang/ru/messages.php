@@ -270,6 +270,9 @@ return [
     'contact' => 'Контакт',
     'city' => 'Город',
     'holidays' => 'Выходные',
+    'projects_to_clients' => 'Соотношние проектов к клиентам',
+    'approval' => 'Соотношеение одобрений к отказам',
+    'metrics' => 'Метрика',
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',

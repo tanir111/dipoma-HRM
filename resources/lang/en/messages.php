@@ -271,6 +271,9 @@ return [
     'holidays' => 'Holidays',
     'city' => 'City',
 
+    'projects_to_clients' => 'Projects to clients relation',
+    'approval' => 'Approvals to disapprovals relation',
+    'metrics' => 'Metrics',
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
