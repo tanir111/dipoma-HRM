@@ -13,12 +13,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Assigned Awards </a>
+                        <a href=""> {{trans('messages.assigned_awards')}}</a>
                     </li>
-                    <li class="breadcrumb-current-item"> Awardees Listings </li>
+                    <li class="breadcrumb-current-item"> {{trans('messages.awardees_listings')}} </li>
                 </ol>
             </div>
         </header>
@@ -36,7 +36,7 @@
                         <div class="box box-success">
                         <div class="panel">
                             <div class="panel-heading">
-                                <span class="panel-title hidden-xs"> Awardees Listings </span>
+                                <span class="panel-title hidden-xs">{{trans('messages.awardees_listings')}}</span>
                             </div>
                             <div class="panel-body pn">
                                 @if(Session::has('flash_message'))
@@ -49,12 +49,12 @@
                                     <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
                                         <thead>
                                         <tr class="bg-light">
-                                            <th class="text-center">Id</th>
-                                            <th class="text-center">Employee</th>
-                                            <th class="text-center">Award</th>
-                                            <th class="text-center">Date</th>
-                                            <th class="text-center">Reason</th>
-                                            <th class="text-center">Actions</th>
+                                            <th class="text-center">{{trans('messages.id')}}</th>
+                                            <th class="text-center">{{trans('messages.employee')}}</th>
+                                            <th class="text-center">{{trans('messages.award')}}</th>
+                                            <th class="text-center">{{trans('messages.date')}}</th>
+                                            <th class="text-center">{{trans('messages.reason')}}</th>
+                                            <th class="text-center">{{trans('messages.actions')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -70,15 +70,15 @@
                                                     <div class="btn-group text-right">
                                                         <button type="button"
                                                                 class="btn btn-success br2 btn-xs fs12 dropdown-toggle"
-                                                                data-toggle="dropdown" aria-expanded="false"> Action
+                                                                data-toggle="dropdown" aria-expanded="false"> {{trans('messages.action')}}
                                                             <span class="caret ml5"></span>
                                                         </button>
                                                         <ul class="dropdown-menu" role="menu">
                                                             <li>
-                                                                <a href="/edit-award-assignment/{{$assign->id}}">Edit</a>
+                                                                <a href="/edit-award-assignment/{{$assign->id}}">{{trans('messages.edit')}}</a>
                                                             </li>
                                                             <li>
-                                                                <a href="/delete-award-assignment/{{$assign->id}}">Delete</a>
+                                                                <a href="/delete-award-assignment/{{$assign->id}}">{{trans('messages.delete')}}</a>
                                                             </li>
                                                         </ul>
                                                     </div>

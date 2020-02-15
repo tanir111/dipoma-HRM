@@ -12,12 +12,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Projects </a>
+                        <a href="">{{trans('messages.projects')}}</a>
                     </li>
-                    <li class="breadcrumb-current-item"> Edit Project</li>
+                    <li class="breadcrumb-current-item">{{trans('messages.edit_project')}}</li>
                 </ol>
             </div>
         </header>
@@ -30,7 +30,7 @@
                         <div class="box box-success">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <span class="panel-title hidden-xs"> Edit Project </span>
+                                    <span class="panel-title hidden-xs"> {{trans('messages.edit_project')}}</span>
                                 </div>
 
                                 <div class="panel-body pn">
@@ -44,32 +44,32 @@
                                             {!! Form::open(['class' => 'form-horizontal']) !!}
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Project </label>
+                                                <label class="col-md-3 control-label"> {{trans('messages.project')}} </label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="name" id="input002"
-                                                           class="select2-single form-control" placeholder="Name" value="{{isset($project->name)? $project->name:'' }}"
+                                                           class="select2-single form-control" placeholder="" value="{{isset($project->name)? $project->name:'' }}"
                                                            required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Description </label>
+                                                <label class="col-md-3 control-label"> {{trans('messages.description')}} </label>
                                                 <div class="col-md-6">
                                                     <textarea class="form-control" name="description">{{isset($project->description) ? $project->description:''}}</textarea>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Project Code </label>
+                                                <label class="col-md-3 control-label"> {{trans('messages.project_code')}} </label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="code" id="input002"
-                                                           class="select2-single form-control" placeholder="Project Code" value="{{isset($project->code)? $project->code:''}}"
+                                                           class="select2-single form-control" placeholder="" value="{{isset($project->code)? $project->code:''}}"
                                                            required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Client </label>
+                                                <label class="col-md-3 control-label"> {{trans('messages.client')}} </label>
                                                 <div class="col-md-6">
                                                  {!! Form::select('client_id', $model->clients, $project->client_id, ['class' => 'form-control']) !!}
                                                     {{--<select class="selectpicker form-control" data-done-button="true"
@@ -87,12 +87,12 @@
                                                 <div class="col-md-2">
 
                                                     <input type="submit" class="btn btn-bordered btn-info btn-block"
-                                                           value="Save">
+                                                           value="{{trans('messages.save')}}">
                                                 </div>
                                                 <div class="col-md-2"><a href="/add-project">
                                                         <input type="button"
                                                                class="btn btn-bordered btn-success btn-block"
-                                                               value="Reset"></a>
+                                                               value="{{trans('messages.reset')}}"></a>
                                                 </div>
                                             </div>
                                             {!! Form::close() !!}

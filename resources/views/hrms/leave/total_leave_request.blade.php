@@ -13,12 +13,12 @@
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard"> Dashboard </a>
+                    <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                 </li>
                 <li class="breadcrumb-link">
-                    <a href=""> Leaves </a>
+                    <a href=""> {{trans('messages.leaves')}} </a>
                 </li>
-                <li class="breadcrumb-current-item"> Total Leave Requests </li>
+                <li class="breadcrumb-current-item"> {{trans('messages.total_leave_request')}} </li>
             </ol>
         </div>
     </header>
@@ -36,7 +36,7 @@
                     <div class="box box-success">
                     <div class="panel">
                         <div class="panel-heading">
-                            <span class="panel-title hidden-xs"> Total Leave Lists </span><br />
+                            <span class="panel-title hidden-xs"> {{trans('messages.total_leave_lists')}} </span><br />
                         </div><br />
                         <div class="panel-menu allcp-form theme-primary mtn">
                             <div class="row">
@@ -61,16 +61,16 @@
                                 </div>
 
                                 <div class="col-md-2"><br />
-                                    <input type="submit" value="Search" name="button" class="btn btn-primary">
+                                    <input type="submit" value="{{trans('messages.search')}}" name="button" class="btn btn-primary">
                                 </div>
 
                                 <div class="col-md-2"><br />
-                                    <input type="submit" value="Export" name="button" class="btn btn-success">
+                                    <input type="submit" value="{{trans('messages.export')}}" name="button" class="btn btn-success">
                                 </div>
                                 {!! Form::close() !!}
                                 <div class="col-md-2"><br />
                                     <a href="/total-leave-list" >
-                                        <input type="submit" value="Reset" class="btn btn-warning"></a>
+                                        <input type="submit" value="{{trans('messages.reset')}}" class="btn btn-warning"></a>
                                 </div>
 
                             </div>
@@ -87,15 +87,15 @@
                                 <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
                                     <thead>
                                     <tr class="bg-light">
-                                        <th class="text-center">Id</th>
-                                        <th class="text-center">Employee</th>
-                                        <th class="text-center">Code</th>
-                                        <th class="text-center">Leave Type</th>
-                                        <th class="text-center">Date From</th>
-                                        <th class="text-center">Date To</th>
-                                        <th class="text-center">Days</th>
-                                        <th class="text-center">Remarks</th>
-                                        <th class="text-center">Status</th>
+                                        <th class="text-center">{{trans('messages.id')}}</th>
+                                        <th class="text-center">{{trans('messages.employee')}}</th>
+                                        <th class="text-center">{{trans('messages.code')}}</th>
+                                        <th class="text-center">{{trans('messages.leave_type')}}</th>
+                                        <th class="text-center">{{trans('messages.date_from')}}</th>
+                                        <th class="text-center">{{trans('messages.date_to')}}</th>
+                                        <th class="text-center">{{trans('messages.days')}}</th>
+                                        <th class="text-center">{{trans('messages.remarks')}}</th>
+                                        <th class="text-center">{{trans('messages.status')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -116,27 +116,27 @@
                                                     @if($leave->status==0)
                                                         <button type="button"
                                                                 class="btn btn-info br2 btn-xs fs12 dropdown-toggle"
-                                                                data-toggle="dropdown" aria-expanded="false"> Pending
+                                                                data-toggle="dropdown" aria-expanded="false"> {{trans('messages.pending')}}
                                                             <span class="caret ml5"></span>
                                                         </button>
                                                         <ul class="dropdown-menu" role="menu">
                                                             <li>
-                                                                <a class="approveClick" data-id="{{$leave->id}}" data-name="approve">Approve</a>
+                                                                <a class="approveClick" data-id="{{$leave->id}}" data-name="approve">{{trans('messages.approve')}}</a>
                                                             </li>
                                                             <li>
-                                                                <a class="disapproveClick" data-id="{{$leave->id}}" data-name="disapprove">Disapprove</a>
+                                                                <a class="disapproveClick" data-id="{{$leave->id}}" data-name="disapprove">{{trans('messages.disapprove')}}</a>
                                                             </li>
                                                         </ul>
                                                     @elseif($leave->status==1)
                                                         <button type="button"
                                                                 class="btn btn-success br2 btn-xs fs12"
-                                                                aria-expanded="false"><i class="fa fa-check"> Approved </i>
+                                                                aria-expanded="false"><i class="fa fa-check"> {{trans('messages.approved')}} </i>
 
                                                         </button>
                                                     @else
                                                         <button type="button"
                                                                 class="btn btn-danger br2 btn-xs fs12"
-                                                                aria-expanded="false"> <i class="fa fa-times"> Disapproved </i>
+                                                                aria-expanded="false"> <i class="fa fa-times"> {{trans('messages.disapproved')}} </i>
 
                                                         </button>
                                                     @endif
@@ -154,7 +154,7 @@
                             </div>
                                 @else
                                 <div class="row text-center">
-                                    <h2>No leaves to show</h2>
+                                    <h2>{{trans('messages.no_leaves_to_show')}}</h2>
                                 </div>
                                 @endif
                         </div>

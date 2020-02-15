@@ -14,12 +14,12 @@
                             </a>
                         </li>
                         <li class="breadcrumb-active">
-                            <a href="/dashboard"> Dashboard </a>
+                            <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                         </li>
                         <li class="breadcrumb-link">
-                            <a href=""> Projects </a>
+                            <a href=""> {{trans('messages.projects')}} </a>
                         </li>
-                        <li class="breadcrumb-current-item"> Edit {{$projects->name}} </li>
+                        <li class="breadcrumb-current-item"> {{trans('messages.edit')}} {{$projects->name}} </li>
                     </ol>
 
 
@@ -31,12 +31,12 @@
                             </a>
                         </li>
                         <li class="breadcrumb-active">
-                            <a href="/dashboard"> Dashboard </a>
+                            <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                         </li>
                         <li class="breadcrumb-link">
-                            <a href=""> Projects </a>
+                            <a href=""> {{trans('messages.projects')}} </a>
                         </li>
-                        <li class="breadcrumb-current-item"> Assign Projects </li>
+                        <li class="breadcrumb-current-item"> {{trans('messages.assign_projects')}}</li>
                     </ol>
                 @endif
             </div>
@@ -51,9 +51,9 @@
                             <div class="panel">
                                 <div class="panel-heading">
                                     @if(\Route::getFacadeRoot()->current()->uri() == 'edit-project-assignment/{id}')
-                                        <span class="panel-title hidden-xs"> Edit Project Assignment </span>
+                                        <span class="panel-title hidden-xs"> {{trans('messages.edit_project_assignment')}}</span>
                                     @else
-                                        <span class="panel-title hidden-xs"> Assign Project</span>
+                                        <span class="panel-title hidden-xs">{{trans('messages.assign_project')}}</span>
                                     @endif
                                 </div>
 
@@ -67,11 +67,11 @@
                                             @endif
                                             {!! Form::open(['class' => 'form-horizontal']) !!}
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Select Employee </label>
+                                                <label class="col-md-3 control-label">{{trans('messages.select_employee')}}</label>
                                                 <div class="col-md-6">
                                                     <select class="select2-multiple form-control select-primary"
                                                             name="emp_id" required>
-                                                        <option value="" selected>Select One</option>
+                                                        <option value="" selected>{{trans('messages.select_one')}}</option>
                                                         @foreach($emps as $emp)
                                                             <option value="{{$emp->id}}">{{$emp->name}}</option>
                                                         @endforeach
@@ -81,11 +81,11 @@
 
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Select Project </label>
+                                                <label class="col-md-3 control-label">{{trans('messages.select_project')}}</label>
                                                 <div class="col-md-6">
                                                     <select class="select2-multiple form-control select-primary"
                                                             name="project_id" required>
-                                                        <option value="" selected>Select One</option>
+                                                        <option value="" selected>{{trans('messages.select_one')}}</option>
                                                         @foreach($projects as $project)
                                                             <option value="{{$project->id}}">{{$project->name}}</option>
                                                         @endforeach
@@ -94,11 +94,11 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Select Issuing Authority </label>
+                                                <label class="col-md-3 control-label">{{trans('messages.select_issuing_authority')}}</label>
                                                 <div class="col-md-6">
                                                     <select class="select2-multiple form-control select-primary"
                                                             name="authority_id" required>
-                                                        <option value="" selected>Select One</option>
+                                                        <option value="" selected>{{trans('messages.select_one')}}</option>
                                                         @foreach($emps as $emp)
                                                             <option value="{{$emp->id}}">{{$emp->name}}</option>
                                                         @endforeach
@@ -108,7 +108,7 @@
 
 
                                                 <div class="form-group">
-                                                    <label for="datepicker1" class="col-md-3 control-label"> Date of Assignment </label>
+                                                    <label for="datepicker1" class="col-md-3 control-label">{{trans('messages.date_of_assignment')}}</label>
                                                     <div class="col-md-6">
                                                         <div class="input-group">
                                                             <div class="input-group-addon">
@@ -126,7 +126,7 @@
 
 
                                                 <div class="form-group">
-                                                    <label for="datepicker4" class="col-md-3 control-label"> Date of Release </label>
+                                                    <label for="datepicker4" class="col-md-3 control-label">{{trans('messages.date_of_release')}}</label>
                                                     <div class="col-md-6">
                                                         {{--@if(\Route::getFacadeRoot()->current()->uri() == 'edit-assignment/{id}')
 
@@ -156,10 +156,10 @@
                                                 <label class="col-md-3 control-label"></label>
                                                 <div class="col-md-2">
 
-                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{trans('messages.submit')}}">
                                                 </div>
                                                 <div class="col-md-2"><a href="/assign-project" >
-                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
+                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="{{trans('messages.reset')}}"></a></div>
                                             </div>
                                         </div>
 

@@ -13,12 +13,12 @@
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard"> Dashboard </a>
+                    <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                 </li>
                 <li class="breadcrumb-link">
-                    <a href=""> Teams </a>
+                    <a href=""> {{trans('messages.teams')}} </a>
                 </li>
-                <li class="breadcrumb-current-item"> Edit Team </li>
+                <li class="breadcrumb-current-item">{{trans('messages.edit_team')}}</li>
             </ol>
         </div>
     </header>
@@ -31,7 +31,7 @@
                     <div class="box box-success">
                     <div class="panel">
                         <div class="panel-heading">
-                            <span class="panel-title hidden-xs"> Edit Team </span>
+                            <span class="panel-title hidden-xs">{{trans('messages.edit_team')}}</span>
                         </div>
 
                         <div class="panel-body pn">
@@ -45,7 +45,7 @@
                                     @endif
                                     {!! Form::open(['class' => 'form-horizontal']) !!}
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Team Name </label>
+                                            <label class="col-md-3 control-label">{{trans('messages.team_name')}}</label>
                                             <div class="col-md-6">
                                                 <input type="text" placeholder="name of team..." name="team_name"
                                                        value="{{$edit[0]->name}}" class="select2-single form-control" required>
@@ -54,11 +54,11 @@
 
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Select Team Manager</label>
+                                            <label class="col-md-3 control-label">{{trans('messages.select_team_manager')}}</label>
                                             <div class="col-md-6">
                                                 <select class="selectpicker form-control" data-done-button="true"
                                                         name="manager_id" required>
-                                                    <option value="" selected>Select One</option>
+                                                    <option value="" selected>{{trans('messages.select_one')}}</option>
                                                     @foreach($managers as $manager)
                                                         @if($edit[0]->manager->id == $manager->id)
                                                             <option value="{{$manager->id}}" selected>{{$manager->name}}</option>
@@ -73,11 +73,11 @@
 
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Select Team Leader</label>
+                                            <label class="col-md-3 control-label">{{trans('messages.select_team_leader')}}</label>
                                             <div class="col-md-6">
                                                 <select class="selectpicker form-control" data-done-button="true"
                                                         name="leader_id" required>
-                                                    <option value="" selected>Select One</option>
+                                                    <option value="" selected>{{trans('messages.select_one')}}</option>
                                                     @foreach($leaders as $leader)
                                                         @if($edit[0]->leader->id == $leader->id)
                                                             <option value="{{$leader->id}}" selected>{{$leader->name}}</option>
@@ -91,7 +91,7 @@
 
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Select Team Members </label>
+                                            <label class="col-md-3 control-label">{{trans('messages.select_team_members')}}</label>
                                             <div class="col-md-6">
                                                 <select id="done" class="selectpicker form-control"
                                                         multiple data-done-button="true" name="member_id[]" required>
@@ -111,12 +111,12 @@
                                             <label class="col-md-3 control-label"></label>
                                             <div class="col-md-2">
 
-                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{trans('messages.submit')}}">
                                             </div>
                                             <div class="col-md-2">
                                                 <a href="/edit-team/{id}" >
 
-                                                    <input type="button" value="Reset" class="btn btn-bordered btn-success btn-block"></a>
+                                                    <input type="button" value="{{trans('messages.reset')}}" class="btn btn-bordered btn-success btn-block"></a>
                                             </div>
                                         </div>
                                         {!! Form::close() !!}

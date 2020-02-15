@@ -18,7 +18,7 @@
             <div class="navbar-btn btn-group">
         <li class="dropdown dropdown-fuse">
             <a href="#" class="dropdown-toggle fw600" data-toggle="dropdown">
-                <span class="hidden-xs"><name>Валюта</name></span>
+                <span class="hidden-xs"><name>{{trans('messages.currency')}}</name></span>
                 <span class="fa fa-money"></span>
             </a>
 
@@ -50,17 +50,16 @@
 
                 @endif
             </a>
-            </a>
             <ul class="dropdown-menu list-group keep-dropdown w250" role="menu">
                 @if(\Route::getFacadeRoot()->current()->uri() != 'change-password')
                     <li class="dropdown-footer text-center">
                         <a href="/change-password" class="btn btn-primary btn-sm btn-bordered">
-                            <span class="fa fa-lock pr5"></span> Change Password </a>
+                            <span class="fa fa-lock pr5"></span>{{trans('messages.change_password')}}</a>
                     </li>
                 @endif
                 <li class="dropdown-footer text-center">
                     <a href="/logout" class="btn btn-primary btn-sm btn-bordered">
-                        <span class="fa fa-power-off pr5"></span> Logout </a>
+                        <span class="fa fa-power-off pr5"></span>{{trans('messages.logout')}} </a>
                 </li>
             </ul>
         </li>

@@ -14,12 +14,12 @@
                             </a>
                         </li>
                         <li class="breadcrumb-active">
-                            <a href="/dashboard"> Dashboard </a>
+                            <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                         </li>
                         <li class="breadcrumb-link">
-                            <a href=""> Award </a>
+                            <a href=""> {{trans('messages.award')}} </a>
                         </li>
-                        <li class="breadcrumb-current-item"> Add Award </li>
+                        <li class="breadcrumb-current-item"> {{trans('messages.add_award')}} </li>
                     </ol>
             </div>
         </header>
@@ -32,7 +32,7 @@
                         <div class="box box-success">
                         <div class="panel">
                             <div class="panel-heading">
-                                    <span class="panel-title hidden-xs"> Add Award </span>
+                                    <span class="panel-title hidden-xs"> {{trans('messages.add_award')}}</span>
                             </div>
 
                             <div class="panel-body pn">
@@ -47,7 +47,7 @@
 
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Award </label>
+                                            <label class="col-md-3 control-label"> {{trans('messages.award')}} </label>
                                             <div class="col-md-6">
                                                     <input type="text" name="name" id="input002" class="select2-single form-control" placeholder="Award" required>
                                             </div>
@@ -55,9 +55,9 @@
 
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Description </label>
+                                            <label class="col-md-3 control-label"> {{trans('messages.description')}} </label>
                                             <div class="col-md-6">
-                                                    <textarea class="select2-single form-control" rows="3" id="textarea1" placeholder="Award Description" name="description" required></textarea>
+                                                    <textarea class="select2-single form-control" rows="3" id="textarea1" placeholder="" name="description" required></textarea>
                                             </div>
                                         </div>
 
@@ -66,11 +66,11 @@
                                             <label class="col-md-3 control-label"></label>
                                             <div class="col-md-2">
 
-                                                <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+                                                <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{trans('messages.submit')}}">
 
                                             </div>
                                             <div class="col-md-2"><a href="/add-award" >
-                                                    <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
+                                                    <input type="button" class="btn btn-bordered btn-success btn-block" value="{{trans('messages.reset')}}"></a></div>
                                         </div>
                                     </div>
                                     {!! Form::close() !!}

@@ -78,7 +78,7 @@ Route::group(['middleware' => ['language',]], function () {
 
         Route::get('upload-emp', ['as' => 'upload-emp', 'uses' => 'EmpController@importFile']);
 
-        Route::post('upload-emp', ['as' => 'upload-emp', 'uses' => 'EmpController@uploadFile']);
+        Route::post('upload-emp', ['as' => 'upload-emp.excel', 'uses' => 'EmpController@uploadFile']);
 
         Route::get('edit-emp/{id}', ['as' => 'edit-emp', 'uses' => 'EmpController@showEdit']);
 

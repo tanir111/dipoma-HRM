@@ -13,12 +13,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Clients </a>
+                        <a href=""> {{trans('messages.clients')}} </a>
                     </li>
-                    <li class="breadcrumb-current-item"> Client Listings </li>
+                    <li class="breadcrumb-current-item">{{trans('messages.client_listings')}}</li>
                 </ol>
             </div>
         </header>
@@ -36,7 +36,7 @@
                         <div class="box box-success">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <span class="panel-title hidden-xs"> Client Lists </span>
+                                    <span class="panel-title hidden-xs">{{trans('messages.client_lists')}}</span>
                                 </div>
                                 <div class="panel-body pn">
                                     @if(Session::has('flash_message'))
@@ -49,14 +49,12 @@
                                         <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
                                             <thead>
                                             <tr class="bg-light">
-                                                <th class="text-center">Id</th>
-                                                <th class="text-center">Name</th>
-                                                <th class="text-center">Address</th>
-                                                <th class="text-center">Company</th>
-                                                <th class="text-center">Code</th>
-                                                <th class="text-center">City</th>
-                                                <th class="text-center">Contact</th>
-                                                <th class="text-center">Contract number</th>
+                                                <th class="text-center">{{trans('messages.id')}}</th>
+                                                <th class="text-center">{{trans('messages.name')}}</th>
+                                                <th class="text-center">{{trans('messages.address')}}</th>
+                                                <th class="text-center">{{trans('messages.company')}}</th>
+                                                <th class="text-center">{{trans('messages.code')}}</th>
+                                                <th class="text-center">{{trans('messages.actions')}}</th>
                                             </tr>
                                             </thead>
 
@@ -68,22 +66,19 @@
                                                     <td class="text-center">{{$client->address}}</td>
                                                     <td class="text-center">{{$client->company}}</td>
                                                     <td class="text-center">{{$client->code}}</td>
-                                                    <td class="text-center">{{$client->city}}</td>
-                                                    <td class="text-center">{{$client->contact}}</td>
-                                                    <td class="text-center">{{$client->contract_number}}</td>
                                                     <td class="text-center">
                                                         <div class="btn-group text-right">
                                                             <button type="button"
                                                                     class="btn btn-success br2 btn-xs fs12 dropdown-toggle"
-                                                                    data-toggle="dropdown" aria-expanded="false"> Action
+                                                                    data-toggle="dropdown" aria-expanded="false"> {{trans('messages.action')}}
                                                                 <span class="caret ml5"></span>
                                                             </button>
                                                             <ul class="dropdown-menu" role="menu">
                                                                 <li>
-                                                                    <a href="/edit-client/{{$client->id}}">Edit</a>
+                                                                    <a href="/edit-client/{{$client->id}}">{{trans('messages.edit')}}</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="/delete-list/{{$client->id}}">Delete</a>
+                                                                    <a href="/delete-list/{{$client->id}}">{{trans('messages.delete')}}</a>
                                                                 </li>
                                                             </ul>
                                                         </div>

@@ -12,12 +12,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard">{{trans('messages.dashboard')}}</a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Project </a>
+                        <a href=""> {{trans('messages.project')}} </a>
                     </li>
-                    <li class="breadcrumb-current-item"> Add project</li>
+                    <li class="breadcrumb-current-item">{{trans('messages.add_project')}}</li>
                 </ol>
             </div>
         </header>
@@ -30,7 +30,7 @@
                         <div class="box box-success">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <span class="panel-title hidden-xs"> Add Project </span>
+                                    <span class="panel-title hidden-xs">{{trans('messages.add_project')}}</span>
                                 </div>
 
                                 <div class="panel-body pn">
@@ -44,48 +44,47 @@
                                             {!! Form::open(['class' => 'form-horizontal']) !!}
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Project </label>
+                                                <label class="col-md-3 control-label"> {{trans('messages.project')}} </label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="name" id="input002"
-                                                           class="select2-single form-control" placeholder="Name"
+                                                           class="select2-single form-control" placeholder=""
                                                            required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Description </label>
+                                                <label class="col-md-3 control-label"> {{trans('messages.description')}} </label>
                                                 <div class="col-md-6">
                                                     <textarea class="form-control" name="description"></textarea>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Project Code </label>
+                                                <label class="col-md-3 control-label">{{trans('messages.project_code')}}</label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="code" id="input002"
                                                            class="select2-single form-control"
-                                                           placeholder="Project Code"
+                                                           placeholder=""
                                                            required>
                                                 </div>
                                             </div>
 
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Company </label>
+                                                <label class="col-md-3 control-label"> {{trans('messages.client')}} </label>
                                                 <div class="col-md-6">
                                                     @if($model->clients->count() > 0)
                                                         <select class="selectpicker form-control"
                                                                 data-done-button="true"
                                                                 name="client_id" required>
-                                                            <option value="" selected>Select One</option>
+                                                            <option value="" selected>{{trans('messages.select_one')}}</option>
                                                             @foreach($model->clients as $client)
-                                                                <option value="{{$client->id}}">{{$client->company.': '.$client->name}}</option>
+                                                                <option value="{{$client->id}}">{{$client->name}}</option>
                                                             @endforeach
                                                         </select>
                                                     @else
 
-                                                        <label class="col-md-9 control-label"> Client not exists!!! You
-                                                            need to add!!!</label>
+                                                        <label class="col-md-9 control-label">{{trans('messages.client_not_exist')}}</label>
                                                     @endif
                                                 </div>
                                             </div>
@@ -95,12 +94,12 @@
                                                 <div class="col-md-2">
 
                                                     <input type="submit" class="btn btn-bordered btn-info btn-block"
-                                                           value="Save">
+                                                           value="{{trans('messages.save')}}">
                                                 </div>
                                                 <div class="col-md-2"><a href="/add-project">
                                                         <input type="button"
                                                                class="btn btn-bordered btn-success btn-block"
-                                                               value="Reset"></a>
+                                                               value="{{trans('messages.reset')}}"></a>
                                                 </div>
                                             </div>
                                             {!! Form::close() !!}

@@ -13,12 +13,12 @@
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard"> Dashboard </a>
+                    <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                 </li>
                 <li class="breadcrumb-link">
-                    <a href=""> Awards </a>
+                    <a href=""> {{trans('messages.awards')}} </a>
                 </li>
-                <li class="breadcrumb-current-item"> Edit Awards Assigned </li>
+                <li class="breadcrumb-current-item"> {{trans('messages.edit_awards_assigned')}}</li>
             </ol>
         </div>
     </header>
@@ -31,7 +31,7 @@
                     <div class="box box-success">
                     <div class="panel">
                         <div class="panel-heading">
-                            <span class="panel-title hidden-xs"> Edit Awards Assignment </span>
+                            <span class="panel-title hidden-xs"> {{trans('messages.edit_award_assignment')}} </span>
                         </div>
 
                         <div class="panel-body pn">
@@ -45,7 +45,7 @@
                                     {!! Form::open(['class' => 'form-horizontal']) !!}
 
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label"> Select Employee </label>
+                                        <label class="col-md-3 control-label">{{trans('messages.select_employee')}} </label>
                                         <div class="col-md-6">
                                             <select class="select2-multiple form-control select-primary"
                                                     name="emp_id" required>
@@ -63,7 +63,7 @@
 
 
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label"> Select Award </label>
+                                        <label class="col-md-3 control-label">{{trans('messages.select_award')}} </label>
                                         <div class="col-md-6">
                                             <select class="select2-multiple form-control select-primary"
                                                     name="asset_id" required>
@@ -80,7 +80,7 @@
 
 
                                         <div class="form-group">
-                                            <label for="datepicker1" class="col-md-3 control-label"> Date </label>
+                                            <label for="datepicker1" class="col-md-3 control-label"> {{trans('messages.date')}} </label>
                                             <div class="col-md-6">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">
@@ -93,7 +93,7 @@
 
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Reason </label>
+                                            <label class="col-md-3 control-label"> {{trans('messages.reason')}} </label>
                                             <div class="col-md-6">
                                                 <input type="text" name="reason" id="input002" class="select2-single form-control" value="@if($assigns){{$assigns->reason}}@endif" required>
                                             </div>
@@ -103,11 +103,11 @@
                                         <label class="col-md-3 control-label"></label>
                                         <div class="col-md-2">
 
-                                            <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+                                            <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{trans('messages.submit')}}">
 
                                         </div>
                                         <div class="col-md-2"><a href="/edit-award-assignment/{id}" >
-                                                <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
+                                                <input type="button" class="btn btn-bordered btn-success btn-block" value="{{trans('messages.reset')}}"></a></div>
                                     </div>
 
                                     {!! Form::close() !!}

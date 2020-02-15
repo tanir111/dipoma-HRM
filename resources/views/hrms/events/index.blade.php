@@ -16,12 +16,12 @@
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard">Dashboard</a>
+                    <a href="/dashboard">{{trans('messages.dashboard')}}</a>
                 </li>
                 <li class="breadcrumb-link">
-                    <a href=""> Home </a>
+                    <a href=""> {{trans('messages.home')}} </a>
                 </li>
-                <li class="breadcrumb-current-item">Events</li>
+                <li class="breadcrumb-current-item">{{trans('messages.events')}}</li>
             </ol>
         </div>
     </header>
@@ -37,7 +37,7 @@
 
                 <!-- -------------- Calendar -------------- -->
                 {{--<div id="calendar" class="events-calendar"></div>--}}
-                <h2 class="text-muted" style="text-align:center"> SCHEDULE EVENTS
+                <h2 class="text-muted" style="text-align:center"> {{trans('messages.schedule_events')}}
                     <a id="compose-event-btn" href="#calendarManagment" data-effect="mfp-flipInY">
                         <span class="fa fa-plus-square"></span>
                     </a>
