@@ -1,10 +1,10 @@
 'use strict';
 //  Author: ThemeREX.com
-// 
+//
 //  This file is reserved for changes made by the user.
 //  Your scripts should be placed here so you can be sure
 //  it won't disappear after update
-// 
+//
 (function($) {
 
         $(document).ready(function() {
@@ -116,6 +116,7 @@
             /* @date picker
              ------------------------------------------------------------------ */
             $("#datepicker1").datepicker({
+                changeYear: true,
                 prevText: '<i class="fa fa-chevron-left"></i>',
                 nextText: '<i class="fa fa-chevron-right"></i>',
                 showButtonPanel: false,
@@ -130,6 +131,7 @@
             });
 
             $("#datepicker4").datepicker({
+                changeYear: true,
                 prevText: '<i class="fa fa-chevron-left"></i>',
                 nextText: '<i class="fa fa-chevron-right"></i>',
                 showButtonPanel: false,
@@ -144,6 +146,7 @@
             });
 
             $("#datepicker5").datepicker({
+                changeYear: true,
                 prevText: '<i class="fa fa-chevron-left"></i>',
                 nextText: '<i class="fa fa-chevron-right"></i>',
                 showButtonPanel: false,
@@ -158,6 +161,7 @@
             });
 
             $("#datepicker6").datepicker({
+                changeYear: true,
                 prevText: '<i class="fa fa-chevron-left"></i>',
                 nextText: '<i class="fa fa-chevron-right"></i>',
                 showButtonPanel: false,
@@ -172,6 +176,7 @@
             });
 
             $("#datepicker7").datepicker({
+                changeYear: true,
                 prevText: '<i class="fa fa-chevron-left"></i>',
                 nextText: '<i class="fa fa-chevron-right"></i>',
                 showButtonPanel: false,
@@ -186,6 +191,7 @@
             });
 
             $('#datepicker2').datepicker({
+                changeYear: true,
                 numberOfMonths: 3,
                 showOn: 'both',
                 buttonText: '<i class="fa fa-calendar-o"></i>',
@@ -202,6 +208,7 @@
             });
 
             $('#datepicker3').datepicker({
+                changeYear: true,
                 showOn: 'both',
                 disabled: true,
                 buttonText: '<i class="fa fa-calendar-o"></i>',
@@ -218,6 +225,7 @@
             });
 
             $('.inline-dp').datepicker({
+                changeYear: true,
                 numberOfMonths: 1,
                 prevText: '<i class="fa fa-chevron-left"></i>',
                 nextText: '<i class="fa fa-chevron-right"></i>',
@@ -227,7 +235,7 @@
             /* @month picker
              ------------------------------------------------------------------ */
             $("#monthpicker1").monthpicker({
-                changeYear: false,
+                changeYear: true,
                 stepYears: 1,
                 prevText: '<i class="fa fa-chevron-left"></i>',
                 nextText: '<i class="fa fa-chevron-right"></i>',

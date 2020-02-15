@@ -587,7 +587,6 @@
 <script src="/assets/js/jquery/jquery_ui/jquery-ui.min.js"></script>
 
 
-
 <!-- -------------- HighCharts Plugin -------------- -->
 <script src="/assets/js/plugins/highcharts/highcharts.js"></script>
 <script src="/assets/js/plugins/c3charts/d3.min.js"></script>
