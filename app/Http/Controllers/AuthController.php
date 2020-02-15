@@ -64,7 +64,7 @@ class AuthController extends Controller
         $clientsCount = Client::count();
         $projectsCount = Project::count();
         $holidaysCount = Holiday::count();
-
+        $salaries = Employee::select(['name', 'surname', 'salary'])->get();
         $leaveCount = EmployeeLeaves::count();
         $appliedCount = EmployeeLeaves::where('status', 1)->count();
         $notAppliedCount = EmployeeLeaves::where('status', 2)->count();
@@ -72,7 +72,8 @@ class AuthController extends Controller
         return view('hrms.dashboard', compact(
             'events', 'meetings', 'clientsCount',
             'projectsCount', 'appliedCount', 'notAppliedCount',
-            'employeeCount', 'leaveCount', 'holidaysCount'));
+            'employeeCount', 'leaveCount', 'holidaysCount',
+            'salaries'));
     }
 
     public function welcome()

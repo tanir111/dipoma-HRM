@@ -34,6 +34,89 @@
             <!-- -------------- Quick Links -------------- -->
             <div class="row">
                 @if(Auth::user()->isHR())
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="panel">
+                                    <h4>{{trans('messages.projects_to_clients')}}</h4>
+                                    <canvas id="myChart1"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="panel">
+                                    <h4>{{trans('messages.approval')}}</h4>
+                                    <canvas id="myChart2"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="panel">
+                                    <h4>{{trans('messages.salary')}}</h4>
+                                    <canvas id="barChart"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="panel panel-tile">
+                                    <div class="panel-body">
+                                        <div class="row pv10">
+                                            <h4>{{trans('messages.metrics')}}</h4>
+                                            <div class="row col-sm-4">
+                                                <div class="col-xs-5">
+                                                    <h3 class="text-primary mn pl5">
+
+                                                        <h3 class="text-success-dark mn">
+                                                            {{$employeeCount}} </h3>
+                                                        {{trans('messages.employees')}}</h3>
+                                                </div>
+                                            </div>
+                                            <div class="row col-sm-4">
+                                                <div class="col-xs-5">
+                                                    <h3 class="text-primary mn pl5">
+
+                                                        <h3 class="text-success-dark mn">
+                                                            {{$projectsCount}} </h3>
+                                                        {{trans('messages.projects')}}</h3>
+                                                </div>
+                                            </div>
+                                            <div class="row col-sm-4">
+                                                <div class="col-xs-5">
+                                                    <h3 class="text-primary mn pl5">
+
+                                                        <h3 class="text-success-dark mn">
+                                                            {{$clientsCount}} </h3>
+                                                        {{trans('messages.clients')}}</h3>
+                                                </div>
+                                            </div>
+                                            <div class="row col-sm-4">
+                                                <div class="col-xs-5">
+                                                    <h3 class="text-primary mn pl5">
+
+                                                        <h3 class="text-success-dark mn">
+                                                            {{$leaveCount}} </h3>
+                                                        {{trans('messages.leaves')}}</h3>
+                                                </div>
+                                            </div>
+                                            <div class="row col-sm-4">
+                                                <div class="col-xs-5">
+                                                    <h3 class="text-primary mn pl5">
+
+                                                        <h3 class="text-success-dark mn">
+                                                            {{$holidaysCount}} </h3>
+                                                        {{trans('messages.holidays')}}</h3>
+                                                </div>
+                                                <div class="col-xs-7 text-right">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
                     <div class="col-sm-6 col-xl-3">
                         <div class="panel panel-tile">
                             <div class="panel-body">
@@ -111,81 +194,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="panel">
-                                    <h4>{{trans('messages.projects_to_clients')}}</h4>
-                                    <canvas id="myChart1"></canvas>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="panel">
-                                    <h4>{{trans('messages.approval')}}</h4>
-                                    <canvas id="myChart2"></canvas>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12">
-                                <div class="panel panel-tile">
-                                    <div class="panel-body">
-                                        <div class="row pv10">
-                                            <h4>{{trans('messages.metrics')}}</h4>
-                                            <div class="row col-sm-4">
-                                                <div class="col-xs-5">
-                                                    <h3 class="text-primary mn pl5">
-
-                                                        <h3 class="text-success-dark mn">
-                                                            {{$employeeCount}} </h3>
-                                                        {{trans('messages.employees')}}</h3>
-                                                </div>
-                                            </div>
-                                            <div class="row col-sm-4">
-                                                <div class="col-xs-5">
-                                                    <h3 class="text-primary mn pl5">
-
-                                                        <h3 class="text-success-dark mn">
-                                                            {{$projectsCount}} </h3>
-                                                        {{trans('messages.projects')}}</h3>
-                                                </div>
-                                            </div>
-                                            <div class="row col-sm-4">
-                                                <div class="col-xs-5">
-                                                    <h3 class="text-primary mn pl5">
-
-                                                        <h3 class="text-success-dark mn">
-                                                            {{$clientsCount}} </h3>
-                                                        {{trans('messages.clients')}}</h3>
-                                                </div>
-                                            </div>
-                                            <div class="row col-sm-4">
-                                                <div class="col-xs-5">
-                                                    <h3 class="text-primary mn pl5">
-
-                                                        <h3 class="text-success-dark mn">
-                                                            {{$leaveCount}} </h3>
-                                                        {{trans('messages.leaves')}}</h3>
-                                                </div>
-                                            </div>
-                                            <div class="row col-sm-4">
-                                                <div class="col-xs-5">
-                                                    <h3 class="text-primary mn pl5">
-
-                                                        <h3 class="text-success-dark mn">
-                                                            {{$holidaysCount}} </h3>
-                                                        {{trans('messages.holidays')}}</h3>
-                                                </div>
-                                                <div class="col-xs-7 text-right">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
                     <script>
                         function createChart(id, data, colors, labels) {
                             var ctx = document.getElementById(id).getContext('2d');
@@ -240,6 +248,80 @@
 
                         createChart('myChart2', data, colors, labels);
 
+                        function getRandomColor() {
+                            var letters = '0123456789ABCDEF'.split('');
+                            var color = '#';
+                            for (var i = 0; i < 6; i++) {
+                                color += letters[Math.floor(Math.random() * 16)];
+                            }
+                            return color;
+                        }
+
+                        function createChart3() {
+
+                            var data = {!!json_encode($salaries)!!};
+                            var labels1 = [];
+                            for (var i = 0; i < data.length; i++) {
+                                labels1.push(data[i].name + ' ' + data[i].surname)
+                            }
+                            console.log(labels1)
+                            var salaries = [];
+                            for (var i = 0; i < data.length; i++) {
+                                salaries.push(data[i].salary)
+                            }
+
+                            var colors = [];
+                            for (var i = 0; i < data.length; i++) {
+                                colors.push(getRandomColor())
+                            }
+                            ;
+                            console.log(salaries)
+
+                            var canvas = document.getElementById("barChart");
+                            var myChart = new Chart(canvas, {
+                                type: 'bar',
+                                data: {
+                                    labels: labels1,
+                                    datasets: [{
+                                        label: '{{trans('messages.salary')}}',
+                                        data: salaries,
+                                        backgroundColor: colors,
+                                        // borderColor: [
+                                        //     'rgba(255,99,132,1)',
+                                        //     'rgba(54, 162, 235, 1)',
+                                        //     'rgba(255, 206, 86, 1)',
+                                        //     'rgba(75, 192, 192, 1)',
+                                        //     'rgba(153, 102, 255, 1)',
+                                        //     'rgba(255, 159, 64, 1)',
+                                        //     'rgba(255,99,132,1)',
+                                        //     'rgba(54, 162, 235, 1)',
+                                        //     'rgba(255, 206, 86, 1)',
+                                        //     'rgba(75, 192, 192, 1)',
+                                        //     'rgba(153, 102, 255, 1)',
+                                        //     'rgba(255, 159, 64, 1)'
+                                        // ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        xAxes: [{
+                                            ticks: {
+                                                maxRotation: 90,
+                                                minRotation: 80
+                                            }
+                                        }],
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero: true
+                                            }
+                                        }]
+                                    }
+                                }
+                            });
+                        }
+
+                        createChart3();
                     </script>
                 @endif
                 @if(!Auth::user()->isHR())
