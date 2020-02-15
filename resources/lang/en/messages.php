@@ -71,6 +71,7 @@ return [
     'invitation'=>'Invitation',
     'event'=>'Event',
     'company_policy'=>'Company Policy',
+    'company_name'=>'Company Name',
 
     'home'=>'Home',
     'employee_manager'=>'Employee Manager',

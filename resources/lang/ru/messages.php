@@ -71,6 +71,7 @@ return [
     'invitation'=>'Приглашение',
     'event'=>'СОбытие',
     'company_policy'=>'Политика компании',
+    'company_name'=>'Компания',
 
     'home'=>'домой',
     'employee_manager'=>'Менеджер сотрудников',
