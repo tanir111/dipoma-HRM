@@ -20,12 +20,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Employee </a>
+                        <a href=""> {{trans('messages.employee')}} </a>
                     </li>
-                    <li class="breadcrumb-current-item"> Bank Details </li>
+                    <li class="breadcrumb-current-item">{{trans('messages.bank_details')}}</li>
                 </ol>
             </div>
         </header>
@@ -43,7 +43,7 @@
                         <div class="box box-success">
                         <div class="panel">
                             <div class="panel-heading">
-                                <span class="panel-title hidden-xs"> Bank Detail Listings </span>
+                                <span class="panel-title hidden-xs">{{trans('messages.bank_detail_listings')}}</span>
                             </div>
                             <div class="panel-body pn">
                                 @if(Session::has('flash_message'))
@@ -56,11 +56,11 @@
                                     <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
                                         <thead>
                                         <tr class="bg-light">
-                                            <th class="text-center">Id</th>
-                                            <th class="text-center">Employee</th>
-                                            <th class="text-center">Bank Name</th>
-                                            <th class="text-center">Account Number</th>
-                                            <th class="text-center">Actions</th>
+                                            <th class="text-center">{{trans('messages.id')}}</th>
+                                            <th class="text-center">{{trans('messages.employee')}}</th>
+                                            <th class="text-center">{{trans('messages.bank_name')}}</th>
+                                            <th class="text-center">{{trans('messages.account_number')}}</th>
+                                            <th class="text-center">{{trans('messages.actions')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -80,7 +80,7 @@
                                                                 "{{$emp->employee['name']}}",
                                                                 "{{$emp->employee['bank_name']}}",
                                                                 "{{$emp->employee['account_number']}}"
-                                                                ]'> Edit
+                                                                ]'> {{trans('messages.edit')}}
                                                         </button>
                                                     </div>
                                                 </td>
@@ -112,21 +112,21 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
+                    <h4 class="modal-title">{{trans('messages.edit')}}</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="employee_name">Employee Name</label>
+                        <label for="employee_name">{{trans('messages.employee_name')}}</label>
                         <input type="text" id="employee_name" class="form-control" readonly>
                     </div>
 
                     <div class="form-group">
-                        <label for="bank_name">Bank Name</label>
+                        <label for="bank_name">{{trans('messages.bank_name')}}</label>
                         <input type="text" id="bank_name" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="account_number">Account Number</label>
+                        <label for="account_number">{{trans('messages.account_number')}}</label>
                         <input type="text" id="account_number" class="form-control">
                     </div>
 
@@ -141,7 +141,7 @@
                     <input type="hidden" id="emp_id" class="form-control">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-custom" id="update-bank-account-details">Update</button>
+                    <button type="button" class="btn btn-custom" id="update-bank-account-details">{{trans('messages.update')}}</button>
                 </div>
             </div>
 

@@ -14,12 +14,12 @@
                     </a>
                    </li>
                   <li class="breadcrumb-active">
-                    <a href="/dashboard"> Dashboard </a>
+                    <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                   </li>
                   <li class="breadcrumb-link">
-                    <a href=""> Role </a>
+                    <a href=""> {{trans('messages.role')}} </a>
                   </li>
-                  <li class="breadcrumb-current-item"> Edit {{$result->name}} </li>
+                  <li class="breadcrumb-current-item"> {{trans('messages.edit')}} {{$result->name}} </li>
                </ol>
                 @else
                     <ol class="breadcrumb">
@@ -29,12 +29,12 @@
                             </a>
                         </li>
                         <li class="breadcrumb-active">
-                            <a href="/dashboard"> Dashboard </a>
+                            <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                         </li>
                         <li class="breadcrumb-link">
-                            <a href=""> Role </a>
+                            <a href=""> {{trans('messages.role')}} </a>
                         </li>
-                        <li class="breadcrumb-current-item"> Add Role </li>
+                        <li class="breadcrumb-current-item"> {{trans('messages.add_role')}} </li>
                     </ol>
                 @endif
         </div>
@@ -49,9 +49,9 @@
                     <div class="panel">
                         <div class="panel-heading">
                             @if(\Route::getFacadeRoot()->current()->uri() == 'edit-role/{id}')
-                                <span class="panel-title hidden-xs"> Edit Role </span>
+                                <span class="panel-title hidden-xs"> {{trans('messages.edit_role')}} </span>
                                 @else
-                                   <span class="panel-title hidden-xs"> Add Role </span>
+                                   <span class="panel-title hidden-xs"> {{trans('messages.add_role')}} </span>
                                @endif
                         </div>
 
@@ -66,25 +66,25 @@
                                         {!! Form::open(['class' => 'form-horizontal']) !!}
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Role </label>
+                                            <label class="col-md-3 control-label"> {{trans('messages.role')}} </label>
                                             <div class="col-md-6">
                                                 @if(\Route::getFacadeRoot()->current()->uri() == 'edit-role/{id}')
                                                 <input type="text" name="name" id="input002" class="select2-single form-control" value="@if($result && $result->name){{$result->name}}@endif" required>
                                                 @else
-                                                    <input type="text" name="name" id="input002" class="select2-single form-control" placeholder="Role" required>
+                                                    <input type="text" name="name" id="input002" class="select2-single form-control" placeholder="" required>
                                                 @endif
                                             </div>
                                         </div>
 
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Description </label>
+                                            <label class="col-md-3 control-label"> {{trans('messages.description')}} </label>
                                             <div class="col-md-6">
 
                                                     @if(\Route::getFacadeRoot()->current()->uri() == 'edit-role/{id}')
                                                         <textarea class="select2-single form-control" rows="3" id="textarea1" name="description" required>@if($result && $result->description){{$result->description}}@endif</textarea>
                                                     @else
-                                                        <textarea class="select2-single form-control" rows="3" id="textarea1" placeholder="Role Description" name="description" required></textarea>
+                                                        <textarea class="select2-single form-control" rows="3" id="textarea1" placeholder="" name="description" required></textarea>
                                                     @endif
                                             </div>
                                         </div>
@@ -93,10 +93,10 @@
                                             <label class="col-md-3 control-label"></label>
                                             <div class="col-md-2">
 
-                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{trans('messages.submit')}}">
                                            </div>
                                             <div class="col-md-2"><a href="/add-role" >
-                                                    <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
+                                                    <input type="button" class="btn btn-bordered btn-success btn-block" value="{{trans('messages.reset')}}"></a></div>
                                         </div>
                                         {!! Form::close() !!}
 

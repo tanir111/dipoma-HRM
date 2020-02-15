@@ -12,12 +12,12 @@
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard">Dashboard</a>
+                    <a href="/dashboard">{{trans('messages.dashboard')}}</a>
                 </li>
                 <li class="breadcrumb-link">
-                    <a href="/dashboard">Home</a>
+                    <a href="/dashboard">{{trans('messages.home')}}</a>
                 </li>
-                <li class="breadcrumb-current-item">Dashboard</li>
+                <li class="breadcrumb-current-item">{{trans('messages.dashboard')}}</li>
             </ol>
         </div>
 
@@ -41,8 +41,9 @@
                                         <img src="/assets/img/pages/clipart2.png" class="img-responsive mauto" alt=""/>
                                     </div>
                                     <div class="col-xs-7 pl5">
-                                        <h5 class="text-muted"><a href="{{route('employee-manager')}}"> EMPLOYEE
-                                                MANAGER</a></h5>
+                                        <h5 class="text-muted"><a href="{{route('employee-manager')}}">
+                                                {{trans('messages.employee_manager')}}
+                                            </a></h5>
                                         {{--<h2 class="fs50 mt5 mbn">385</h2>--}}
                                     </div>
                                 </div>
@@ -56,8 +57,9 @@
                                     <div class="col-xs-5 ph10"><img src="/assets/img/pages/clipart0.png"
                                                                     class="img-responsive mauto" alt=""/></div>
                                     <div class="col-xs-7 pl5">
-                                        <h5 class="text-muted"><a href="{{route('total-leave-list')}}"> LEAVE <br/>
-                                                MANAGER </a></h5>
+                                        <h5 class="text-muted"><a href="{{route('total-leave-list')}}">
+                                                {{trans('messages.leave_manager')}}
+                                            </a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +72,8 @@
                                     <div class="col-xs-5 ph10"><img src="/assets/img/pages/laptop.png"
                                                                     class="img-responsive mauto" alt=""/></div>
                                     <div class="col-xs-7 pl5">
-                                        <h5 class="text-muted"><a href="{{route('asset-listing')}}"> ASSET <br/> MANAGER
+                                        <h5 class="text-muted"><a href="{{route('asset-listing')}}">
+                                                {{trans('messages.asset_manager')}}
                                             </a></h5>
                                     </div>
                                 </div>
@@ -84,8 +87,9 @@
                                     <div class="col-xs-5 ph10"><img src="/assets/img/pages/dollar.png"
                                                                     class="img-responsive mauto" alt=""/></div>
                                     <div class="col-xs-7 pl5">
-                                        <h5 class="text-muted"><a href="{{route('expense-list')}}"> EXPENSE <br/>
-                                                MANAGER </a></h5>
+                                        <h5 class="text-muted"><a href="{{route('expense-list')}}">
+                                                {{trans('messages.expense_manager')}}
+                                            </a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -98,8 +102,9 @@
                                     <div class="col-xs-4 ph10"><img src="/assets/img/pages/clipart5.png"
                                                                     class="img-responsive mauto" alt=""/></div>
                                     <div class="col-xs-8 pl5">
-                                        <h5 class="text-muted"><a href="{{route('attendance-manager')}}"> ATTENDANCE
-                                                MANAGER </a></h5>
+                                        <h5 class="text-muted"><a href="{{route('attendance-manager')}}">
+                                                {{trans('messages.attendance_manager')}}
+                                            </a></h5>
                                     </div>
                                 </div>
                             </div>

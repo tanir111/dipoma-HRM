@@ -13,12 +13,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Promotion </a>
+                        <a href=""> {{trans('messages.promotion')}} </a>
                     </li>
-                    <li class="breadcrumb-current-item"> Promotion Listings </li>
+                    <li class="breadcrumb-current-item"> {{trans('messages.promotion_listings')}} </li>
                 </ol>
             </div>
         </header>
@@ -36,7 +36,7 @@
                         <div class="box box-success">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <span class="panel-title hidden-xs"> Promotion Listings </span>
+                                    <span class="panel-title hidden-xs"> {{trans('messages.promotion_listings')}} </span>
                                 </div>
                                 <div class="panel-body pn">
                                     @if(Session::has('flash_message'))
@@ -49,13 +49,13 @@
                                         <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
                                             <thead>
                                             <tr class="bg-light">
-                                                <th class="text-center">Id</th>
-                                                <th class="text-center">Employee</th>
-                                                <th class="text-center">Old Designation</th>
-                                                <th class="text-center">New Designation</th>
-                                                <th class="text-center">Old Salary</th>
-                                                <th class="text-center">New Salary</th>
-                                                <th class="text-center">Date of Promotion</th>
+                                                <th class="text-center">{{trans('messages.id')}}</th>
+                                                <th class="text-center">{{trans('messages.employee')}}</th>
+                                                <th class="text-center">{{trans('messages.old_designation')}}</th>
+                                                <th class="text-center">{{trans('messages.new_designation')}}</th>
+                                                <th class="text-center">{{trans('messages.old_salary')}}</th>
+                                                <th class="text-center">{{trans('messages.new_salary')}}</th>
+                                                <th class="text-center">{{trans('messages.date_of_promotion')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>

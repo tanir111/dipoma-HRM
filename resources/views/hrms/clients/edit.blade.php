@@ -13,12 +13,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Client </a>
+                        <a href=""> {{trans('messages.client')}} </a>
                     </li>
-                    <li class="breadcrumb-current-item"> Edit Client</li>
+                    <li class="breadcrumb-current-item">{{trans('messages.edit_client')}}</li>
                 </ol>
             </div>
         </header>
@@ -31,7 +31,7 @@
                         <div class="box box-success">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <span class="panel-title hidden-xs"> Edit {{$client->name}} </span>
+                                    <span class="panel-title hidden-xs"> {{trans('messages.edit')}} {{$client->name}} </span>
                                 </div>
 
                                 <div class="panel-body pn">
@@ -45,28 +45,28 @@
                                             {!! Form::open(['class' => 'form-horizontal']) !!}
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Client </label>
+                                                <label class="col-md-3 control-label">{{trans('messages.client')}}</label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="name" id="input002" class="select2-single form-control" placeholder="Name" value="{{$client->name}}" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Address </label>
+                                                <label class="col-md-3 control-label"> {{trans('messages.address')}} </label>
                                                 <div class="col-md-6">
                                                     <textarea class="select2-single form-control" rows="3" id="address" placeholder="Client Address" name="address">{{$client->address}}</textarea>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Company </label>
+                                                <label class="col-md-3 control-label"> {{trans('messages.company')}} </label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="company" id="input002" class="select2-single form-control" placeholder="Company" value="{{$client->company}}">
                                                 </div>
                                             </div>
 
                                             <div class="form-group code-group">
-                                                <label class="col-md-3 control-label"> Code </label>
+                                                <label class="col-md-3 control-label"> {{trans('messages.code')}} </label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="code" class="select2-single form-control" placeholder="Unique Code" required value="{{$client->code}}">
                                                 </div>
@@ -76,10 +76,10 @@
                                                 <label class="col-md-3 control-label"></label>
                                                 <div class="col-md-2">
 
-                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{trans('messages.submit')}}">
                                                 </div>
                                                 <div class="col-md-2"><a href="/add-client">
-                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a>
+                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="{{trans('messages.reset')}}"></a>
                                                 </div>
                                             </div>
                                             {!! Form::close() !!}

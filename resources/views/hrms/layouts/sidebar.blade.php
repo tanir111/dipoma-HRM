@@ -27,17 +27,17 @@
         <li>
             <a class="accordion-toggle" href="/dashboard">
                 <span class="fa fa-user"></span>
-                <span class="sidebar-title">Employees</span>
+                <span class="sidebar-title">{{trans('messages.employee')}}</span>
                 <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
                 <li>
                     <a href="{{route('add-employee')}}">
-                        <span class="glyphicon glyphicon-tags"></span> Add Employee </a>
+                        <span class="glyphicon glyphicon-tags"></span>{{trans('messages.add_employee')}}</a>
                 </li>
                 <li>
                     <a href="{{route('employee-manager')}}">
-                        <span class="glyphicon glyphicon-tags"></span> Employee Listing </a>
+                        <span class="glyphicon glyphicon-tags"></span>{{trans('messages.employee_listing')}}</a>
                 </li>
                 {{--<li>--}}
                     {{--<a href="{{route('upload-emp')}}">--}}
@@ -50,18 +50,18 @@
             <li>
                 <a class="accordion-toggle" href="/dashboard">
                     <span class="fa fa-user"></span>
-                    <span class="sidebar-title">Clients</span>
+                    <span class="sidebar-title">{{trans('messages.clients')}}</span>
                     <span class="caret"></span>
                 </a>
                 <ul class="nav sub-nav">
                     <li>
                         <a href="{{route('add-client')}}">
-                            <span class="glyphicon glyphicon-tags"></span> Add Client </a>
+                            <span class="glyphicon glyphicon-tags"></span>{{trans('messages.add_client')}}</a>
                     </li>
 
                     <li>
                         <a href="{{route('list-client')}}">
-                            <span class="glyphicon glyphicon-tags"></span> List Client </a>
+                            <span class="glyphicon glyphicon-tags"></span>{{trans('messages.client_list')}}</a>
                     </li>
                 </ul>
             </li>
@@ -70,28 +70,28 @@
         <li>
             <a class="accordion-toggle" href="/dashboard">
                 <span class="fa fa-user"></span>
-                <span class="sidebar-title">Projects</span>
+                <span class="sidebar-title">{{trans('messages.projects')}}</span>
                 <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
                 <li>
                     <a href="{{route('add-project')}}">
-                        <span class="glyphicon glyphicon-tags"></span> Add Project </a>
+                        <span class="glyphicon glyphicon-tags"></span>{{trans('messages.add_project')}}</a>
                 </li>
 
                 <li>
                     <a href="{{route('list-project')}}">
-                        <span class="glyphicon glyphicon-tags"></span> List Project</a>
+                        <span class="glyphicon glyphicon-tags"></span>{{trans('messages.project_list')}}</a>
                 </li>
 
                 <li>
                     <a href="{{route('assign-project')}}">
-                        <span class="glyphicon glyphicon-tags"></span> Assign Project</a>
+                        <span class="glyphicon glyphicon-tags"></span>{{trans('messages.assign_project')}}</a>
                 </li>
 
                 <li>
                     <a href="{{route('project-assignment-listing')}}">
-                        <span class="glyphicon glyphicon-tags"></span> Project Assignment Listing</a>
+                        <span class="glyphicon glyphicon-tags"></span>{{trans('messages.assignment_project_list')}}</a>
                 </li>
             </ul>
         </li>
@@ -100,7 +100,7 @@
 
             <a href="/bank-account-details">
                 <span class="fa fa-bank"></span>
-                <span class="sidebar-title">Bank Account</span>
+                <span class="sidebar-title">{{trans('messages.bank_account')}}</span>
 
             </a>
         </li>
@@ -108,17 +108,17 @@
         <li>
             <a class="accordion-toggle" href="/dashboard">
                 <span class="fa fa-group"></span>
-                <span class="sidebar-title">Teams</span>
+                <span class="sidebar-title">{{trans('messages.teams')}}</span>
                 <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
                 <li>
                     <a href="{{route('add-team')}}">
-                        <span class="glyphicon glyphicon-book"></span> Add Team </a>
+                        <span class="glyphicon glyphicon-book"></span>{{trans('messages.add_team')}}</a>
                 </li>
                 <li>
                     <a href="{{route('team-listing')}}">
-                        <span class="glyphicon glyphicon-modal-window"></span> Team Listings </a>
+                        <span class="glyphicon glyphicon-modal-window"></span>{{trans('messages.team_listing')}}</a>
                 </li>
             </ul>
         </li>
@@ -126,42 +126,42 @@
         <li>
             <a class="accordion-toggle" href="/dashboard">
                 <span class="fa fa-graduation-cap"></span>
-                <span class="sidebar-title">Roles</span>
+                <span class="sidebar-title">{{trans('messages.roles')}}</span>
                 <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
                 <li>
                     <a href="{{route('add-role')}}">
-                        <span class="glyphicon glyphicon-book"></span> Add Role </a>
+                        <span class="glyphicon glyphicon-book"></span>{{trans('messages.add_role')}}</a>
                 </li>
                 <li>
                     <a href="{{route('role-list')}}">
-                        <span class="glyphicon glyphicon-modal-window"></span> Role Listings </a>
+                        <span class="glyphicon glyphicon-modal-window"></span>{{trans('messages.role_listing')}}</a>
                 </li>
             </ul>
         </li>
         <li>
             <a class="accordion-toggle" href="/dashboard">
                 <span class="fa fa fa-laptop"></span>
-                <span class="sidebar-title">Assets</span>
+                <span class="sidebar-title">{{trans('messages.assets')}}</span>
                 <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
                 <li>
                     <a href="{{route('add-asset')}}">
-                        <span class="glyphicon glyphicon-shopping-cart"></span> Add Asset </a>
+                        <span class="glyphicon glyphicon-shopping-cart"></span>{{trans('messages.add_asset')}}</a>
                 </li>
                 <li>
                     <a href="{{route('asset-listing')}}">
-                        <span class="glyphicon glyphicon-calendar"></span> Asset Listings </a>
+                        <span class="glyphicon glyphicon-calendar"></span>{{trans('messages.asset_listing')}}</a>
                 </li>
                 <li>
                     <a href="{{route('assign-asset')}}">
-                        <span class="fa fa-desktop"></span> Assign Asset </a>
+                        <span class="fa fa-desktop"></span>{{trans('messages.assign_asset')}}</a>
                 </li>
                 <li>
                     <a href="{{route('assignment-listing')}}">
-                        <span class="fa fa-clipboard"></span> Assignment Listings </a>
+                        <span class="fa fa-clipboard"></span>{{trans('messages.assign_asset_listing')}}</a>
                 </li>
             </ul>
         </li>
@@ -169,33 +169,33 @@
     <li>
         <a class="accordion-toggle" href="/dashboard">
             <span class="fa fa-envelope"></span>
-            <span class="sidebar-title">Leaves</span>
+            <span class="sidebar-title">{{trans('messages.leaves')}}</span>
             <span class="caret"></span>
         </a>
         <ul class="nav sub-nav">
             <li>
                 <a href="{{route('apply-leave')}}">
-                    <span class="glyphicon glyphicon-shopping-cart"></span> Apply Leave </a>
+                    <span class="glyphicon glyphicon-shopping-cart"></span>{{trans('messages.apply_leave')}}</a>
             </li>
             <li>
                 <a href="{{route('my-leave-list')}}">
-                    <span class="glyphicon glyphicon-calendar"></span> My Leave List </a>
+                    <span class="glyphicon glyphicon-calendar"></span>{{trans('messages.my_leave_list')}}</a>
             </li>
 
             @if(\Auth::user()->isHR())
                 <li>
                     <a href="{{route('add-leave-type')}}">
-                        <span class="fa fa-desktop"></span> Add Leave Type </a>
+                        <span class="fa fa-desktop"></span>{{trans('messages.add_leave_type')}}</a>
                 </li>
                 <li>
                     <a href="{{route('leave-type-listing')}}">
-                        <span class="fa fa-clipboard"></span> Leave Type Listings </a>
+                        <span class="fa fa-clipboard"></span>{{trans('messages.leave_type_listing')}}</a>
                 </li>
             @endif
             @if(Auth::user()->isHR() || Auth::user()->isCoordinator())
                 <li>
                     <a href="{{route('total-leave-list')}}">
-                        <span class="fa fa-clipboard"></span> Total Leave Listings </a>
+                        <span class="fa fa-clipboard"></span>{{trans('messages.total_leave_listing')}}</a>
                 </li>
             @endif
         </ul>
@@ -205,17 +205,17 @@
         <li>
             <a class="accordion-toggle" href="/dashboard">
                 <span class="fa fa-arrow-circle-o-up"></span>
-                <span class="sidebar-title">Promotions</span>
+                <span class="sidebar-title">{{trans('messages.promotions')}}</span>
                 <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
                 <li>
                     <a href="/promotion">
-                        <span class="glyphicon glyphicon-book"></span> Promote </a>
+                        <span class="glyphicon glyphicon-book"></span> {{trans('messages.promote')}}</a>
                 </li>
                 <li>
                     <a href="/show-promotion">
-                        <span class="glyphicon glyphicon-modal-window"></span> Promotion Listings </a>
+                        <span class="glyphicon glyphicon-modal-window"></span>{{trans('messages.promotion_listing')}}</a>
                 </li>
             </ul>
         </li>
@@ -241,25 +241,25 @@
         <li>
             <a class="accordion-toggle" href="/dashboard">
                 <span class="fa fa fa-trophy"></span>
-                <span class="sidebar-title">Awards</span>
+                <span class="sidebar-title">{{trans('messages.awards')}}</span>
                 <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
                 <li>
                     <a href="/add-award">
-                        <span class="fa fa-adn"></span> Add Award </a>
+                        <span class="fa fa-adn"></span>{{trans('messages.add_award')}}</a>
                 </li>
                 <li>
                     <a href="/award-listing">
-                        <span class="glyphicon glyphicon-calendar"></span> Award Listings </a>
+                        <span class="glyphicon glyphicon-calendar"></span>{{trans('messages.award_listing')}}</a>
                 </li>
                 <li>
                     <a href="/assign-award">
-                        <span class="fa fa-desktop"></span> Awardees </a>
+                        <span class="fa fa-desktop"></span>{{trans('messages.awardees')}}</a>
                 </li>
                 <li>
                     <a href="/awardees-listing">
-                        <span class="fa fa-clipboard"></span> Awardees Listings </a>
+                        <span class="fa fa-clipboard"></span>{{trans('messages.awardees_listing')}} </a>
                 </li>
             </ul>
         </li>
@@ -333,11 +333,11 @@
 
 {{--    @endif--}}
 
-    <li class="sidebar-label pt30"> Extras</li>
+    <li class="sidebar-label pt30"> {{trans('messages.extras')}}</li>
     <li>
         <a href="/create-meeting">
             <span class="fa fa-calendar-o"></span>
-            <span class="sidebar-title"> Meeting  &nbsp Invitation </span>
+            <span class="sidebar-title">{{trans('messages.meeting')}}&nbsp {{trans('messages.invitation')}} </span>
         </a>
     </li>
 
@@ -345,7 +345,7 @@
         <li>
             <a href="/create-event">
                 <span class="fa fa-calendar-o"></span>
-                <span class="sidebar-title"> Event  &nbsp Invitation </span>
+                <span class="sidebar-title">{{trans('messages.event')}}  &nbsp {{trans('messages.invitation')}} </span>
             </a>
         </li>
     @endif
@@ -353,7 +353,7 @@
     <li>
         <a href="/hr-policy">
             <span class="fa fa-gavel"></span>
-            <span class="sidebar-title"> Company Policy </span>
+            <span class="sidebar-title">{{trans('messages.company_policy')}}</span>
         </a>
     </li>
     <p> &nbsp; </p>

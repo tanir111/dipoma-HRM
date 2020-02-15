@@ -302,9 +302,9 @@
                              <a href="#"> Edit Details</a>
                          </li>--}}
                         <li class="breadcrumb-link">
-                            <a href="/dashboard"> Employees </a>
+                            <a href="/dashboard"> {{trans('messages.employees')}} </a>
                         </li>
-                        <li class="breadcrumb-current-item"> Edit details of {{$emps->name}} </li>
+                        <li class="breadcrumb-current-item">{{trans('messages.edit_details_of')}} {{$emps->name}} </li>
                     </ol>
                 </div>
 
@@ -318,12 +318,12 @@
                             </a>
                         </li>
                         <li class="breadcrumb-active">
-                            <a href="/dashboard">Dashboard</a>
+                            <a href="/dashboard">{{trans('messages.dashboard')}}</a>
                         </li>
                         <li class="breadcrumb-link">
-                            <a href="/add-employee"> Employees </a>
+                            <a href="/add-employee"> {{trans('messages.employees')}} </a>
                         </li>
-                        <li class="breadcrumb-current-item"> Add Details</li>
+                        <li class="breadcrumb-current-item">{{trans('messages.add_details')}}</li>
                     </ol>
                 </div>
 
@@ -353,12 +353,12 @@
 
                             <!-- -------------- step 1 -------------- -->
                             <h4 class="wizard-section-title">
-                                <i class="fa fa-user pr5"></i> Personal Details</h4>
+                                <i class="fa fa-user pr5"></i>{{trans('messages.personal_details')}}</h4>
                             <section class="wizard-section">
                                 <div class="section">
-                                    <label for="photo-upload"><h6 class="mb20 mt40"> Photo </h6></label>
+                                    <label for="photo-upload"><h6 class="mb20 mt40"> {{trans('messages.photo')}} </h6></label>
                                     <label class="field prepend-icon append-button file">
-                                        <span class="button">Choose File</span>
+                                        <span class="button">{{trans('messages.choose_file')}}</span>
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                             <input type="hidden" value="edit-emp/{{$emps->id}}" id="url">
 
@@ -386,7 +386,7 @@
                                 <!-- -------------- /section -------------- -->
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40">Employee Code</h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.employee_code')}}</h6></label>
                                     <label for="input002" class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                             <input type="text" name="emp_code" id="emp_code" class="gui-input"
@@ -407,7 +407,7 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40">Employee Name </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.employee_name')}}</h6></label>
                                     <label for="input002" class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                             <input type="text" name="emp_name" id="emp_name" class="gui-input"
@@ -429,7 +429,7 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40">Employee Surname </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.employee_surname')}}</h6></label>
                                     <label for="input002" class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                             <input type="text" name="emp_surname" id="emp_surname" class="gui-input"
@@ -450,7 +450,7 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40">Employment Status </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.employment_status')}}</h6></label>
                                     <div class="option-group field">
                                         <label class="field option mb5">
                                             @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
@@ -474,7 +474,7 @@
                                 </div>
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Role </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.role')}}</h6></label>
                                     @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                         <select class="select2-single form-control" name="role" id="role" readonly
                                                 required>
@@ -497,7 +497,7 @@
                                 </div>
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Gender </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.gender')}}</h6></label>
                                     <div class="option-group field">
                                         <label class="field option mb5">
                                             <input type="radio" value="0" name="gender" id="gender"
@@ -513,7 +513,7 @@
 
                                 <div class="section">
                                     <label for="datepicker1" class="field prepend-icon mb5"><h6 class="mb20 mt40">
-                                            Date of Birth </h6></label>
+                                            {{trans('messages.date_of_birth')}}</h6></label>
 
                                     <div class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
@@ -535,7 +535,7 @@
 
                                 <div class="section">
                                     <label for="datepicker4" class="field prepend-icon mb5"><h6 class="mb20 mt40">
-                                            Date of Joining </h6></label>
+                                            {{trans('messages.date_of_joining')}}</h6></label>
 
                                     <div class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
@@ -557,7 +557,7 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Mobile Number </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.mobile_number')}}</h6></label>
                                     <label for="input002" class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                             <input name="mob_number" id="mobile_phone"
@@ -585,7 +585,7 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Emergency Number </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.emergency_number')}}</h6></label>
                                     <label for="input002" class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                             <input name="emer_number" id="emergency_number"
@@ -612,7 +612,7 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Qualification </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40"> {{trans('messages.qualification')}} </h6></label>
                                     <label for="input002" class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
 
@@ -633,7 +633,7 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Current Address </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.current_address')}}</h6></label>
                                     <label for="input002" class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                             <input type="text" name="address" id="address" class="gui-input"
@@ -653,7 +653,7 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Permanent Address </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.permanent_address')}}</h6></label>
                                     <label for="input002" class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                             <input type="text" name="permanent_address" id="permanent_address"
@@ -677,11 +677,11 @@
 
                             <!-- -------------- step 2 -------------- -->
                             <h4 class="wizard-section-title">
-                                <i class="fa fa-user-secret pr5"></i> Employment details</h4>
+                                <i class="fa fa-user-secret pr5"></i>{{trans('messages.employment_details')}}</h4>
                             <section class="wizard-section">
                                 <!-- -------------- /section -------------- -->
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Joining Formalities </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.joining_formalities')}}</h6></label>
 
                                     <div class="option-group field">
                                         <label class="field option mb5">
@@ -697,7 +697,7 @@
                                 </div>
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Offer Acceptance </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.offer_acceptance')}}</h6></label>
 
                                     <div class="option-group field">
                                         <label class="field option mb5">
@@ -715,12 +715,12 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Probation Period </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.probation_period')}}</h6></label>
 
                                     @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                         <select class="select2-single form-control probation_select" name="prob_period"
                                                 id="probation_period">
-                                            <option value="">Select probation period</option>
+                                            <option value="">{{trans('messages.select_probation_period')}}</option>
                                             @if($emps->employee->probation_period == '0')
                                                 <option value="0" selected>0 days</option>
                                                 <option value="90">90 days</option>
@@ -749,7 +749,7 @@
                                     @else
                                         <select class="select2-single form-control probation_select" name="prob_period"
                                                 id="probation_period">
-                                            <option value="">Select probation period</option>
+                                            <option value="">{{trans('messages.select_probation_period')}}</option>
                                             <option value="0">0 days</option>
                                             <option value="90">90 days</option>
                                             <option value="180">180 days</option>
@@ -765,7 +765,8 @@
 
                                 <div class="section">
                                     <label for="datepicker5" class="field prepend-icon mb5"><h6 class="mb20 mt40">
-                                            Date of Confirmation </h6></label>
+                                            {{trans('messages.date_of_confirmation')}}
+                                        </h6></label>
 
                                     <div class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
@@ -785,9 +786,9 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Department </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40"> {{trans('messages.department')}} </h6></label>
                                     <select class="select2-single form-control" name="department" id="department">
-                                        <option value="">Select department</option>
+                                        <option value="">{{trans('messages.select_department')}}</option>
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                             @if($emps->employee->department == 'Marketplace')
                                                 <option value="Marketplace" selected>Marketplace</option>
@@ -812,7 +813,7 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Salary on Confirmation </h6>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.salary_on_confirmation')}}</h6>
                                     </label>
                                     <label for="input002" class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
@@ -844,7 +845,7 @@
 
                             <!-- -------------- step 3 -------------- -->
                             <h4 class="wizard-section-title">
-                                <i class="fa fa-file-text pr5"></i> Banking Details</h4>
+                                <i class="fa fa-file-text pr5"></i>{{trans('messages.banking_details')}}</h4>
                             <section class="wizard-section">
 
                                 <script src="/assets/jquery.maskedinput.js" type="text/javascript"></script>
@@ -854,7 +855,7 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Bank Account Number </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.bank_account_number')}}</h6></label>
                                     <label for="input002" class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                             <input type="text" name="account_number" id="bank_account_number"
@@ -889,7 +890,7 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Bank Name </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.bank_name')}}</h6></label>
                                     <label for="input002" class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                             <input type="text" name="bank_name" id="bank_name" class="gui-input"
@@ -908,17 +909,17 @@
                                 </div>
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> PF Status </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.pf_status')}}</h6></label>
 
                                     <div class="option-group field">
                                         <label class="field option mb5">
                                             <input type="radio" value="1" name="pf_status" id="pf_status"
                                                    @if(isset($emps))@if($emps->employee->pf_status == '1')checked @endif @endif>
-                                            <span class="radio"></span>Active</label>
+                                            <span class="radio"></span>{{trans('messages.active')}}</label>
                                         <label class="field option mb5">
                                             <input type="radio" value="0" name="pf_status" id="pf_status"
                                                    @if(isset($emps))@if($emps->employee->pf_status == '0')checked @endif @endif>
-                                            <span class="radio"></span>Inactive</label>
+                                            <span class="radio"></span>{{trans('messages.inactive')}}</label>
                                     </div>
                                 </div>
                                 <!-- -------------- /section -------------- -->
@@ -927,13 +928,13 @@
 
 
                             <h4 class="wizard-section-title">
-                                <i class="fa fa-file-text pr5"></i> Ex Employment Details </h4>
+                                <i class="fa fa-file-text pr5"></i>{{trans('messages.ex_employment_details')}}</h4>
                             <section class="wizard-section">
 
 
                                 <div class="section">
                                     <label for="datepicker6" class="field prepend-icon mb5"><h6 class="mb20 mt40">
-                                            Date of Resignation </h6></label>
+                                            {{trans('messages.date_of_resignation')}}</h6></label>
 
                                     <div class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
@@ -953,9 +954,9 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Notice Period </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.notice_period')}}</h6></label>
                                     <select class="select2-single form-control" name="notice_period" id="notice_period">
-                                        <option value="">Select notice period</option>
+                                        <option value="">{{trans('messages.select_notice_period')}}</option>
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
                                             @if($emps->employee->notice_period == '1')
                                                 <option value="1" selected>1 Month</option>
@@ -974,7 +975,7 @@
 
                                 <div class="section">
                                     <label for="datepicker7" class="field prepend-icon mb5"><h6 class="mb20 mt40">
-                                            Last Working Day </h6></label>
+                                            {{trans('messages.last_working_day')}}</h6></label>
 
                                     <div class="field prepend-icon">
                                         @if(\Route::getFacadeRoot()->current()->uri() == 'edit-emp/{id}')
@@ -996,18 +997,18 @@
 
 
                                 <div class="section">
-                                    <label for="input002"><h6 class="mb20 mt40"> Full & Final </h6></label>
+                                    <label for="input002"><h6 class="mb20 mt40">{{trans('messages.full_final')}}</h6></label>
 
                                     <div class="option-group field">
                                         <label class="field option mb5">
                                             <input type="hidden" value="{!! csrf_token() !!}" id="token">
                                             <input type="radio" value="1" name="full_final" id="full_final"
                                                    @if(isset($emps))@if($emps->employee->full_final == '1')checked @endif @endif>
-                                            <span class="radio"></span>Yes</label>
+                                            <span class="radio"></span>{{trans('messages.yes')}}</label>
                                         <label class="field option mb5">
                                             <input type="radio" value="0" name="full_final" id="full_final"
                                                    @if(isset($emps))@if($emps->employee->full_final == '0')checked @endif @endif>
-                                            <span class="radio"></span>No</label>
+                                            <span class="radio"></span>{{trans('messages.no')}}</label>
                                     </div>
                                 </div>
                             </section>

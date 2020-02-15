@@ -15,12 +15,12 @@
                             </a>
                         </li>
                         <li class="breadcrumb-active">
-                            <a href="/dashboard"> Dashboard </a>
+                            <a href="/dashboard"> {{trans('messages.dashboard')}} </a>
                         </li>
                         <li class="breadcrumb-link">
-                            <a href=""> Promotion </a>
+                            <a href=""> {{trans('messages.promotion')}} </a>
                         </li>
-                        <li class="breadcrumb-current-item"> Promote  </li>
+                        <li class="breadcrumb-current-item"> {{trans('messages.promote')}}  </li>
                     </ol>
             </div>
         </header>
@@ -33,7 +33,7 @@
                         <div class="box box-success">
                             <div class="panel">
                                 <div class="panel-heading">
-                                        <span class="panel-title hidden-xs"> Promote </span>
+                                        <span class="panel-title hidden-xs"> {{trans('messages.promote')}} </span>
                                 </div>
 
                                 <div class="panel-body pn">
@@ -46,11 +46,11 @@
                                             @endif
                                             {!! Form::open(['class' => 'form-horizontal']) !!}
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Select Employee </label>
+                                                <label class="col-md-3 control-label"> {{trans('messages.select_employee')}} </label>
                                                 <div class="col-md-6">
                                                     <select class="select2-single form-control select-primary"
                                                             name="emp_id" id="promotion_emp_id" required>
-                                                        <option value="" selected>Select One</option>
+                                                        <option value="" selected>{{trans('messages.select_one')}}</option>
                                                         @foreach($emps as $emp)
                                                             <option value="{{$emp->id}}">{{$emp->name}}</option>
                                                         @endforeach
@@ -59,7 +59,7 @@
                                             </div>
 
                                                 <div class="form-group">
-                                                    <label class="col-md-3 control-label"> Old Designation </label>
+                                                    <label class="col-md-3 control-label"> {{trans('messages.old_designation')}} </label>
                                                     <div class="col-md-6">
                                                             <input type="text" id="old_designation" class="form-control" name="old_designation" readonly required>
                                                     </div>
@@ -68,12 +68,12 @@
 
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Select New Designation </label>
+                                                <label class="col-md-3 control-label"> {{trans('messages.select_new_designation')}} </label>
                                                 <div class="col-md-6">
                                                     <select class="select2-multiple
                                                     form-control select-primary"
                                                             name="new_designation" required>
-                                                        <option value="" selected>Select One</option>
+                                                        <option value="" selected>{{trans('messages.select_one')}}</option>
                                                         @foreach($roles as $role)
                                                             <option value="{{$role->id}}">{{$role->name}}</option>
                                                         @endforeach
@@ -84,14 +84,14 @@
 
 
                                                 <div class="form-group">
-                                                    <label for="datepicker1" class="col-md-3 control-label"> Old Salary </label>
+                                                    <label for="datepicker1" class="col-md-3 control-label"> {{trans('messages.old_salary')}} </label>
                                                     <div class="col-md-6">
                                                             <input type="text" id="old_salary" class="form-control" name="old_salary" readonly required>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="datepicker1" class="col-md-3 control-label">Enter New Salary </label>
+                                                    <label for="datepicker1" class="col-md-3 control-label">{{trans('messages.enter_new_salary')}} </label>
                                                     <div class="col-md-6">
                                                             <input type="text" id="new_salary" class="form-control" name="new_salary" required>
                                                     </div>
@@ -99,7 +99,7 @@
 
 
                                                 <div class="form-group">
-                                                <label for="datepicker1" class="col-md-3 control-label"> Date of Promotion </label>
+                                                <label for="datepicker1" class="col-md-3 control-label">{{trans('messages.date_of_promotion')}} </label>
                                                 <div class="col-md-6">
                                                     <div class="input-group">
                                                         <div class="input-group-addon">
@@ -115,10 +115,10 @@
                                                 <label class="col-md-3 control-label"></label>
                                                 <div class="col-md-2">
 
-                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{trans('messages.submit')}}">
                                                 </div>
                                                 <div class="col-md-2"><a href="/promotion" >
-                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
+                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="{{trans('messages.reset')}}"></a></div>
                                             </div>
                                         </div>
 
