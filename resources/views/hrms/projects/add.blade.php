@@ -71,7 +71,7 @@
 
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Client </label>
+                                                <label class="col-md-3 control-label"> Company </label>
                                                 <div class="col-md-6">
                                                     @if($model->clients->count() > 0)
                                                         <select class="selectpicker form-control"
@@ -79,7 +79,7 @@
                                                                 name="client_id" required>
                                                             <option value="" selected>Select One</option>
                                                             @foreach($model->clients as $client)
-                                                                <option value="{{$client->id}}">{{$client->name}}</option>
+                                                                <option value="{{$client->id}}">{{$client->company.': '.$client->name}}</option>
                                                             @endforeach
                                                         </select>
                                                     @else

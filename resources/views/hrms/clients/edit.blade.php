@@ -92,7 +92,8 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label"> Contact</label>
                                                 <div class="col-md-6">
-                                                    <input type="text" name="contact"
+                                                    <input
+                                                           type="text" name="contact"
                                                            class="form-control"
                                                            value="{{$client->contact}}"
                                                            placeholder="Contact">
