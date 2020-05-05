@@ -66,7 +66,10 @@
                                                     <h3 class="text-primary mn pl5">
 
                                                         <h3 class="text-success-dark mn">
-                                                            {{$employeeCount}} </h3>
+                                                            @if(isset($employeeCount))
+                                                                {{$employeeCount}}
+                                                            @endif
+                                                        </h3>
                                                         {{trans('messages.employees')}}</h3>
                                                 </div>
                                             </div>
@@ -75,7 +78,10 @@
                                                     <h3 class="text-primary mn pl5">
 
                                                         <h3 class="text-success-dark mn">
-                                                            {{$projectsCount}} </h3>
+                                                            @if(isset($projectsCount))
+                                                                {{$projectsCount}}
+                                                            @endif
+                                                        </h3>
                                                         {{trans('messages.projects')}}</h3>
                                                 </div>
                                             </div>
@@ -84,7 +90,10 @@
                                                     <h3 class="text-primary mn pl5">
 
                                                         <h3 class="text-success-dark mn">
-                                                            {{$clientsCount}} </h3>
+                                                            @if(isset($clientsCount))
+                                                                {{$clientsCount}}
+                                                            @endif
+                                                        </h3>
                                                         {{trans('messages.clients')}}</h3>
                                                 </div>
                                             </div>
@@ -93,7 +102,10 @@
                                                     <h3 class="text-primary mn pl5">
 
                                                         <h3 class="text-success-dark mn">
-                                                            {{$leaveCount}} </h3>
+                                                            @if(isset($leaveCount))
+                                                                {{$leaveCount}}
+                                                            @endif
+                                                        </h3>
                                                         {{trans('messages.leaves')}}</h3>
                                                 </div>
                                             </div>
@@ -102,7 +114,10 @@
                                                     <h3 class="text-primary mn pl5">
 
                                                         <h3 class="text-success-dark mn">
-                                                            {{$holidaysCount}} </h3>
+                                                            @if(isset($holidaysCount))
+                                                                {{$holidaysCount}}
+                                                            @endif
+                                                        </h3>
                                                         {{trans('messages.holidays')}}</h3>
                                                 </div>
                                                 <div class="col-xs-7 text-right">
