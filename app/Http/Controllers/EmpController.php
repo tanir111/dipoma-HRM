@@ -451,7 +451,7 @@ class EmpController extends Controller
     {
         $string = $request->string;
         $column = $request->column;
-        if ($request->button == 'Search') {
+        if ($request->button == trans('messages.search')) {
             if ($string == '' && $column == '') {
                 \Session::flash('success', ' Employee details uploaded successfully.');
                 return redirect()->to('employee-manager');
@@ -467,7 +467,8 @@ class EmpController extends Controller
                 )->with('employee')->paginate(20);
             }
 
-            return view('hrms.employee.show_emp', compact('emps', 'column', 'string'));
+            $jsonEmps = json_encode($emps->items());
+            return view('hrms.employee.show_emp', compact('emps', 'column', 'string', 'jsonEmps'));
         } else {
             if ($column == '') {
                 $emps = User::with('employee')->get();
